@@ -373,7 +373,7 @@ forward IdiotSound(playerid);
 public IdiotSound(playerid)
 {
     PlayAudioStreamForPlayerEx(playerid, "http://www.ng-gaming.net/users/farva/you-are-an-idiot.mp3");
-    ShowPlayerDialogEx(playerid,DIALOG_NOTHING,DIALOG_STYLE_MSGBOX,"BUSTED!","Ban da bi phat 15 phan tram tai san cua minh va bi phat prison 3 tieng, neu su dung hack tiep tuc co the se bi banned","Exit","");
+    ShowPlayerDialogEx(playerid,DIALOG_NOTHING,DIALOG_STYLE_MSGBOX,"BUSTED!","A 15 percent CLEO tax has been assessed to your account along with a 3 hour prison - future use could result in a ban","Exit","");
 }
 
 forward SetCamBack(playerid);
@@ -479,7 +479,7 @@ public SetVehicleEngine(vehicleid, playerid)
     if(engine == VEHICLE_PARAMS_ON)
 	{
 		SetVehicleParamsEx(vehicleid,VEHICLE_PARAMS_OFF,lights,alarm,doors,bonnet,boot,objective);
-		SendClientMessageEx(playerid, COLOR_WHITE, "Da tat dong co xe.");
+		SendClientMessageEx(playerid, COLOR_WHITE, "Dong co xe da dung thanh cong.");
 		arr_Engine{vehicleid} = 0;
 	}
     else if(engine == VEHICLE_PARAMS_OFF || engine == VEHICLE_PARAMS_UNSET)
@@ -489,7 +489,7 @@ public SetVehicleEngine(vehicleid, playerid)
 
 		GetVehicleHealth(vehicleid, f_vHealth);
 		if (GetPVarInt(playerid, "Refueling")) return SendClientMessageEx(playerid, COLOR_WHITE, "Ban khong the lam dieu nay khi dang do xang.");
-		if(f_vHealth < 350.0) return SendClientMessageEx(playerid, COLOR_RED, "Xe da bi hu, khong the khoi dong!");
+		if(f_vHealth < 350.0) return SendClientMessageEx(playerid, COLOR_RED, "Xe khong the khoi dong - no da bi hu!");
 		if(IsRefuelableVehicle(vehicleid) && !IsVIPcar(vehicleid) && !IsAdminSpawnedVehicle(vehicleid) && VehicleFuel[vehicleid] <= 0.0)
 		{
 			/*if(!PlayerInfo[playerid][pShopNotice])
@@ -498,7 +498,7 @@ public SetVehicleEngine(vehicleid, playerid)
 				PlayerTextDrawShow(playerid, MicroNotice[playerid]);
 				SetTimerEx("HidePlayerTextDraw", 10000, false, "ii", playerid, _:MicroNotice[playerid]);
 			}*/
-			return SendClientMessageEx(playerid, COLOR_RED, "Xe da het xang, khong the khoi dong!");
+			return SendClientMessageEx(playerid, COLOR_RED, "Xe khong the khoi dong - xe het xang!");
 		}
 		SetVehicleParamsEx(vehicleid,VEHICLE_PARAMS_ON,lights,alarm,doors,bonnet,boot,objective);
 		if(DynVeh[vehicleid] != -1 && DynVehicleInfo[DynVeh[vehicleid]][gv_iType] == 1 && IsAPlane(vehicleid)) { SendClientMessageEx(playerid, COLOR_WHITE, "Xe da duoc khoi dong thanh cong (/announcetakeoff de tat dong co)."); }
@@ -604,7 +604,7 @@ public cameraexpire(playerid)
 	}
  	TogglePlayerControllable(playerid,1);
   	DestroyDynamic3DTextLabel(Camera3D[playerid]);
-   	SendClientMessageEx(playerid, COLOR_GRAD1, "Camera cua ban da het pin!");
+   	SendClientMessageEx(playerid, COLOR_GRAD1, "Your camera ran out of batteries!");
 }
 
 forward split(const strsrc[], strdest[][], delimiter);
@@ -632,7 +632,7 @@ public KickNonRP(playerid)
 	GetPVarString(playerid, "KickNonRP", name, sizeof(name));
 	if(strcmp(GetPlayerNameEx(playerid), name) == 0)
 	{
-	    SendClientMessage(playerid, COLOR_WHITE, "Ban da bi kick vi dat ten NonRP, hay dat ten theo cu phap Ho_Ten (vi du: Nhat_Nam).");
+	    SendClientMessage(playerid, COLOR_WHITE, "Ban da bi kick vi ten cua ban vi pham NonRP (vd. Nhat_Nam).");
 		SetTimerEx("KickEx", 1000, 0, "i", playerid);
 	}
 }
