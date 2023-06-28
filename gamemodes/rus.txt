@@ -1,0 +1,4 @@
+./includes/main/jobs/Controler/var.pwn(8) : èäåíòèôèêàòîð íå èñïîëüçóåòñÿ: "ListKey"
+D:\ECCity\gamemodes\NGRP.pwn(309) : èäåíòèôèêàòîð íå èñïîëüçóåòñÿ: "Player_MaxCapacity"
+Pawn compiler 3.2.3664	 	 	Copyright (c) 1997-2016, ITB CompuPhase
+
