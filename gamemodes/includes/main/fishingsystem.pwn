@@ -696,7 +696,7 @@ CMD:sellfish(playerid, params[]) {
 				return SendClientMessageEx(playerid, COLOR_YELLOW, szMiscArray);
 			}
         
-            if(amount < 50) return SendClientMessageEx(playerid, COLOR_GREY, "Ban chi co the ban hon 50 pound ca moi lan.");
+            if(amount < 50) return SendClientMessageEx(playerid, COLOR_GREY, "Ban chi co the ban duoc hon 50 pound ca moi lan.");
         	if(PlayerInfo[playerid][pFishWeight] >= amount && PlayerInfo[playerid][pFishWeight] != 0)
        		{
    	    		new rand = random(100) + 100, money = amount * 40 + rand;
