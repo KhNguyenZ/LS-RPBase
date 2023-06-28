@@ -76,12 +76,12 @@ hook OnPlayerEnterCheckpoint(playerid)
 		    	
        			GivePlayerCash(playerid, value);
        			
-       			format(szMiscArray, sizeof(szMiscArray), "You have completed your garbage run and earned $%s.", number_format(value));
+       			format(szMiscArray, sizeof(szMiscArray), "Ban da hoan thanh viec don rac va kiem duoc $%s.", number_format(value));
 				SendClientMessageEx(playerid, COLOR_WHITE, szMiscArray);
 				
 			    if(PlayerInfo[playerid][pDoubleEXP] > 0)
 				{
-					format(szMiscArray, sizeof(szMiscArray), "You have gained 2 garbage skill points instead of 1. You have %d hours left on the Double EXP token.", PlayerInfo[playerid][pDoubleEXP]);
+					format(szMiscArray, sizeof(szMiscArray), "Ban da nhan duoc 2 diem ky nang don rac. Ban con %d gio (DOUBLE EXP).", PlayerInfo[playerid][pDoubleEXP]);
 					SendClientMessageEx(playerid, COLOR_YELLOW, szMiscArray);
 					PlayerInfo[playerid][pGarbageSkill] += 2;
 				}
@@ -92,7 +92,7 @@ hook OnPlayerEnterCheckpoint(playerid)
 			}
 			return 1;
 		}
-		else SendClientMessageEx(playerid, COLOR_GRAD1, "  You are not in a garbage truck!");
+		else SendClientMessageEx(playerid, COLOR_GRAD1, "  Ban khong o trong xe rac!");
 	}
  	return 1;
 }
@@ -111,14 +111,14 @@ command(garbagerun, playerid, params[])
                 DeletePVar(playerid, "pGarbageStage");
                 SetPVarInt(playerid, "pGarbagePath", random(5));
                     
-                SendClientMessageEx(playerid, COLOR_YELLOW, "You have started a garbage run, make your way to your first destination.");
+                SendClientMessageEx(playerid, COLOR_YELLOW, "Ban da bat dau chay xe rac, hay di den dia diem dau tien.");
                 AdvanceGarbageJob(playerid);
 	        }
-	        else return SendClientMessageEx(playerid, COLOR_GRAD1, "  You are already on a garbage run!");
+	        else return SendClientMessageEx(playerid, COLOR_GRAD1, "  Ban dang chay xe rac!");
 	    }
-	    else return SendClientMessageEx(playerid, COLOR_GRAD1, "  You are not in a garbage truck!");
+	    else return SendClientMessageEx(playerid, COLOR_GRAD1, "  Ban khong o trong xe rac!");
 	}
-	else SendClientMessageEx(playerid, COLOR_GRAD1, "  You are not a garbage man!");
+	else SendClientMessageEx(playerid, COLOR_GRAD1, "  Ban khong phai la nguoi don rac!");
 	return 1;
 }
 
@@ -239,12 +239,12 @@ public GarbageJobLoad(playerid)
     if(GetPVarInt(playerid, "pGarbageStage") != 5)
     {
     	AdvanceGarbageJob(playerid);
-    	SendClientMessageEx(playerid, COLOR_WHITE, "Garbage loaded, make your way to the next checkpoint.");
+    	SendClientMessageEx(playerid, COLOR_WHITE, "Rac dang duoc chat len, hay den checkpoint tiep theo.");
 	}
 	else
 	{
 	    SetPlayerCheckpoint(playerid, 2520.4834,-2089.1470,13.5469, 4.0); // return to hq
-	    SendClientMessageEx(playerid, COLOR_WHITE, "Your garbage truck is full, make your way back to headquarters.");
+	    SendClientMessageEx(playerid, COLOR_WHITE, "Xe rac cua ban da day, hay quay tro lai cho ban dau.");
 	}
     return 1;
 }
