@@ -8613,7 +8613,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		if(response)
 		{
 			if(PlayerInfo[playerid][pCredits] < GetPVarInt(playerid, "FineAmount"))
-				return SendClientMessageEx(playerid, COLOR_GREY, "Ban khong co du tin dung de bi phat.");
+				return SendClientMessageEx(playerid, COLOR_GREY, "Ban khong co du credit de bi phat.");
 
 			new reason[60];
 			GetPVarString(playerid, "FineReason", reason, 60);
@@ -8625,10 +8625,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 
 			GivePlayerCredits(playerid, -GetPVarInt(playerid, "FineAmount"), 1);
 
-			format(string, sizeof(string), "Ban da bi %s tin dung cho %s boi %s.", number_format(GetPVarInt(playerid, "FineAmount")), reason, GetPlayerNameEx(GetPVarInt(playerid, "FineBy")));
+			format(string, sizeof(string), "Ban da bi %s credit cho %s boi %s.", number_format(GetPVarInt(playerid, "FineAmount")), reason, GetPlayerNameEx(GetPVarInt(playerid, "FineBy")));
 			SendClientMessageEx(playerid, COLOR_CYAN, string);
 
-			format(string, sizeof(string), "Ban %s %s tin dung cho %s,", GetPlayerNameEx(playerid), number_format(GetPVarInt(playerid, "FineAmount")), reason);
+			format(string, sizeof(string), "Ban %s %s credit cho %s,", GetPlayerNameEx(playerid), number_format(GetPVarInt(playerid, "FineAmount")), reason);
 			SendClientMessageEx(GetPVarInt(playerid, "FineBy"), COLOR_CYAN, string);
 		}
 		else
@@ -9008,7 +9008,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			else
 			{
 				if(isnull(inputtext))
-					return ShowPlayerDialogEx(playerid, DIALOG_CREATEPIN, DIALOG_STYLE_INPUT, "Pin Number", "Tao mot so pin de ban co the dam bao tin dung tai khoan cua minh.", "Create", "Exit");
+					return ShowPlayerDialogEx(playerid, DIALOG_CREATEPIN, DIALOG_STYLE_INPUT, "Pin Number", "Tao mot so pin de ban co the dam bao credit tai khoan cua minh.", "Create", "Exit");
 			}
 
 			SetPVarString(playerid, "PinConfirm", inputtext);
@@ -9050,7 +9050,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				}
 				else
 				{
-					ShowPlayerDialogEx(playerid, DIALOG_CREATEPIN, DIALOG_STYLE_INPUT, "Pin Number", "Error: So ma pin khong khop,\n\nHay tao so ma pin de ban co the dam bao tin dung tai khoan cua minh.", "Create", "Exit");
+					ShowPlayerDialogEx(playerid, DIALOG_CREATEPIN, DIALOG_STYLE_INPUT, "Pin Number", "Error: So ma pin khong khop,\n\nHay tao so ma pin de ban co the dam bao credit tai khoan cua minh.", "Create", "Exit");
 				}
 				DeletePVar(playerid, "PinConfirm");
 			}
@@ -9856,7 +9856,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		if(response)
 		{
 			if(PlayerInfo[playerid][pCredits] < ShopItems[20][sItemPrice])
-				return SendClientMessageEx(playerid, COLOR_GREY, "Ban khong co du tin dung de mua mat hang nay. Truy cap ls-rp.online de mua tin dung.");
+				return SendClientMessageEx(playerid, COLOR_GREY, "Ban khong co du credit de mua mat hang nay. Truy cap ls-rp.online de mua tin dung.");
 
 			new
 				szQuery[215];
@@ -10959,7 +10959,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		if(response)
 		{
 			if(PlayerInfo[playerid][pCredits] < GetPVarInt(playerid, "VIPPrice"))
-				return SendClientMessageEx(playerid, COLOR_GREY, "Ban khong co du tin dung de mua mat hang nay. Truy cap ls-rp.online de mua tin dung.");
+				return SendClientMessageEx(playerid, COLOR_GREY, "Ban khong co du credit de mua mat hang nay. Truy cap ls-rp.online de mua tin dung.");
 
 			if(PlayerInfo[playerid][pDonateRank] != 0)
 				return SendClientMessageEx(playerid, COLOR_GREY, "Ban da co VIP, vui long cho het han.");
@@ -11474,7 +11474,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		else
 		{
 			SendClientMessageEx(playerid, COLOR_GREY, "Ban da tu choi de nghi tin dung.");
-			SendClientMessageEx(GetPVarInt(playerid, "CreditsSeller"), COLOR_GREY, "Uu dai tin dung cua ban da bi tu choi.");
+			SendClientMessageEx(GetPVarInt(playerid, "CreditsSeller"), COLOR_GREY, "Uu dai credit cua ban da bi tu choi.");
 		}
 		DeletePVar(playerid, "CreditsOffer");
 		DeletePVar(playerid, "CreditsAmount");

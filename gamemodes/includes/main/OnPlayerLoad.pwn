@@ -40,7 +40,7 @@ public OnPlayerLoad(playerid)
 	{
 	    if(PlayerInfo[playerid][pOnline] != servernumber)
 	    {
-		    SendClientMessage(playerid, COLOR_WHITE, "SERVER: This account is already online!");
+		    SendClientMessage(playerid, COLOR_WHITE, "SERVER: Tai khoan nay da truc tuyen!");
 			SetTimerEx("KickEx", 1000, 0, "i", playerid);
 			return 1;
 		}
@@ -62,7 +62,7 @@ public OnPlayerLoad(playerid)
 
 	if(PlayerInfo[playerid][pDisabled] == 2)
 	{
-		ShowPlayerDialogEx(playerid, DIALOG_DISABLED, DIALOG_STYLE_MSGBOX, "Account Disabled - Truy cap (forum-replace)", "Tai khoan cua ban da ngung hoat dong vi ban khong dang nhap no trong 6 thang.\nPlease visit the forums and post an Administrative Request to begin the process to reactivate your account.", "Okay", "");
+		ShowPlayerDialogEx(playerid, DIALOG_DISABLED, DIALOG_STYLE_MSGBOX, "Account Disabled - Truy cap (forum-replace)", "Tai khoan cua ban da ngung hoat dong vi ban khong dang nhap no trong 6 thang.\nVui long truy cap dien dan va gui Yeu cau quan tri de bat dau qua trinh kich hoat lai tai khoan cua ban.", "Okay", "");
 		SetTimerEx("KickEx", 5000, 0, "i", playerid);
 		return 1;
 	}
@@ -77,7 +77,7 @@ public OnPlayerLoad(playerid)
 		if(PlayerInfo[playerid][pHR] > 1) PlayerInfo[playerid][pHR] = 0;
 		if(PlayerInfo[playerid][pAP] > 1) PlayerInfo[playerid][pAP] = 0;
 		if(PlayerInfo[playerid][pSecurity] > 1) PlayerInfo[playerid][pSecurity] = 0;
-		SendClientMessage(playerid, COLOR_WHITE, "SERVER: This account is disabled!");
+		SendClientMessage(playerid, COLOR_WHITE, "SERVER: Tai khoan nay da bi khoa!");
 		SetTimerEx("KickEx", 1000, 0, "i", playerid);
 		return 1;
 	}
@@ -425,7 +425,7 @@ public OnPlayerLoad(playerid)
 	
 	if(PlayerInfo[playerid][pVIPExpire] > 0 && (1 <= PlayerInfo[playerid][pDonateRank] <= 4) && (PlayerInfo[playerid][pVIPExpire] < gettime()) && PlayerInfo[playerid][pAdmin] < 2)
 	{
-		format(string, sizeof(string), "%s(%d) (%s) VIP removed (VIP Expire: %d | Level: %d)", GetPlayerNameEx(playerid), GetPVarInt(playerid, "pSQLID"), GetPlayerIpEx(playerid), PlayerInfo[playerid][pVIPExpire], PlayerInfo[playerid][pDonateRank]);
+		format(string, sizeof(string), "%s(%d) (%s) VIP da loai bo (VIP Het han: %d | Cap: %d)", GetPlayerNameEx(playerid), GetPVarInt(playerid, "pSQLID"), GetPlayerIpEx(playerid), PlayerInfo[playerid][pVIPExpire], PlayerInfo[playerid][pDonateRank]);
 		Log("logs/vipremove.log", string);
 		PlayerInfo[playerid][pDonateRank] = 0;
 		PlayerInfo[playerid][pVIPExpire] = 0;
@@ -442,7 +442,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi ban do ban gioi thieu	da dat cap 3, vi the ban da nhan duoc 100 Credits.");
 		}
@@ -453,7 +453,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*5*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*5*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 500 Credits.");
 		}
@@ -464,7 +464,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 100 credits.");
 		}
@@ -475,7 +475,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*10*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*10*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 1000 credits.");
 		}
@@ -486,7 +486,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 100 credits.");
 		}
@@ -497,7 +497,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*15*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*15*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 1500 credits.");
 		}
@@ -508,7 +508,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 100 credits.");
 		}
@@ -519,7 +519,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*20*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*20*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 2000 credits.");
 		}
@@ -530,7 +530,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 100 credits.");
 		}
@@ -541,7 +541,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pRefers]++;
 			mysql_format(MainPipeline, szQuery, sizeof(szQuery), "UPDATE `accounts` SET `Credits`=%d WHERE `Username` = '%s'", PlayerInfo[playerid][pCredits], GetPlayerNameExt(playerid));
 			mysql_tquery(MainPipeline, szQuery, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
-			format(szString, sizeof(szString), "%s(%d) has received %d credits for referring a player (The player reached level 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*25*PlayerInfo[playerid][pPendingRefReward]);
+			format(szString, sizeof(szString), "%s(%d) da nhan %d tin dung cho gioi thieu mot nguoi choi (Nguoi choi dat cap 3)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), CREDITS_AMOUNT_REFERRAL*25*PlayerInfo[playerid][pPendingRefReward]);
 			Log("logs/referral.log", szString);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Nguoi choi cua ban gioi thieu da dat cap 3, vi the ban da nhan duoc 2500 credits.");
 		}
@@ -558,7 +558,7 @@ public OnPlayerLoad(playerid)
 				if(PlayerInfo[j][pBusiness] == Business) {
 					PlayerInfo[j][pBusiness] = INVALID_BUSINESS_ID;
 					PlayerInfo[j][pBusinessRank] = 0;
-					SendClientMessageEx(playerid, COLOR_WHITE, "An admin has sold this business, your business stats have been reset.");
+					SendClientMessageEx(playerid, COLOR_WHITE, "Quan tri vien da ban doanh nghiep nay, so lieu thong ke ve doanh nghiep cua ban da duoc dat lai.");
 				}
 			}	
 
@@ -571,14 +571,14 @@ public OnPlayerLoad(playerid)
 			mysql_format(MainPipeline, string, sizeof(string), "UPDATE `accounts` SET `Business` = "#INVALID_BUSINESS_ID", `BusinessRank` = 0 WHERE `Business` = '%d'", Business);
 			mysql_tquery(MainPipeline, string, "OnQueryFinish", "i", SENDDATA_THREAD);
 
-	        SendClientMessageEx(playerid, COLOR_RED, "Your business has been removed as it has expired.");
+	        SendClientMessageEx(playerid, COLOR_RED, "Doanh nghiep cua ban da bi xoa vi no da het han.");
 	        format(string, sizeof(string), "[BUSINESS EXPIRED] %s(%d) business id %i has been removed as it has expired.", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), Business);
 			Log("logs/shoplog.log", string);
 
 	    }
 	    else if(Businesses[PlayerInfo[playerid][pBusiness]][bMonths] - 259200 < gettime())
 	    {
-	        SendClientMessageEx(playerid, COLOR_RED, "Your business expires in less than three days - renew today at shop.ng-gaming.net! Type /businessdate for more information.");
+	        SendClientMessageEx(playerid, COLOR_RED, "Doanh nghiep cua ban se het han sau chua day ba ngay - hay gia han ngay hom nay tai shop.ng-gaming.net! Nhap /businessdate de biet them thong tin.");
 	    }
 	}
 	if(PlayerInfo[playerid][pJob2] >= 1 && (PlayerInfo[playerid][pDonateRank] < 1 && PlayerInfo[playerid][pFamed] < 1))
@@ -594,7 +594,7 @@ public OnPlayerLoad(playerid)
 	if(PlayerInfo[playerid][pDonateRank] >= 4 && PlayerInfo[playerid][pArmsSkill] < 1200)
 	{
 		PlayerInfo[playerid][pArmsSkill] = 1200;
-		SendClientMessageEx(playerid, COLOR_YELLOW, "Platinum VIP Feature: You have been given Level 5 Arms Dealer.");
+		SendClientMessageEx(playerid, COLOR_YELLOW, "Platinum VIP Feature: Ban da duoc cap dai ly vu khi cap 5.");
 	}
 	if(PlayerInfo[playerid][pDonateRank] >= 4)
 	{
@@ -624,9 +624,9 @@ public OnPlayerLoad(playerid)
 	{
 		new name[MAX_PLAYER_NAME];
 		GetPlayerName(playerid, name, sizeof(name));
-		format(string, sizeof(string), "{AA3333}AdmWarning{FFFF00}: %s has attempted to log in with Admin Level %d.", GetPlayerNameEx(playerid), PlayerInfo[playerid][pAdmin]);
+		format(string, sizeof(string), "{AA3333}AdmWarning{FFFF00}: %s da co gang dang nhap voi Quan tri Cap %d.", GetPlayerNameEx(playerid), PlayerInfo[playerid][pAdmin]);
 		ABroadCast( COLOR_YELLOW, string, 4 );
-		format(string, sizeof(string), "%s(%d) has attempted to log in with Admin Level %d.", name, GetPlayerSQLId(playerid), PlayerInfo[playerid][pAdmin]);
+		format(string, sizeof(string), "%s(%d) da co gang dang nhap voi Cap quan tri vien %d.", name, GetPlayerSQLId(playerid), PlayerInfo[playerid][pAdmin]);
 		Log("logs/security.log", string);
 		PlayerInfo[playerid][pAdmin] = 0;
 	}
@@ -827,7 +827,7 @@ public OnPlayerLoad(playerid)
 	CountFlags(playerid);
 	if(PlayerInfo[playerid][pFlagged] > 5)
 	{
-		format(string, sizeof(string), "SERVER: %s has %d outstanding flags.", GetPlayerNameEx(playerid), PlayerInfo[playerid][pFlagged]);
+		format(string, sizeof(string), "SERVER: %s co %d co noi bat.", GetPlayerNameEx(playerid), PlayerInfo[playerid][pFlagged]);
 		ABroadCast(COLOR_WHITE, string, 2);
 	}
 	LoadTreasureInventory(playerid);
@@ -835,12 +835,12 @@ public OnPlayerLoad(playerid)
 	{
 		if(PlayerInfo[playerid][pOrderConfirmed] == 1)
 		{
-			format(string, sizeof(string), "SERVER: %s has an outstanding shop (Confirmed) order.", GetPlayerNameEx(playerid));
+			format(string, sizeof(string), "SERVER: %s co mot cua hang (da xac nhan) don hang.", GetPlayerNameEx(playerid));
 			ShopTechBroadCast(COLOR_WHITE, string);
 		}
 		else
 		{
-			format(string, sizeof(string), "SERVER: %s has an outstanding shop (Invalid) order.", GetPlayerNameEx(playerid));
+			format(string, sizeof(string), "SERVER: %s co mot don hang chua xu ly (Khong hop le) don hang.", GetPlayerNameEx(playerid));
 			ShopTechBroadCast(COLOR_WHITE, string);
 		}
 	}
@@ -930,7 +930,7 @@ public OnPlayerLoad(playerid)
 		SendClientMessageEx(playerid, COLOR_RED, "VIP cua ban chi con 3 ngay la het han - hay lam moi no tai (forum-replace)! Nhap /vipdate de biet them thong tin.");
     }
 	if(PlayerInfo[playerid][pRVehWarns] != 0 && PlayerInfo[playerid][pLastRVehWarn] + 2592000 < gettime()) {
-		SendClientMessageEx(playerid, COLOR_WHITE, "Your restricted vehicle warnings have expired!");
+		SendClientMessageEx(playerid, COLOR_WHITE, "Canh bao phuong tien bi han che cua ban da het han!");
 		PlayerInfo[playerid][pLastRVehWarn] = 0;
 		PlayerInfo[playerid][pRVehWarns] = 0;
 	}
@@ -985,7 +985,7 @@ public OnPlayerLoad(playerid)
 					PlayerToyInfo[playerid][v][ptScaleZ] = 1.0;
 					PlayerToyInfo[playerid][v][ptTradable] = 1;
 					PlayerToyInfo[playerid][v][ptAutoAttach] = -2;
-					SendClientMessageEx(playerid, COLOR_GRAD2, "You've been gifted a santa hat toy! Merry Christmas!");
+					SendClientMessageEx(playerid, COLOR_GRAD2, "Ban da duoc tang mot mon do choi mu ong gia Noel!!");
 					
 					g_mysql_NewToy(playerid, v);
 					success = 1;
@@ -1027,7 +1027,7 @@ public OnPlayerLoad(playerid)
 			}
 			print("Object ID: 19065");
 		}
-		if(PlayerInfo[playerid][pConnectHours] > 7 && month == 12 && day == 31 && year == 2016)
+		if(PlayerInfo[playerid][pConnectHours] > 7 && month == 12 && day == 31 && year == 2023)
 		{
 			PlayerInfo[playerid][pFirework] += 5;
 			PlayerInfo[playerid][pReceivedPrize] = 1;
@@ -1074,11 +1074,11 @@ public OnPlayerLoad(playerid)
 
 
 	// if(PlayerInfo[playerid][mPurchaseCount][1] && PlayerInfo[playerid][mCooldown][1]) format(string, sizeof(string), "You currently have a active Job Boost for the %s job for another %d minute(s).", GetJobName(PlayerInfo[playerid][mBoost][0]), PlayerInfo[playerid][mCooldown][1]), SendClientMessageEx(playerid, -1, string);
-	if(PlayerInfo[playerid][mCooldown][4] && PlayerInfo[playerid][mCooldown][4]) format(string, sizeof(string), "You currently have a active Energy Bar for another %d minute(s).", PlayerInfo[playerid][mCooldown][4]), SendClientMessageEx(playerid, -1, string);
-	if(PlayerInfo[playerid][mPurchaseCount][12] && PlayerInfo[playerid][mCooldown][12]) format(string, sizeof(string), "You currently have a active Quick Bank Access for another %d minute(s).", PlayerInfo[playerid][mCooldown][12]), SendClientMessageEx(playerid, -1, string);
-	if(PlayerInfo[playerid][pPhousekey] != INVALID_HOUSE_ID && HouseInfo[PlayerInfo[playerid][pPhousekey]][hSignExpire]) format(string, sizeof(string), "Your first house has a active House Sale Sign for another %s", ConvertTimeS(HouseInfo[PlayerInfo[playerid][pPhousekey]][hSignExpire]-gettime())), SendClientMessageEx(playerid, -1, string);
-	if(PlayerInfo[playerid][pPhousekey2] != INVALID_HOUSE_ID && HouseInfo[PlayerInfo[playerid][pPhousekey2]][hSignExpire]) format(string, sizeof(string), "Your second house has a active House Sale Sign for another %s", ConvertTimeS(HouseInfo[PlayerInfo[playerid][pPhousekey2]][hSignExpire]-gettime())), SendClientMessageEx(playerid, -1, string);
-	if(PlayerInfo[playerid][pPhousekey3] != INVALID_HOUSE_ID && HouseInfo[PlayerInfo[playerid][pPhousekey3]][hSignExpire]) format(string, sizeof(string), "Your third house has a active House Sale Sign for another %s", ConvertTimeS(HouseInfo[PlayerInfo[playerid][pPhousekey3]][hSignExpire]-gettime())), SendClientMessageEx(playerid, -1, string);
+	if(PlayerInfo[playerid][mCooldown][4] && PlayerInfo[playerid][mCooldown][4]) format(string, sizeof(string), "Ban hien co mot Thanh nang luong dang hoat dong trong %d phut nua.", PlayerInfo[playerid][mCooldown][4]), SendClientMessageEx(playerid, -1, string);
+	if(PlayerInfo[playerid][mPurchaseCount][12] && PlayerInfo[playerid][mCooldown][12]) format(string, sizeof(string), "Ban hien da kich hoat Truy cap Ngan hang Nhanh trong %d phut nua.", PlayerInfo[playerid][mCooldown][12]), SendClientMessageEx(playerid, -1, string);
+	if(PlayerInfo[playerid][pPhousekey] != INVALID_HOUSE_ID && HouseInfo[PlayerInfo[playerid][pPhousekey]][hSignExpire]) format(string, sizeof(string), "Ngoi nha dau tien cua ban hien dang hoat dong Dang ban nha", ConvertTimeS(HouseInfo[PlayerInfo[playerid][pPhousekey]][hSignExpire]-gettime())), SendClientMessageEx(playerid, -1, string);
+	if(PlayerInfo[playerid][pPhousekey2] != INVALID_HOUSE_ID && HouseInfo[PlayerInfo[playerid][pPhousekey2]][hSignExpire]) format(string, sizeof(string), "Ngoi nha thu hai cua ban hien dang nam trong Bang hieu Ban nha dang hoat dong", ConvertTimeS(HouseInfo[PlayerInfo[playerid][pPhousekey2]][hSignExpire]-gettime())), SendClientMessageEx(playerid, -1, string);
+	if(PlayerInfo[playerid][pPhousekey3] != INVALID_HOUSE_ID && HouseInfo[PlayerInfo[playerid][pPhousekey3]][hSignExpire]) format(string, sizeof(string), "Ngoi nha thu ba cua ban hien dang hoat dong", ConvertTimeS(HouseInfo[PlayerInfo[playerid][pPhousekey3]][hSignExpire]-gettime())), SendClientMessageEx(playerid, -1, string);
 	if(zombieevent && PlayerInfo[playerid][mInventory][18]) format(string, sizeof(string), "You currently have a antibiotic flowing through your bloodstream protecting you from %d zombie bite(s).", PlayerInfo[playerid][mInventory][18]), SendClientMessageEx(playerid, -1, string);
 
 	if((PlayerInfo[playerid][pInsurance] == HOSPITAL_LSVIP || PlayerInfo[playerid][pInsurance] == HOSPITAL_SFVIP || PlayerInfo[playerid][pInsurance] == HOSPITAL_LVVIP || PlayerInfo[playerid][pInsurance] == HOSPITAL_HOMECARE) && !PlayerInfo[playerid][pDonateRank]) PlayerInfo[playerid][pInsurance] = random(2);
@@ -1097,7 +1097,7 @@ public OnPlayerLoad(playerid)
 			PlayerInfo[playerid][pVIPSellable] = 1;
 			PlayerInfo[playerid][pVIPExpire] = 1430110800;
 			LoadPlayerDisabledVehicles(playerid);
-			SendClientMessageEx(playerid, -1, "You have been gifted Silver VIP for playing on NGG's B-Day weekend!");
+			SendClientMessageEx(playerid, -1, "Ban da duoc tang Bac VIP khi choi vao ngay cuoi tuan B-Day cua NGG!");
 		}
 		if(PlayerInfo[playerid][pDonateRank] == 4 && !PlayerInfo[playerid][pReceivedPrize])
 		{

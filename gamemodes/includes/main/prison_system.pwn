@@ -83,7 +83,7 @@ ListDetainees(playerid)
 	{
 		if(GetPVarInt(i, "ArrestPoint") == GetArrestPointID(playerid) + 1)
 		{
-			strcat(szPrisoners, "{3333CC}Prisoner:{FFFFFF}");
+			strcat(szPrisoners, "{3333CC}Tu nhan:{FFFFFF}");
 			strcat(szPrisoners, "(");
 			valstr(temp, i);
 			strcat(szPrisoners, temp);
@@ -93,7 +93,7 @@ ListDetainees(playerid)
 			iCount++;
 		}
 	}
-	if(iCount == 0) return SendClientMessageEx(playerid, COLOR_GRAD2, "No prisoners at this arrest point.");
+	if(iCount == 0) return SendClientMessageEx(playerid, COLOR_GRAD2, "Khong co tu nhan tai diem bat giu nay.");
 	return ShowPlayerDialogEx(playerid, DIALOG_LOAD_DETAINEES, DIALOG_LOAD_DETAINEES, "Detainees List", szPrisoners, "Load", "Cancel");
 }
 
@@ -107,7 +107,7 @@ LoadPrisoner(iLoadingID, iPrisonerID, iVehicleID, iVehicleSeat, iNewVW, iNewIW)
 	TogglePlayerControllable(iPrisonerID, 0);
 	DeletePVar(iPrisonerID, "ArrestPoint");
 
-	SendClientMessageEx(iPrisonerID, COLOR_LIGHTBLUE, "You have been loaded into a prisoner transport bus by and will be transported to DOC");
+	SendClientMessageEx(iPrisonerID, COLOR_LIGHTBLUE, "Ban da duoc dua len mot chiec xe buyt van chuyen tu nhan va se duoc chuyen den DOC");
 	ListDetainees(iLoadingID);
 }
 
@@ -266,19 +266,19 @@ DocLockdown(playerid)
 		{
 			OpenDocAreaDoors(i, 0);
 		}
-		format( szWarning, sizeof(szWarning), "ALERT: The DeMorgan Correctional Facility is now on lockdown for an emergency (( %s ))", GetPlayerNameEx(playerid));
+		format( szWarning, sizeof(szWarning), "ALERT: Co so Tap huan DeMorgan hien dang bi phong toa trong truong hop khan cap (( %s ))", GetPlayerNameEx(playerid));
 		SendGroupMessage(1, COLOR_RED, szWarning);
 
-		format(szMiscArray, sizeof szMiscArray, "%s has set the DeMorgan Correctional Facilty on lockdown.", GetPlayerNameEx(playerid));
+		format(szMiscArray, sizeof szMiscArray, "%s da phong toa Co so Tap huan DeMorgan,", GetPlayerNameEx(playerid));
  		GroupLog(PlayerInfo[playerid][pMember], szMiscArray);
 	}
 	else
 	{
 		bDocLockdown = false;
-		format( szWarning, sizeof(szWarning), "ALERT: The DeMorgan Correctional Facility is no longer on lockdown (( %s ))", GetPlayerNameEx(playerid));
+		format( szWarning, sizeof(szWarning), "ALERT: Co so Tap huan DeMorgan hien dang bi khoa (( %s ))", GetPlayerNameEx(playerid));
 		SendGroupMessage(1, COLOR_YELLOW, szWarning);
 
-		format(szMiscArray, sizeof szMiscArray, "%s has removed the DeMorgan Correctional Facilty from lockdown.", GetPlayerNameEx(playerid));
+		format(szMiscArray, sizeof szMiscArray, "%s da bo lenh phong toa Co so Tap huan DeMorgan.", GetPlayerNameEx(playerid));
  		GroupLog(PlayerInfo[playerid][pMember], szMiscArray);
 	}
 }
@@ -560,60 +560,6 @@ OpenDocCells(cellid, open)
 	else if(open == 1) bDocCellOpen[cellid] = true;
 }
 
-/*GetClosestJailBoxingRing(iTargetID)
-{
-	new iClosest;
-	for(new i = 0; i < MAX_JAIL_BOXINGS; i++)
-	{
-		if(IsPlayerInRangeOfPoint(iTargetID, 5, JailBoxingPos[i][0], JailBoxingPos[i][1], JailBoxingPos[i][2]))
-		{
-			iClosest = i;
-			break;
-		}
-	}
-	return iClosest;
-}
-
-IsPlayerAtJailBoxing(iTargetID)
-{
-	for(new i = 0; i < MAX_JAIL_BOXINGS; i++)
-	{
-		if(IsPlayerInRangeOfPoint(iTargetID, 5, JailBoxingPos[i][0], JailBoxingPos[i][1], JailBoxingPos[i][2]))
-		{
-			return true;
-		}
-	}
-	return 0;
-}
-
-SetPlayerIntoJailBoxing(iTargetID)
-{
-	new index = GetClosestJailBoxingRing(iTargetID);
-
-	if(arrJailBoxingData[index][bInProgress] == false && arrJailBoxingData[index][iParticipants] < 2)
-	{
-		SetPlayerPos(iTargetID, JailBoxingPos[index][0], JailBoxingPos[index][1], JailBoxingPos[index][2]);
-		arrJailBoxingData[index][iParticipants]++;
-		SetPVarInt(iTargetID, "_InJailBoxing", index + 1);
-		SendClientMessageEx(iTargetID, COLOR_WHITE, "You have joined the boxing queue.");
-
-		if(arrJailBoxingData[index][iParticipants] == 2)
-		{
-			foreach(Player, i)
-			{
-				if(GetPVarInt(i, "_InJailBoxing") == index + 1 && i != iTargetID)
-				{
-					SetPVarInt(iTargetID, "_JailBoxingChallenger", i);
-					SetPVarInt(i, "_JailBoxingChallenger", iTargetID);
-					break;
-				}
-			}
-			arrJailBoxingData[index][iDocBoxingCountdown] = 4;
-			arrJailBoxingData[index][iDocCountDownTimer] = SetTimerEx("StartJailBoxing", 1000, true, "i", index);
-		}
-	}
-	else SendClientMessageEx(iTargetID, COLOR_WHITE, "You cannot join this arena at the moment.");
-}*/
 
 RemoveFromJailBoxing(iTargetID)
 {
@@ -641,7 +587,7 @@ public StartJailBoxing(iArenaID)
 	arrJailBoxingData[iArenaID][iDocBoxingCountdown]--;
 	if(arrJailBoxingData[iArenaID][iDocBoxingCountdown] == 0)
 	{
-		format(string, sizeof(string), "** [Boxing Countdown (Arena:%d)] The bell rings **", iArenaID);
+		format(string, sizeof(string), "** [Boxing Countdown (Khu vuc:%d)] Chuong reo **", iArenaID);
 		ProxDetector(10.0, iRangePoint, string, 0xEB41000, 0xEB41000, 0xEB41000, 0xEB41000, 0xEB41000);
 		arrJailBoxingData[iArenaID][bInProgress] = true;
 		KillTimer(arrJailBoxingData[iArenaID][iDocCountDownTimer]);
@@ -649,7 +595,7 @@ public StartJailBoxing(iArenaID)
 	}
 	else
 	{
-		format(string, sizeof(string), "** [Boxing Countdown (Arena:%d)] %d seconds until start! **", iArenaID, arrJailBoxingData[iArenaID][iDocBoxingCountdown]);
+		format(string, sizeof(string), "** [Boxing Countdown (Khu vuc:%d)] %d giay den khi bat dau! **", iArenaID, arrJailBoxingData[iArenaID][iDocBoxingCountdown]);
 		ProxDetector(10.0, iRangePoint, string, 0xEB41000, 0xEB41000, 0xEB41000, 0xEB41000, 0xEB41000);
 	}
 	return 1;
@@ -670,7 +616,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					case 1: ShowDocPrisonControls(playerid, 5);
 					case 2: ShowDocPrisonControls(playerid, 4);
 					case 3: DocLockdown(playerid);
-					case 4: ShowPlayerDialogEx(playerid, DIALOG_DOC_CP_INT, DIALOG_STYLE_LIST, "Doc Control Pannel - Intercom", "Prison\nYard\nAll", "Select", "Back");
+					case 4: ShowPlayerDialogEx(playerid, DIALOG_DOC_CP_INT, DIALOG_STYLE_LIST, "Doc Control Pannel - Intercom", "Nha tu\nSan\nTat ca", "Select", "Back");
 				}
 			}
 		}
@@ -777,7 +723,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		{
 			if(response)
 			{
-				ShowPlayerDialogEx(playerid, DIALOG_DOC_CP_INT2, DIALOG_STYLE_INPUT, "DoC Control Panel - Intercom", "Enter your message below:", "Login", "Cancel");
+				ShowPlayerDialogEx(playerid, DIALOG_DOC_CP_INT2, DIALOG_STYLE_INPUT, "DoC Control Panel - Intercom", "Nhap tin nhan cua ban duoi day:", "Login", "Cancel");
 				switch(listitem)
 				{
 					case 0: SetPVarInt(playerid, "pPrisonIntercom", 1);
@@ -863,7 +809,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
         	if(!response)
         	{
             	strcpy(PlayerInfo[playerid][pPrisonReason], "[IC] [DNRL] Prison Gang", 128);
-            	SendClientMessageEx(playerid, COLOR_GRAD1, "You have chosen to stay in prison. Use /docrelease if you wish to finish serving your sentence.");
+            	SendClientMessageEx(playerid, COLOR_GRAD1, "Ban da chon o lai trong tu. Su dung /docrelease neu ban muon chap hanh xong ban an cua minh.");
             	PlayerInfo[playerid][pJailTime] = 9999999;
         	}
         	else
@@ -885,23 +831,23 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							PlayerInfo[playerid][pPrisonCredits] -= 10;
 							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
 
-							SendClientMessageEx(playerid, COLOR_GREY, "You have purchased some cigarettes from the prison shop for 10 credits.");
+							SendClientMessageEx(playerid, COLOR_GREY, "Ban da mua mot so thuoc la tu cua hang trong tu voi gia 10 tin dung.");
 						}
-					 	else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+					 	else return SendClientMessageEx(playerid, COLOR_GREY, "Ban khong co du tin dung nha tu!");
                 	}
                 	case 0:
                 	{
                 	    if(PlayerInfo[playerid][pPrisonCredits] >= 5)
 						{
-                    		if(PlayerInfo[playerid][pDice] >= 1) return SendClientMessageEx(playerid, COLOR_GREY, "You already have a dice!");
+                    		if(PlayerInfo[playerid][pDice] >= 1) return SendClientMessageEx(playerid, COLOR_GREY, "Ban da co mot con xuc xac!");
 
 							PlayerInfo[playerid][pDice] = 1;
 							PlayerInfo[playerid][pPrisonCredits] -= 5;
 							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
 
-							SendClientMessageEx(playerid, COLOR_GREY, "You have purchased a dice from the prison shop for 5 credits.");
+							SendClientMessageEx(playerid, COLOR_GREY, "Ban da mua mot vien xuc xac tu cua hang nha tu voi 5 tin dung.");
 						}
-						else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+						else return SendClientMessageEx(playerid, COLOR_GREY, ""Ban khong co du tin dung nha tu!"");
                 	}
                 	case 1:
                 	{
@@ -911,13 +857,13 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							PlayerInfo[playerid][pPrisonCredits] -= 5;
 							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
 
-							SendClientMessageEx(playerid, COLOR_GREY, "You have purchased some paper from the prison shop for 5 credits.");
+							SendClientMessageEx(playerid, COLOR_GREY, "Ban da mua mot so giay tu cua hang nha tu voi gia 5 tin dung.");
 						}
-						else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+						else return SendClientMessageEx(playerid, COLOR_GREY, "  Ban khong co du tin dung nha tu!");
                 	}
                 	case 6:
                 	{
-                    	if(PlayerInfo[playerid][pCDPlayer] >= 1) return SendClientMessageEx(playerid, COLOR_GREY, "You already have a MP3!");
+                    	if(PlayerInfo[playerid][pCDPlayer] >= 1) return SendClientMessageEx(playerid, COLOR_GREY, "Ban da co mot MP3!");
 
                     	if(PlayerInfo[playerid][pPrisonCredits] >= 50)
                     	{
@@ -925,9 +871,9 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							PlayerInfo[playerid][pPrisonCredits] -= 50;
 							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
 
-							SendClientMessageEx(playerid, COLOR_GREY, "You have purchased an MP3 Player from the prison shop for 50 credits.");
+							SendClientMessageEx(playerid, COLOR_GREY, "Ban da mua mot May nghe nhac MP3 tu cua hang trong tu voi gia 50 tin dung.");
 						}
-						else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+						else return SendClientMessageEx(playerid, COLOR_GREY, "  Ban khong co du tin dung nha tu!");
                 	}
                 	case 7:
                 	{
@@ -941,7 +887,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 								case 2: return ShowModelSelectionMenuEx(playerid, g_aFemaleSkins, sizeof(g_aFemaleSkins), "Skin Model", PRISON_SKINSELECT, -16.0, 0.0, -55.0);
                				}
 						}
-						else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+						else return SendClientMessageEx(playerid, COLOR_GREY,  "Ban khong co du tin dung nha tu!");
                 	}
                 	case 2:
                 	{
@@ -955,7 +901,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 
 							SendClientMessageEx(playerid, COLOR_GREY, "You have purchased a bar of soap from the prison shop for 5 credits.");
 						}
-						else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+						else return SendClientMessageEx(playerid, COLOR_GREY, "  Ban khong co du tin dung nha tu!");
                 	}
                 	case 3:
                 	{
@@ -968,7 +914,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 
 							SendClientMessageEx(playerid, COLOR_GREY, "You have purchased a packet of sugar from the prison shop for 5 credits.");
 						}
-						else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+						else return SendClientMessageEx(playerid, COLOR_GREY, "  Ban khong co du tin dung nha tu!");
                 	}
                 	case 4:
                 	{
@@ -982,7 +928,7 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 
 							SendClientMessageEx(playerid, COLOR_GREY, "You have purchased a loaf of bread from the prison shop for 10 credits.");
 						}
-						else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+						else return SendClientMessageEx(playerid, COLOR_GREY, "  Ban khong co du tin dung nha tu!");
                 	}
             	}
 			}
