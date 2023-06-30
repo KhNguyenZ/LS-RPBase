@@ -222,12 +222,12 @@ stock const g_HitRejectReasons[][] = {
 	"Luot toc do qua nhanh: %d (%d samples, max %d)",
 	"danh toc do qua nhanh: %d (%d mau, nhieu vu khi)",
 	"Dao giet khong dong bo",
-	"Damage inflicted too far from current position (dist %f)",
-	"Invalid weapon damage (%.4f)",
-	"Hit a player in the same vehicle",
-	"Hit the vehicle you're in",
-	"Hit invalid vehicle: %d",
-	"Hit a disconnected player ID: %d"
+	"Sat thuong gay ra qua xa tu hien tai vi tri (khoang cach %f)",
+	"Khong hop le vu khi sat thuong (%,4f)",
+	"danh mot nguoi choi trong cung mot chiec xe",
+	"dam vao chiec xe ban dang o",
+	"danh xe khong hop le: %d",
+	"Nhan ID nguoi choi bi ngat ket noi: %d"
 };
 
 stock const g_WeaponName[57][59] = {
