@@ -373,7 +373,7 @@ ptask HackCheck[HACKTIMER_INTERVAL](playerid) {
 
 timer AC_RevivePlayer[5000](playerid) {
 
-	format(szMiscArray, sizeof(szMiscArray), "SYSTEM: %s(%d) has been revived by [SYSTEM]", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerNameEx(playerid));
+	format(szMiscArray, sizeof(szMiscArray), "He Thong: %s(%d) da duoc hoi sinh boi [He Thong]", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerNameEx(playerid));
 	Log("logs/system.log", szMiscArray);
 	KillEMSQueue(playerid);
 	ClearAnimationsEx(playerid);
@@ -415,7 +415,7 @@ CMD:rehashpareas(playerid, params[]) {
 	if(!ac_ACToggle[AC_NAMETAGS]) return SendClientMessageEx(playerid, COLOR_GRAD1, "This feature isn't enabled in /system.");
 
 	new iRange;
-	if(sscanf(params, "d", iRange)) return SendClientMessageEx(playerid, COLOR_GRAD1, "USAGE: /resetpareas [range]");
+	if(sscanf(params, "d", iRange)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Cach Su Dung: /resetpareas [range]");
 	if(!(0 < iRange < 70)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Invalid range (between 0 and 70).");
 
 	new szData[2];
@@ -442,7 +442,7 @@ CMD:setnametagdistance(playerid, params[]) {
 	if(!IsAdminLevel(playerid, ADMIN_SENIOR, 1)) return 1;
 
 	new iRange;
-	if(sscanf(params, "d", iRange)) return SendClientMessageEx(playerid, COLOR_GRAD1, "USAGE: /setnametagdistance [range]");
+	if(sscanf(params, "d", iRange)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Cach Su Dung: /setnametagdistance [range]");
 	if(!(0 < iRange < 70)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Invalid range (between 0 and 70).");
 
 	new szData[2];
@@ -709,11 +709,11 @@ hook OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			if(response) {
 			
 				if(ac_ACToggle[listitem]) {
-					format(szMiscArray, sizeof(szMiscArray), "[SYSTEM] %s turned off the %s detection.", GetPlayerNameEx(playerid), ac_ACNames[listitem]);
+					format(szMiscArray, sizeof(szMiscArray), "[He Thong] %s da tat cac %s phat hien.", GetPlayerNameEx(playerid), ac_ACNames[listitem]);
 					ac_ACToggle[listitem] = false;
 				}
 				else {
-					format(szMiscArray, sizeof(szMiscArray), "[SYSTEM] %s turned on the %s detection.", GetPlayerNameEx(playerid), ac_ACNames[listitem]);
+					format(szMiscArray, sizeof(szMiscArray), "[He Thong] %s da bat do %s phat hien.", GetPlayerNameEx(playerid), ac_ACNames[listitem]);
 					ac_ACToggle[listitem] = true;
 				}
 				Log("logs/ACSystem.log", szMiscArray);
@@ -747,11 +747,11 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
 		if(iShots < 1) {
 			TazerTimeout[playerid] = 12;
 			SetTimerEx("TazerTimer",1000,false,"d",playerid);
-			SendClientMessageEx(playerid, COLOR_WHITE, "Your tazer is recharging!");
+			SendClientMessageEx(playerid, COLOR_WHITE, "Tazer cua ban dang duoc sac lai!");
 			
 			RemovePlayerWeapon(playerid, 23);
 			GivePlayerValidWeapon(playerid, pTazerReplace{playerid});
-			format(szMiscArray, sizeof(szMiscArray), "* %s holsters their tazer.", GetPlayerNameEx(playerid));
+			format(szMiscArray, sizeof(szMiscArray), "* %s bao bao tazer cua ho.", GetPlayerNameEx(playerid));
 			ProxDetector(4.0, playerid, szMiscArray, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 			pTazer{playerid} = 0;
 		}
@@ -782,13 +782,13 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
 	
 	#if defined AC_DEBUG
 	if(hittype == BULLET_HIT_TYPE_PLAYER) {
-		AC_SendDebugMessage(playerid, "OnPlayerWeaponShot(%s shot %s with %s at %f, %f, %f) ", GetPlayerNameEx(playerid),  GetPlayerNameEx(hitid), AC_GetWeaponName(weaponid), fX, fY, fZ);
+		AC_SendDebugMessage(playerid, "OnPlayerWeaponShot(%s ban %s voi %s at %f, %f, %f) ", GetPlayerNameEx(playerid),  GetPlayerNameEx(hitid), AC_GetWeaponName(weaponid), fX, fY, fZ);
 	}
 	else if(hittype) {
-		AC_SendDebugMessage(playerid, "OnPlayerWeaponShot(%s shot %s %d with %s at %f, %f, %f", GetPlayerNameEx(playerid),  GetPlayerNameEx(hitid), AC_GetWeaponName(weaponid), fX, fY, fZ);
+		AC_SendDebugMessage(playerid, "OnPlayerWeaponShot(%s ban %s %d voi %s at %f, %f, %f", GetPlayerNameEx(playerid),  GetPlayerNameEx(hitid), AC_GetWeaponName(weaponid), fX, fY, fZ);
 	}
 	else {
-		AC_SendDebugMessage(playerid, "OnPlayerWeaponShot(%s shot with %s at %f, %f, %f)", GetPlayerNameEx(playerid), AC_GetWeaponName(weaponid), fX, fY, fZ);
+		AC_SendDebugMessage(playerid, "OnPlayerWeaponShot(%s ban voi %s at %f, %f, %f)", GetPlayerNameEx(playerid), AC_GetWeaponName(weaponid), fX, fY, fZ);
 	}
 	#endif
 	
@@ -1029,7 +1029,7 @@ AC_AirBreaking(i) {
 	arrAntiCheat[i][ac_fPos][2] = fPos[2];
 
 	#if defined AC_DEBUG
-	format(szMiscArray, sizeof(szMiscArray), "Distance: %d (%f, %f, %f, %f, %f, %f)", iDistance, fPos[0], fPos[1], fPos[2], arrAntiCheat[i][ac_fPos][0], arrAntiCheat[i][ac_fPos][1], arrAntiCheat[i][ac_fPos][2]);
+	format(szMiscArray, sizeof(szMiscArray), "Khoang cach:%d (%f, %f, %f, %f, %f, %f)", iDistance, fPos[0], fPos[1], fPos[2], arrAntiCheat[i][ac_fPos][0], arrAntiCheat[i][ac_fPos][1], arrAntiCheat[i][ac_fPos][2]);
 	SendClientMessage(i, 0xFFFFFFFF, szMiscArray);
 	#endif
 
@@ -1037,7 +1037,7 @@ AC_AirBreaking(i) {
 	if(IsPlayerInAnyVehicle(i)) {
 		
 		#if defined AC_DEBUG
-		format(szMiscArray, sizeof(szMiscArray), "VEH SPEED: %d", iSpeed);
+		format(szMiscArray, sizeof(szMiscArray), "Toc do xe: %d", iSpeed);
 		SendClientMessage(i, 0xFFFFFFFF, szMiscArray);
 		#endif
 		if(iSpeed < 0.2 && iDistance > iSpeed + 30) return 1;
@@ -1045,7 +1045,7 @@ AC_AirBreaking(i) {
 	else {
 
 		#if defined AC_DEBUG
-		format(szMiscArray, sizeof(szMiscArray), "FOOT SPEED: %d", iSpeed);
+		format(szMiscArray, sizeof(szMiscArray), "Toc do chan: %d", iSpeed);
 		SendClientMessage(i, 0xFFFFFFFF, szMiscArray);
 		#endif
 		if(iDistance > iSpeed + 30) return 1;
@@ -1362,14 +1362,14 @@ AC_Flag(playerid, processid, iExtraID = INVALID_PLAYER_ID, Float:fInfo = 0.0) {
 			new iInfo = floatround(fInfo);
 			if(iInfo > 6) AC_Process(playerid, AC_PROAIM, iExtraID);
 			else { 
-				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}AimBot - I flagged %s for using pro-aim (%dx) with their %s.", GetPlayerNameEx(playerid), iInfo, AC_GetWeaponName(iExtraID));
+				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}AimBot - I flagged %s for using pro-aim (%dx) with cua ho %s.", GetPlayerNameEx(playerid), iInfo, AC_GetWeaponName(iExtraID));
 				ABroadCast(COLOR_LIGHTRED, szMiscArray, 2);
 			}
 		}
 		case AC_AIMBOT: {
 			if(fInfo > 20) AC_Process(playerid, AC_AIMBOT, iExtraID);
 			else {
-				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}AimBot - I flagged %s for a high hit-ratio (%.1f) with their %s.", GetPlayerNameEx(playerid), fInfo, AC_GetWeaponName(iExtraID));
+				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}AimBot - I flagged %s for a high hit-ratio (%,1f) voi cua ho %s.", GetPlayerNameEx(playerid), fInfo, AC_GetWeaponName(iExtraID));
 				ABroadCast(COLOR_LIGHTRED, szMiscArray, 2);
 			}
 		}
@@ -1392,7 +1392,7 @@ AC_Process(playerid, processid, iExtraID = INVALID_PLAYER_ID, iExtraID2 = -1, iE
 
 			case AC_AIMBOT: {
 
-				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}%s is using Aimbot", GetPlayerNameEx(playerid));
+				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}%s dang su dung Aimbot", GetPlayerNameEx(playerid));
 				ABroadCast(COLOR_LIGHTRED, szMiscArray, 2);
 
 				new iTotalMiss = arrWeaponDataAC[playerid][ac_iBulletsFired][iExtraID] - arrWeaponDataAC[playerid][ac_iBulletsHit][iExtraID],
@@ -1426,12 +1426,12 @@ AC_Process(playerid, processid, iExtraID = INVALID_PLAYER_ID, iExtraID2 = -1, iE
 				ApplyAnimation(playerid, "PED", "IDLE_stance", 4.1, 0, 0, 0, 0, 0, 1);
 				defer AC_ResetAnim(playerid);
 				GivePlayerWeapon(playerid, w, 0);
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: Please do not C-Bug / CS.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Xin dung C-Bug/CS.");
 				return 1;
 			}
 			case AC_SILENTAIM: {
 
-				format(szMiscArray, sizeof(szMiscArray), "[SYSTEM]: %s (%d) used Silent Aim (detector %d) on %s (%d) with a %s (warnings: %d).", GetPlayerNameExt(playerid), PlayerInfo[playerid][pId], iExtraID3, GetPlayerNameExt(iExtraID2), PlayerInfo[iExtraID2][pId], AC_GetWeaponName(iExtraID), arrAntiCheat[playerid][ac_iFlags][processid]);
+				format(szMiscArray, sizeof(szMiscArray), "[He Thong]: %s (%d) da su dung Im lang Nham (may do %d) bat %s (%d) voi a %s (canh bao: %d).", GetPlayerNameExt(playerid), PlayerInfo[playerid][pId], iExtraID3, GetPlayerNameExt(iExtraID2), PlayerInfo[iExtraID2][pId], AC_GetWeaponName(iExtraID), arrAntiCheat[playerid][ac_iFlags][processid]);
 				Log("logs/anticheat.log", szMiscArray);
 				
 				/*
@@ -1449,14 +1449,14 @@ AC_Process(playerid, processid, iExtraID = INVALID_PLAYER_ID, iExtraID2 = -1, iE
 				}
 				*/
 
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: You were kicked for being desynced.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Ban da bi da vi bi huy dong bo hoa.");
 				SetTimerEx("KickEx", 1000, 0, "i", playerid);
 
-				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}%s is using Silent Aim (detector %d) on %s with a %s (warnings: %d).", GetPlayerNameExt(playerid), iExtraID3, GetPlayerNameExt(iExtraID2), AC_GetWeaponName(iExtraID), arrAntiCheat[playerid][ac_iFlags][processid]);
+				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}%s dang su dung Im lang Nham (may do %d) bat %s voi a %s (canh bao: %d).", GetPlayerNameExt(playerid), iExtraID3, GetPlayerNameExt(iExtraID2), AC_GetWeaponName(iExtraID), arrAntiCheat[playerid][ac_iFlags][processid]);
 			}
 			case AC_PROAIM: {
 
-				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}%s is using Pro-Aim.", GetPlayerNameEx(playerid));
+				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}%s dang su dung Pro-Aim.", GetPlayerNameEx(playerid));
 				ABroadCast(COLOR_LIGHTRED, szMiscArray, 2);
 
 				new iTotalMiss = arrWeaponDataAC[playerid][ac_iBulletsFired][iExtraID] - arrWeaponDataAC[playerid][ac_iBulletsHit][iExtraID],
@@ -1472,14 +1472,14 @@ AC_Process(playerid, processid, iExtraID = INVALID_PLAYER_ID, iExtraID2 = -1, iE
 
 				if(arrAntiCheat[playerid][ac_iFlags][processid] > 15) {
 					
-					SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: You were kicked for being desynced.");
+					SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Ban da bi da vi bi huy dong bo hoa.");
 					SetTimerEx("KickEx", 1000, 0, "i", playerid);
 				}
 				return 1;
 			}
 			case AC_RANGEHACKS: {
 
-				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}%s is using range-hacks.", GetPlayerNameEx(playerid));
+				format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}%s dang su dung hack pham vi.", GetPlayerNameEx(playerid));
 				ABroadCast(COLOR_LIGHTRED, szMiscArray, 2);
 
 				new iTotalMiss = arrWeaponDataAC[playerid][ac_iBulletsFired][iExtraID] - arrWeaponDataAC[playerid][ac_iBulletsHit][iExtraID],
@@ -1493,15 +1493,15 @@ AC_Process(playerid, processid, iExtraID = INVALID_PLAYER_ID, iExtraID2 = -1, iE
 				mysql_tquery(MainPipeline, szQuery, false, "OnQueryFinish", "i", SENDDATA_THREAD);
 				return 1;
 			}
-			case AC_SPEEDHACKS: format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}%s is using speed hacks (B2, B5)", GetPlayerNameEx(playerid));
-			case AC_VEHICLEHACKS: format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}%s is using vehicle hacks.", GetPlayerNameEx(playerid));
+			case AC_SPEEDHACKS: format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}%s dang su dung hack toc do (B2, B5)", GetPlayerNameEx(playerid));
+			case AC_VEHICLEHACKS: format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}%s dang su dung phuong tien hack.", GetPlayerNameEx(playerid));
 			case AC_CMDSPAM: {
 
 				if(iExtraID > 15) {
-					SendClientMessageEx(playerid, COLOR_YELLOW, "You are muted from submitting commands.");
-					format(szMiscArray, sizeof(szMiscArray), "{AA3333}AdmWarning{FFFF00}: %s is spamming commands (%d times).", GetPlayerNameEx(playerid), arrAntiCheat[playerid][ac_iCommandCount]);
+					SendClientMessageEx(playerid, COLOR_YELLOW, "Ban bi tat tieng khi gui lenh.");
+					format(szMiscArray, sizeof(szMiscArray), "{AA3333}AdmWarning{FFFF00}: %s la spam lenh (%d lan).", GetPlayerNameEx(playerid), arrAntiCheat[playerid][ac_iCommandCount]);
 				}
-				else return SendClientMessageEx(playerid, COLOR_YELLOW, "You are muted from submitting commands.");
+				else return SendClientMessageEx(playerid, COLOR_YELLOW, "Ban bi tat tieng khi gui lenh.");
 			}
 			case AC_CARSURFING: {
 
@@ -1509,40 +1509,40 @@ AC_Process(playerid, processid, iExtraID = INVALID_PLAYER_ID, iExtraID2 = -1, iE
 				GetPlayerPos(playerid, fPos[0], fPos[1], fPos[2]);
 				SetPlayerPos(playerid, fPos[0] + 1.0, fPos[1] + 1.0, fPos[2]);
 				PlayAnimEx(playerid, "PED", "BIKE_fallR", 4.1, 0, 1, 1, 1, 0, 1);
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: Please do not car surf.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Vui long khong luot xe.");
 				return 1;
 			}
 			case AC_NINJAJACK: {
 
 				defer AC_RevivePlayer(playerid);
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: You will be revived from the ninja-jacking in a few seconds.");
-				SendClientMessageEx(iExtraID, COLOR_LIGHTRED, "[SYSTEM]: You were caught plausibly ninja-jacking. Admins were warned.");
-				format(szMiscArray, sizeof(szMiscArray), "[SYSTEM]: %s has plausibly ninja-jacked %s.", GetPlayerNameEx(iExtraID), GetPlayerNameEx(playerid));
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Ban se duoc hoi sinh sau cu kich ninja sau vai giay.");
+				SendClientMessageEx(iExtraID, COLOR_LIGHTRED, "[He Thong]: Ban da bi bat qua tang ninja-jacking.");
+				format(szMiscArray, sizeof(szMiscArray), "[He Thong]: %s has plausibly ninja-jacked %s.", GetPlayerNameEx(iExtraID), GetPlayerNameEx(playerid));
 			}
-			case AC_AIRBREAKING: format(szMiscArray, sizeof(szMiscArray), "{AA3333}[SYSTEM]: {FFFF00}%s is AirBreaking.", GetPlayerNameEx(playerid));
+			case AC_AIRBREAKING: format(szMiscArray, sizeof(szMiscArray), "{AA3333}[He Thong]: {FFFF00}%s la AirBreaking.", GetPlayerNameEx(playerid));
 			case AC_HEALTHARMORHACKS: {
 				
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: You were kicked for plausibly health/armor hacking.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Ban da bi da vi hack suc khoe/ao giap chinh dang.");
 				SetTimerEx("KickEx", 1000, 0, "i", iExtraID);
-				format(szMiscArray, sizeof(szMiscArray), "[SYSTEM]: %s was kicked for (plausibly!) health/armor hacking. Refrain from taking more action until fully tested.", GetPlayerNameEx(playerid));
+				format(szMiscArray, sizeof(szMiscArray), "[He Thong]: %s da bi da vi (chinh dang!) Hack suc khoe/ao giap.", GetPlayerNameEx(playerid));
 			}			
 			case AC_DIALOGSPOOFING: {
-				format(szMiscArray, sizeof(szMiscArray), "[SYSTEM]: %s is spoofing dialogs (dialog ID: %d).", GetPlayerNameEx(playerid), iExtraID);
+				format(szMiscArray, sizeof(szMiscArray), "[He Thong]: %s la gia mao hop thoai (hop thoai ID: %d).", GetPlayerNameEx(playerid), iExtraID);
 				Log("logs/anticheat.log", szMiscArray);
 			}
 
 			case AC_GHOSTHACKS: {
 
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: You were kicked for being desynced.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Ban da bi da vi bi huy dong bo hoa.");
 				SetTimerEx("KickEx", 1000, 0, "i", playerid);
-				format(szMiscArray, sizeof(szMiscArray), "[SYSTEM]: %s is using ghost hacks (Shooting while AFK). WeaponID: %d", GetPlayerNameEx(playerid), iExtraID);
+				format(szMiscArray, sizeof(szMiscArray), "[He Thong]: %s dang su dung hack ghost (Ban trong khi AFK). WeaponID: %d", GetPlayerNameEx(playerid), iExtraID);
 				Log("logs/anticheat.log", szMiscArray);
 			}
 			case AC_DESYNC: {
 
-				format(szMiscArray, sizeof(szMiscArray), "[SYSTEM]: %s has a weird camera mode (probably aimbot). Camera Mode: %d.", GetPlayerNameEx(playerid), iExtraID);
+				format(szMiscArray, sizeof(szMiscArray), "[He Thong]: %s co mot che do may anh ky la (co the la aimbot). Camera Mode: %d.", GetPlayerNameEx(playerid), iExtraID);
 				Log("logs/anticheat.log", szMiscArray);
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: You were kicked for being desynced.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Ban da bi da vi bi huy dong bo hoa.");
 				SetTimerEx("KickEx", 1000, 0, "i", playerid);
 			}
 		
@@ -1571,13 +1571,13 @@ AC_IsPlayerSurfing(playerid) {
 
 AC_KeySpamCheck(playerid) {
 	if(GetPVarType(playerid, "PCMute")) {
-		SendClientMessageEx(playerid, COLOR_WHITE, "[SYSTEM]: You are currently blocked from using interaction keys.");
+		SendClientMessageEx(playerid, COLOR_WHITE, "[He Thong]: Ban hien dang bi chan su dung cac phim tuong tac.");
 		return 0;
 	}
 	if(ac_iPlayerKeySpam[playerid] > 4) {
 		SetPVarInt(playerid, "PCMute", 1);
 		defer AC_ResetPVars[10000](playerid, 1);
-		SendClientMessageEx(playerid, COLOR_LIGHTRED, "[SYSTEM]: You were muted for spamming an interaction key. Refrain from doing it again.");
+		SendClientMessageEx(playerid, COLOR_LIGHTRED, "[He Thong]: Ban da bi tat tieng vi spam khoa tuong tac.");
 		return 0;
 	}
 	return 1;
@@ -1594,7 +1594,7 @@ AC_PlayerHealthArmor(playerid) {
 	GetPlayerArmour(playerid, fData[2]);
 	GetArmour(playerid, fData[3]);
 	if(fData[1] < -40) {
-		format(szMiscArray, sizeof(szMiscArray), "[SYSTEM (BETA)]: %s (%d) may be health hacking.", GetPlayerNameEx(playerid), playerid);
+		format(szMiscArray, sizeof(szMiscArray), "[SYSTEM (BETA)]: %s (%d) co the la hack suc khoe.", GetPlayerNameEx(playerid), playerid);
 		ABroadCast(COLOR_LIGHTRED, szMiscArray, 2);
 	}
 	if(fData[0] > (fData[1] + 10.0) || fData[2] > (fData[3] + 10.0)) return 1;
@@ -1681,7 +1681,7 @@ CMD:system(playerid, params[]) {
 		(ac_ACToggle[AC_DIALOGSPOOFING] == true) ? ("{00FF00}On") : ("{FF0000}Off"),
 		(ac_ACToggle[AC_REJECTHITS] == true) ? ("{00FF00}On") : ("{FF0000}Off"),
 		(ac_ACToggle[AC_DESYNC] == true) ? ("{00FF00}On") : ("{FF0000}Off"));
-	ShowPlayerDialogEx(playerid, DIALOG_AC_MAIN, DIALOG_STYLE_TABLIST_HEADERS, "[SYSTEM]: Anti-Cheat", szMiscArray, "Toggle", "");
+	ShowPlayerDialogEx(playerid, DIALOG_AC_MAIN, DIALOG_STYLE_TABLIST_HEADERS, "[He Thong]: Anti-Cheat", szMiscArray, "Toggle", "");
 	return 1;
 }
 
@@ -1693,8 +1693,8 @@ CMD:aimcheck(playerid, params[]) {
 	new uPlayer,
 		szTitle[32 + MAX_PLAYER_NAME];
 
-	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Usage: /aimcheck [playerid/name]");
-	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "You specified an invalid player.");
+	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Cach su dung: /aimcheck [playerid/name]");
+	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Ban da chi dinh mot trinh phat khong hop le");
 
 	format(szMiscArray, sizeof(szMiscArray), "Weapon (total fired)\tHit --- Real Miss (of Total Missed)\tRatio\n");
 
@@ -1733,8 +1733,8 @@ CMD:aimcheck(playerid, params[]) {
 	SendClientMessageEx(playerid, COLOR_YELLOW, "---------- [ ANTICHEAT ] ----------");
 	SendClientMessageEx(playerid, COLOR_GRAD1, "Jingles:");
 	SendClientMessageEx(playerid, COLOR_GRAD1, "");
-	SendClientMessageEx(playerid, COLOR_GRAD1, "Player ratios for some weapons (especially Combat Shotguns (SPAS)) can be high even though they're not aimbotting.");
-	format(szMiscArray, sizeof(szMiscArray), "Only make conclusions if the total shots fired is higher than approx. 50. TIMESTAMP: %s", date(gettime(), 3));
+	SendClientMessageEx(playerid, COLOR_GRAD1, "Ty le nguoi choi doi voi mot so vu khi (dac biet la Combat Shotgun (SPAS)) co the cao mac du chung khong nham muc tieu.");
+	format(szMiscArray, sizeof(szMiscArray), "Chi dua ra ket luan neu tong so phat ban cao hon khoang, 50. TIMESTAMP: %s", date(gettime(), 3));
 	SendClientMessageEx(playerid, COLOR_YELLOW, szMiscArray);
 	SendClientMessageEx(playerid, COLOR_YELLOW, "------------------------------ ");
 	return 1;
@@ -1746,8 +1746,8 @@ CMD:acflags(playerid, params[]) {
 	new uPlayer,
 		szTitle[32 + MAX_PLAYER_NAME];
 
-	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Usage: /acflags [playerid/name]");
-	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "You specified an invalid player.");
+	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Cach Su Dung: /acflags [playerid/name]");
+	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Ban da chi dinh mot trinh phat khong hop le");
 
 	format(szMiscArray, sizeof(szMiscArray), "Name\tFlags");
 	for(new i; i < AC_MAX; ++i) {
@@ -1770,12 +1770,12 @@ CMD:resetacflags(playerid, params[]) {
 	
 	new uPlayer;
 
-	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Usage: /resetacflags [playerid/name]");
-	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "You specified an invalid player.");
+	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Cach Su Dung: /resetacflags [playerid/name]");
+	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Ban da chi dinh mot trinh phat khong hop le");
 	for(new i; i < AC_MAX; ++i) arrAntiCheat[uPlayer][ac_iFlags][i] = 0;
-	format(szMiscArray, sizeof(szMiscArray), "You removed %s's anticheat flags.", GetPlayerNameEx(uPlayer));
+	format(szMiscArray, sizeof(szMiscArray), "Ban da xoa %s's anticheat flags.", GetPlayerNameEx(uPlayer));
 	SendClientMessageEx(playerid, COLOR_YELLOW, szMiscArray);
-	format(szMiscArray, sizeof(szMiscArray), "Administrator %s removed your anticheat flags.", GetPlayerNameEx(playerid));
+	format(szMiscArray, sizeof(szMiscArray), "Administrator %s loai bo cua ban anticheat flags.", GetPlayerNameEx(playerid));
 	SendClientMessageEx(uPlayer, COLOR_YELLOW, szMiscArray);
 	return 1;
 }
@@ -1786,8 +1786,8 @@ CMD:rejects(playerid, params[]) {
 	new uPlayer,
 		szTitle[32 + MAX_PLAYER_NAME];
 
-	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Usage: /aimcheck [playerid/name]");
-	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "You specified an invalid player.");
+	if(sscanf(params, "u", uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Cach Su Dung: /aimcheck [playerid/name]");
+	if(!IsPlayerConnected(uPlayer)) return SendClientMessage(playerid, 0xFFFFFFFF, "Ban da chi dinh mot trinh phat khong hop le");
 	
 	format(szMiscArray, sizeof(szMiscArray), "Reason || Date\tWeapon\tTarget || (Info (0, 1, 2))\n");
 	for(new idx; idx < AC_MAX_REJECTED_HITS; ++idx) {
@@ -1825,7 +1825,7 @@ CMD:listacflags(playerid, params[]) {
 
 	if(PlayerInfo[playerid][pAdmin] >= 2) {
 
-		SendClientMessageEx(playerid, COLOR_GREEN, "____________________ Current players flagged by the anti pro-aim system: ____________________");
+		SendClientMessageEx(playerid, COLOR_GREEN, "____________________ Nguoi choi hien tai bi gan co boi he thong chong pro-aim: ____________________");
 		foreach(new i: Player) {
 
 			if(arrAntiCheat[i][ac_iFlags][AC_PROAIM] > 0) {
@@ -1834,20 +1834,20 @@ CMD:listacflags(playerid, params[]) {
 				SendClientMessage(playerid, COLOR_GRAD1, szMiscArray);
 			}
 		}
-		if(PlayerInfo[playerid][pAdmin] >= 4) SendClientMessage(playerid, COLOR_GRAD2, "NOTE: If you are certain a player is not hacking, you may use /resetpaflags.");
+		if(PlayerInfo[playerid][pAdmin] >= 4) SendClientMessage(playerid, COLOR_GRAD2, "Ghi Chu: Neu ban chac chan mot nguoi choi khong hack, ban co the su dung /resetpaflags.");
 	}
-	else return SendClientMessageEx(playerid, COLOR_GRAD2, "You're not authorized to use this command.");
+	else return SendClientMessageEx(playerid, COLOR_GRAD2, "Ban khong duoc phep su dung lenh nay.");
 	return 1;
 }
 
 CMD:setproaimvar(playerid, params[]) {
 
 	if(!IsAdminLevel(playerid, ADMIN_SENIOR, 1)) return 1;
-	if(sscanf(params, "d", iShotVariance)) return SendClientMessageEx(playerid, COLOR_GRAD1, "USAGE: /setproaimvar [range]");
+	if(sscanf(params, "d", iShotVariance)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Cach Su Dung: /setproaimvar [range]");
 
-	if(!(0 < strval(params) < 30)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Set it between 0 and 30.");
+	if(!(0 < strval(params) < 30)) return SendClientMessageEx(playerid, COLOR_GRAD1, "dat no trong khoang tu 0 den 30.");
 	iShotVariance = strval(params);
-	format(szMiscArray, sizeof(szMiscArray), "You set the shot variance to: %d", iShotVariance);
+	format(szMiscArray, sizeof(szMiscArray), "Ban dat phuong sai ban thanh: %d", iShotVariance);
 	SendClientMessageEx(playerid, COLOR_GRAD1, szMiscArray);
 	return 1;
 }
@@ -1857,7 +1857,7 @@ CMD:ploss(playerid, params[]) {
 	if(!IsAdminLevel(playerid, ADMIN_SENIOR, 1)) return 1;
 	if(PLoss) PLoss = 0;
 	else PLoss = 1;
-	SendClientMessageEx(playerid, COLOR_GRAD1, "You toggled the packet loss function.");
+	SendClientMessageEx(playerid, COLOR_GRAD1, "Ban da bat chuc nang mat goi.");
 	return 1;
 }
 
@@ -2133,7 +2133,7 @@ CMD:analytics(playerid, params[]) {
 	if(!IsAdminLevel(playerid, ADMIN_SENIOR, 1)) return 1;
 
 	new uPlayer;
-	if(sscanf(params, "u", uPlayer)) return SendClientMessageEx(playerid, COLOR_GRAD1, "USAGE: /analytics [playerid / part of name]");
+	if(sscanf(params, "u", uPlayer)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Cach Su Dung: /analytics [playerid / part of name]");
 
 	if(!IsPlayerConnected(uPlayer)) return 1;
 
@@ -2153,7 +2153,7 @@ CMD:setcheating(playerid, params[]) {
 	if(!IsAdminLevel(playerid, ADMIN_SENIOR, 1)) return 1;
 
 	new uPlayer;
-	if(sscanf(params, "u", uPlayer)) return SendClientMessageEx(playerid, COLOR_GRAD1, "USAGE: /setcheating [0/1]");
+	if(sscanf(params, "u", uPlayer)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Cach Su Dung: /setcheating [0/1]");
 
 	if(arrAntiCheat[uPlayer][ac_iIsCheating]) {
 
@@ -2176,7 +2176,7 @@ CMD:settraining(playerid, params[]) {
 	if(!IsAdminLevel(playerid, ADMIN_SENIOR, 1)) return 1;
 
 	new uPlayer;
-	if(sscanf(params, "u", uPlayer)) return SendClientMessageEx(playerid, COLOR_GRAD1, "USAGE: /settraining [0/1]");
+	if(sscanf(params, "u", uPlayer)) return SendClientMessageEx(playerid, COLOR_GRAD1, "Cach Su Dung: /settraining [0/1]");
 
 	if(arrAntiCheat[uPlayer][ac_inTrainingMode]) {
 
