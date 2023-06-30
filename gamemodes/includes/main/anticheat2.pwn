@@ -40,7 +40,7 @@ stock Float:GetPlayerPacketloss(playerid) {
 	GetPlayerNetworkStats(playerid, nstats, sizeof(nstats));
 
 	start = strfind(nstats,"packetloss",true);
-	end = strfind(nstats,"%",true,start);
+	end = strfind(nstats,"%d",true,start);
 
 	strmid(nstats_loss, nstats, start+12, end, sizeof(nstats_loss));
 	return floatstr(nstats_loss);
@@ -204,24 +204,24 @@ enum {
 // Must be in sync with the enum above
 // Used in debug messages and GetRejectedHit
 stock const g_HitRejectReasons[][] = {
-	"None or invalid player shot",
-	"Invalid weapon",
-	"Last shot invalid",
-	"One bullet hit %d players",
-	"Hit too many players with shotgun: %d",
-	"Hit a dying player",
-	"Hit a teammate",
-	"Hit someone that can't see you (not streamed in)",
-	"Invalid hit type: %d",
-	"Hit while being resynced",
-	"Hit when not spawned or dying",
-	"Hit out of range (%f > %f)",
-	"Hit player too far from hit position (dist %f)",
-	"Shooting rate too fast: %d (%d samples, max %d)",
-	"Shooting rate too fast: %d (%d samples, multiple weapons)",
-	"Hit rate too fast: %d (%d samples, max %d)",
-	"Hit rate too fast: %d (%d samples, multiple weapons)",
-	"The knife kill did not sync",
+	"Khong co hoac nguoi choi ban khong hop le",
+	"vu khi khong hop le",
+	"Lan ban cuoi cung khong hop le",
+	"Mot dan trung %d nguoi choi",
+	"danh qua nhieu nguoi choi voi sung ngan: %d",
+	"danh mot nguoi choi sap chet",
+	"danh dong doi",
+	"danh ai do khong the nhin thay ban (khong duoc phat truc tuyen)",
+	"Loai luot khong hop le: %d",
+	"Nhan trong khi duoc dong bo hoa lai",
+	"danh khi khong sinh san hoac chet",
+	"danh ra ngoai pham vi (%f > %f)",
+	"danh nguoi choi qua xa tu danh vi tri (khoang cach %f)",
+	"Chup toc do qua nhanh: %d (%d mau, toi da %d)",
+	"Ban toc do qua nhanh: %d (%d mau, nhieu vu khi)",
+	"Luot toc do qua nhanh: %d (%d samples, max %d)",
+	"danh toc do qua nhanh: %d (%d mau, nhieu vu khi)",
+	"Dao giet khong dong bo",
 	"Damage inflicted too far from current position (dist %f)",
 	"Invalid weapon damage (%.4f)",
 	"Hit a player in the same vehicle",
