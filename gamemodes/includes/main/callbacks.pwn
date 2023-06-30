@@ -93,7 +93,7 @@ public OnVehicleSpawn(vehicleid) {
 			getdate(zyear, zmonth, zday);
 			if(zombieevent || (zmonth == 10 && zday == 31) || (zmonth == 11 && zday == 1)) SetVehicleHealth(iVehicleID, PlayerVehicleInfo[i][v][pvHealth]);
 			new string[128];
-			format(string, sizeof(string), "Your %s has been sent to the location at which you last parked it.", GetVehicleName(iVehicleID));
+			format(string, sizeof(string), "Ban %s da duoc gui den vi tri tai ma ban cuoi do no.", GetVehicleName(iVehicleID));
 			SendClientMessageEx(i, COLOR_GRAD1, string);
 		}
 	}
@@ -116,7 +116,7 @@ public OnVehicleSpawn(vehicleid) {
 			PlayerInfo[i][pInt] = 0;
 			SetPlayerInterior(i, 0);
 			InsidePlane[i] = INVALID_VEHICLE_ID;
-			SendClientMessageEx(i, COLOR_WHITE, "The airplane has been damaged, you cannot be inside it!");
+			SendClientMessageEx(i, COLOR_WHITE, "May bay da bi hong, ban khong the o ben trong no!");
 		}
 	}
 }
@@ -132,9 +132,9 @@ public OnVehicleMod(playerid, vehicleid, componentid)
 				if(HackingMods[playerid] < 3)
 				{
 					new szMessage[128];
-					format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s (ID: %d) may be hacking vehicle mods (%s (%d) %s to a %s (ID: %d))", GetPlayerNameEx(playerid), playerid, partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
+					format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s (ID: %d) co the la hack mod xe (%s (%d) %s den mot %s (ID: %d))", GetPlayerNameEx(playerid), playerid, partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
 					ABroadCast(COLOR_YELLOW, szMessage, 2);
-					format(szMessage, sizeof(szMessage), "%s(%d) may be hacking vehicle mods (%s (%d) %s to a %s (ID: %d))", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
+					format(szMessage, sizeof(szMessage), "%s(%d) co the la hack mod xe (%s (%d) %s den mot %s (ID: %d))", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
 					Log("logs/hack.log", szMessage);
 					HackingMods[playerid]++;
 					return 0;
@@ -156,9 +156,9 @@ public OnVehicleMod(playerid, vehicleid, componentid)
 
 		if(HackingMods[playerid] < 3)
 		{
-			format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s (ID: %d) may be hacking vehicle mods (%s (%d) %s to a %s (ID: %d))", GetPlayerNameEx(playerid), playerid, partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
+			format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s (ID: %d) co the la hack mod xe (%s (%d) %s to a %s (ID: %d))", GetPlayerNameEx(playerid), playerid, partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
 			ABroadCast(COLOR_YELLOW, szMessage, 2);
-			format(szMessage, sizeof(szMessage), "%s(%d) may be hacking vehicle mods (%s (%d) %s to a %s (ID: %d))", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
+			format(szMessage, sizeof(szMessage), "%s(%d) co the la hack mod xe (%s (%d) %s den mot %s (ID: %d))", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), partName(componentid), componentid, partType(GetVehicleComponentType(componentid)), GetVehicleName(vehicleid), GetPlayerVehicleID(playerid));
 			Log("logs/hack.log", szMessage);
 			HackingMods[playerid]++;
 			return 0;
@@ -452,39 +452,39 @@ public OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid,
 	    if(fOffsetX > 1.4)
 		{
 			fOffsetX = 1.4;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum X Offset exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "do lech X toi da da duoc thuc hien, giam dan den muc toi da");
 		}
 	    if(fOffsetY > 1.4) {
 			fOffsetY = 1.4;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum Y Offset exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "do lech Y toi da da duoc thuc hien, giam dan den muc toi da");
 		}
 	    if(fOffsetZ > 1.4) {
 			fOffsetZ = 1.4;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum Z Offset exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "do lech Z toi da da duoc thuc hien, giam dan den muc toi da");
 		}
 	    if(fOffsetX < -1.4) {
 			fOffsetX = -1.4;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum X Offset exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "do lech X toi da da duoc thuc hien, giam dan den muc toi da");
 		}
 	    if(fOffsetY < -1.4) {
 			fOffsetY = -1.4;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum Y Offset exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "do lech Y toi da da duoc thuc hien, giam dan den muc toi da");
 		}
 	    if(fOffsetZ < -1.4) {
 			fOffsetZ = -1.4;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum Z Offset exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "do lech Z toi da da duoc thuc hien, giam dan den muc toi da");
 		}
 	    if(fScaleX > 1.5) {
 			fScaleX = 1.5;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum X Scale exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "Ty le X toi da da duoc thuc thi, giam dan den muc toi da");
 		}
 	    if(fScaleY > 1.5) {
 			fScaleY = 1.5;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum Y Scale exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "Ty le Y toi da da duoc thuc thi, giam dan den muc toi da");
 		}
 		if(fScaleZ > 1.5) {
 			fScaleZ = 1.5;
-			SendClientMessage(playerid, COLOR_WHITE, "Maximum Z Scale exeeded, damped to maximum");
+			SendClientMessage(playerid, COLOR_WHITE, "Ty le Z toi da da duoc thuc thi, giam dan den muc toi da");
 		}
 		if(GetPVarType(playerid, "EditGToy")) {
 
@@ -505,7 +505,7 @@ public OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid,
 
 			DeletePVar(playerid, "EditGToy");
 			g_mysql_SaveGroupToy(playerid);
-			SendClientMessageEx(playerid, COLOR_GRAD1, "You have edited your group toy.");
+			SendClientMessageEx(playerid, COLOR_GRAD1, "Ban da chinh sua do choi nhom cua minh.");
 		}
 		else {
 		    new slotid = GetPVarInt(playerid, "ToySlot");
@@ -527,11 +527,11 @@ public OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid,
 	{
 		if(GetPVarType(playerid, "EditGToy")) {
 			DeletePVar(playerid, "EditGToy");
-			SendClientMessageEx(playerid, COLOR_GRAD1, "You have stopped editing your group toy.");
+			SendClientMessageEx(playerid, COLOR_GRAD1, "Ban da ngung chinh sua do choi nhom cua minh.");
 		}
 		else {
 		    ShowEditMenu(playerid);
-			SendClientMessageEx(playerid, COLOR_WHITE, "You have stopped yourself from editing the toy.");
+			SendClientMessageEx(playerid, COLOR_WHITE, "Ban da ngung chinh sua do choi.");
 		}
 	}
 	return 1;
@@ -571,7 +571,7 @@ public OnPlayerPressButton(playerid, buttonid)
 		}
 		else
 		{
-			SendClientMessageEx(playerid, COLOR_GREY," Access denied.");
+			SendClientMessageEx(playerid, COLOR_GREY," Truy cap bi tu choi.");
 			return 1;
 		}
 	}
@@ -585,7 +585,7 @@ public OnPlayerPressButton(playerid, buttonid)
 		}
 		else
 		{
-			SendClientMessageEx(playerid, COLOR_GREY," Access denied.");
+			SendClientMessageEx(playerid, COLOR_GREY," Truy cap bi tu choi.");
 			return 1;
 		}
 	}
@@ -601,7 +601,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	    }
 	    else
 	    {
-	        SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+	        SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 	}
@@ -617,7 +617,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	    }
 	    else
 	    {
-	        SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+	        SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 	}
@@ -631,7 +631,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	    }
 	    else
 	    {
-	        SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+	        SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 	}
@@ -645,7 +645,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	    }
 	    else
 	    {
-	        SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+	        SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 	}
@@ -659,7 +659,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	    }
 	    else
 	    {
-	        SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+	        SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 	}
@@ -667,7 +667,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	{
 		if(!IsACop(playerid))
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 		MoveDynamicObject(westlobby1,239.71582031,115.09179688,1002.21502686,4);
@@ -678,7 +678,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	{
 		if(!IsACop(playerid))
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
  		MoveDynamicObject(eastlobby1,253.14941406,111.59960938,1002.21502686,4);
@@ -689,7 +689,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	{
 		if(!IsACop(playerid))
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 		MoveDynamicObject(locker1,268.29980469,112.56640625,1003.61718750,4);
@@ -700,7 +700,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	{
 		if(!IsACop(playerid))
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 		MoveDynamicObject(cctv1,263.44921875,115.79980469,1003.61718750,4);
@@ -711,7 +711,7 @@ public OnPlayerPressButton(playerid, buttonid)
 	{
 		if(!IsACop(playerid) || PlayerInfo[playerid][pRank] < 6)
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
 		MoveDynamicObject(chief1,228.0,119.50000000,1009.21875000,4);
@@ -722,30 +722,30 @@ public OnPlayerPressButton(playerid, buttonid)
 	{
 		if(!IsACop(playerid))
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
-		//else ShowPlayerDialogEx( playerid, ELEVATOR3, DIALOG_STYLE_LIST, "Elevator", "Rooftop\nGarage", "Select", "Sui");
+		//else ShowPlayerDialogEx( playerid, ELEVATOR3, DIALOG_STYLE_LIST, "Elevator", "Rooftop\nGarage", "Lua chon", "Huy bo");
 		else SendClientMessageEx(playerid, COLOR_GRAD1, "Thang may nay khong duoc ho tro.");
 	}
 	if(buttonid == garagekey)
 	{
 		if(!IsACop(playerid))
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
-		//else ShowPlayerDialogEx( playerid, ELEVATOR2, DIALOG_STYLE_LIST, "Elevator", "Rooftop\nInterior", "Select", "Sui");
+		//else ShowPlayerDialogEx( playerid, ELEVATOR2, DIALOG_STYLE_LIST, "Elevator", "Rooftop\nInterior", "Lua chon", "Huy bo");
 		else SendClientMessageEx(playerid, COLOR_GRAD1, "Thang may nay khong duoc ho tro.");
 	}
 	if(buttonid == roofkey)
 	{
 		if(!IsACop(playerid))
 		{
-			SendClientMessageEx(playerid,COLOR_GREY,"Access denied.");
+			SendClientMessageEx(playerid,COLOR_GREY,"Truy cap bi tu choi.");
 			return 1;
 		}
-		//else ShowPlayerDialogEx( playerid, ELEVATOR, DIALOG_STYLE_LIST, "Elevator", "Interior\nGarage", "Select", "Sui");
+		//else ShowPlayerDialogEx( playerid, ELEVATOR, DIALOG_STYLE_LIST, "Elevator", "Interior\nGarage", "Lua chon", "Huy bo");
 		else SendClientMessageEx(playerid, COLOR_GRAD1, "Thang may nay khong duoc ho tro.");
 	}
 	if(buttonid == westin)
@@ -768,43 +768,43 @@ public OnPlayerPressButton(playerid, buttonid)
 
 			}
 			else {
-				SendClientMessageEx(playerid, COLOR_GREY, "Access denied");
+				SendClientMessageEx(playerid, COLOR_GREY, "Truy cap bi tu choi");
 				break;
 			}
 		}
 	}
 	if(buttonid == DocCPButton[0] || buttonid == DocCPButton[1])
 	{
-		if(!IsADocGuard(playerid)) return SendClientMessageEx(playerid, COLOR_GREY, "Access denied");
+		if(!IsADocGuard(playerid)) return SendClientMessageEx(playerid, COLOR_GREY, "Truy cap bi tu choi");
 		ShowDocPrisonControls(playerid, 0);
 	}
 	if(buttonid == SFPDHighCMDButton[0]) // Chief
 	{
-		if(PlayerInfo[playerid][pLeader] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "Access denied");
+		if(PlayerInfo[playerid][pLeader] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "Truy cap bi tu choi");
 		SFPDDoors(0, 1);
 		SetTimerEx("SFPDDoors", 3000, false, "ii", 0, 0);
 	}
 	if(buttonid == SFPDHighCMDButton[1]) // Deputy Chief
 	{
-		if(PlayerInfo[playerid][pLeader] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "Access denied");
+		if(PlayerInfo[playerid][pLeader] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "Truy cap bi tu choi");
 		SFPDDoors(1, 1);
 		SetTimerEx("SFPDDoors", 3000, false, "ii", 1, 0);
 	}
 	if(buttonid == SFPDHighCMDButton[2]) // Commander
 	{
-		if(PlayerInfo[playerid][pLeader] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "Access denied");
+		if(PlayerInfo[playerid][pLeader] != 0) return SendClientMessageEx(playerid, COLOR_GREY, "Truy cap bi tu choi");
 		SFPDDoors(2, 1);
 		SetTimerEx("SFPDDoors", 3000, false, "ii", 2, 0);
 	}
 	if(buttonid == SFPDLobbyButton[0])
 	{
-		if(!IsACop(playerid)) return SendClientMessageEx(playerid, COLOR_GREY, "Access denied");
+		if(!IsACop(playerid)) return SendClientMessageEx(playerid, COLOR_GREY, "Truy cap bi tu choi");
 		SFPDDoors(3, 1);
 		SetTimerEx("SFPDDoors", 3000, false, "ii", 3, 0);
 	}
 	if(buttonid == SFPDLobbyButton[1])
 	{
-		if(!IsACop(playerid)) return SendClientMessageEx(playerid, COLOR_GREY, "Access denied");
+		if(!IsACop(playerid)) return SendClientMessageEx(playerid, COLOR_GREY, "Truy cap bi tu choi");
 		SFPDDoors(4, 1);
 		SetTimerEx("SFPDDoors", 3000, false, "ii", 4, 0);
 	}
@@ -909,18 +909,18 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 	return 1;
 }
 
-public OnPlayerModelSelection(playerid, response, listid, modelid)
+public OnPlayerModelLua chonion(playerid, response, listid, modelid)
 {
 	/*if(!response)
 	{
  		if(listid == CarList)
 	    {
 	        print("[ListReloaded]");
-	        ToyList = LoadModelSelectionMenu("ToyList.txt");
-			CarList = LoadModelSelectionMenu("CarList.txt");
-			PlaneList = LoadModelSelectionMenu("PlaneList.txt");
-			BoatList = LoadModelSelectionMenu("BoatList.txt");
-			SkinList = LoadModelSelectionMenu("SkinList.txt");
+	        ToyList = LoadModelLua chonionMenu("ToyList.txt");
+			CarList = LoadModelLua chonionMenu("CarList.txt");
+			PlaneList = LoadModelLua chonionMenu("PlaneList.txt");
+			BoatList = LoadModelLua chonionMenu("BoatList.txt");
+			SkinList = LoadModelLua chonionMenu("SkinList.txt");
 	    }
 	} */
 	if(listid == ToyList2 || listid == ToyList)
@@ -929,7 +929,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 	    {
 	        if(modelid == 18647)
 	        {
-				ShowPlayerDialogEx(playerid, DIALOG_SHOPNEON, DIALOG_STYLE_LIST, "Neon Tubes", "Red Neon Tube\nBlue Neon Tube\nGreen Neon Tube\nYellow Neon Tube\nPink Neon Tube\nWhite Neon Tube", "Select", "Sui");
+				ShowPlayerDialogEx(playerid, DIALOG_SHOPNEON, DIALOG_STYLE_LIST, "Neon Tubes", "Red Neon Tube\nBlue Neon Tube\nGreen Neon Tube\nYellow Neon Tube\nPink Neon Tube\nWhite Neon Tube", "Lua chon", "Huy bo");
 	        }
 	        else
 	        {
@@ -947,14 +947,14 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 						}
 					}
 
-					format(szMiscArray, sizeof(szMiscArray), "%s(%d) %s (Bone: %s)\n", szMiscArray, z, name, HoldingBones[PlayerToyInfo[playerid][z][ptBone]]);
+					format(szMiscArray, sizeof(szMiscArray), "%s(%d) %s (Xuong: %s)\n", szMiscArray, z, name, HoldingBones[PlayerToyInfo[playerid][z][ptBone]]);
 				}
 				printf("MODELID: %d", modelid);
-				ShowPlayerDialogEx(playerid, DIALOG_SHOPBUYTOYS, DIALOG_STYLE_LIST, "Select a Slot", szMiscArray, "Select", "Sui");
+				ShowPlayerDialogEx(playerid, DIALOG_SHOPBUYTOYS, DIALOG_STYLE_LIST, "Chon mot vi tri", szMiscArray, "Lua chon", "Huy bo");
 	  			SetPVarInt(playerid, "ToyID", modelid);
 			}
 	    }
-	    else SendClientMessage(playerid, COLOR_GREY, "You have closed the toy shop.");
+	    else SendClientMessage(playerid, COLOR_GREY, "Ban da dong cua hang do choi.");
     	return 1;
 	}
 	if(listid == BoatList)
@@ -964,7 +964,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 			new string[128];
 			SetPVarInt(playerid, "VehicleID", modelid), SetPVarInt(playerid, "BoatShop", 1);
 			format(string, sizeof(string), "Item: %s\nSo Credits cua ban: %s\nCost: {FFD700}%s{A9C4E4}\nCredits con lai: %s", VehicleName[modelid-400], number_format(PlayerInfo[playerid][pCredits]),number_format(ShopItems[5][sItemPrice]), number_format(PlayerInfo[playerid][pCredits]-ShopItems[5][sItemPrice]));
-			ShowPlayerDialogEx(playerid, DIALOG_CARSHOP, DIALOG_STYLE_MSGBOX, "Vehicle Shop", string, "Purchase", "Sui");
+			ShowPlayerDialogEx(playerid, DIALOG_CARSHOP, DIALOG_STYLE_MSGBOX, "Vehicle Shop", string, "Mua", "Huy bo");
 		}
 	}
 	if(listid == PlaneList)
@@ -974,7 +974,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 			new string[128];
 			SetPVarInt(playerid, "VehicleID", modelid);
 			format(string, sizeof(string), "Item: %s\nSo Credits cua ban: %s\nCost: {FFD700}%s{A9C4E4}\nCredits con lai: %s", VehicleName[modelid-400], number_format(PlayerInfo[playerid][pCredits]),number_format(ShopItems[5][sItemPrice]), number_format(PlayerInfo[playerid][pCredits]-ShopItems[5][sItemPrice]));
-			ShowPlayerDialogEx(playerid, DIALOG_CARSHOP, DIALOG_STYLE_MSGBOX, "Vehicle Shop", string, "Purchase", "Sui");
+			ShowPlayerDialogEx(playerid, DIALOG_CARSHOP, DIALOG_STYLE_MSGBOX, "Vehicle Shop", string, "Mua", "Huy bo");
 		}
 	}
 	if(listid == CarList2 || listid == CarList)
@@ -1000,19 +1000,19 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 					new string[128];
 					SetPVarInt(playerid, "VehicleID", modelid);
 					format(string, sizeof(string), "Item: %s\nSo Credits cua ban: %s\nCost: {FFD700}%s{A9C4E4}\nCredits con lai: %s", VehicleName[modelid-400], number_format(PlayerInfo[playerid][pCredits]),number_format(ShopItems[5][sItemPrice]), number_format(PlayerInfo[playerid][pCredits]-ShopItems[5][sItemPrice]));
-					ShowPlayerDialogEx(playerid, DIALOG_CARSHOP, DIALOG_STYLE_MSGBOX, "Vehicle Shop", string, "Purchase", "Sui");
+					ShowPlayerDialogEx(playerid, DIALOG_CARSHOP, DIALOG_STYLE_MSGBOX, "Vehicle Shop", string, "Mua", "Huy bo");
 				}
 				else
 				{
 					new string[128];
 					SetPVarInt(playerid, "VehicleID", modelid);
 					format(string, sizeof(string), "Item: %s\nSo Credits cua ban: %s\nCost: {FFD700}%s{A9C4E4}\nCredits con lai: %s", VehicleName[modelid-400], number_format(PlayerInfo[playerid][pCredits]),number_format(ShopItems[20][sItemPrice]), number_format(PlayerInfo[playerid][pCredits]-ShopItems[20][sItemPrice]));
-					ShowPlayerDialogEx(playerid, DIALOG_RENTACAR, DIALOG_STYLE_MSGBOX, "Rent a Car", string, "Purchase", "Sui");
+					ShowPlayerDialogEx(playerid, DIALOG_RENTACAR, DIALOG_STYLE_MSGBOX, "Rent a Car", string, "Mua", "Huy bo");
 				}
 			}
 			else if(GetPVarInt(playerid, "voucherdialog") == 1)
 			{
-				if(!vehicleCountCheck(playerid)) return DeletePVar(playerid, "voucherdialog"), DeletePVar(playerid, "WhoIsThis"), SendClientMessageEx(playerid, COLOR_GREY, "You cannot own anymore vehicles - You may purchase additional vehicle slots through /vstorage.");
+				if(!vehicleCountCheck(playerid)) return DeletePVar(playerid, "voucherdialog"), DeletePVar(playerid, "WhoIsThis"), SendClientMessageEx(playerid, COLOR_GREY, "You cannot own anymore vehicles - You may Mua additional vehicle slots through /vstorage.");
 				if(!vehicleSpawnCountCheck(playerid)) return DeletePVar(playerid, "voucherdialog"), DeletePVar(playerid, "WhoIsThis"), SendClientMessageEx(playerid, COLOR_GREY, "You have too many spawned vehicles, please despawn one.");
 				if(PlayerInfo[playerid][pVehVoucher] <= 0) return DeletePVar(playerid, "voucherdialog"), DeletePVar(playerid, "WhoIsThis"), SendClientMessageEx(playerid, COLOR_GREY, "You don't have a car voucher.");
 				new Float: arr_fPlayerPos[4], szLog[128], szString[128];
@@ -1042,7 +1042,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 	        new string[128];
        		SetPVarInt(playerid, "VehicleID", modelid);
        		format(string, sizeof(string), "Item: %s\nCost: 1 Restricted Car Voucher", VehicleName[modelid-400]);
-   			ShowPlayerDialogEx(playerid, DIALOG_CARSHOP2, DIALOG_STYLE_MSGBOX, "Restricted Vehicle Shop", string, "Purchase", "Sui");
+   			ShowPlayerDialogEx(playerid, DIALOG_CARSHOP2, DIALOG_STYLE_MSGBOX, "Restricted Vehicle Shop", string, "Mua", "Huy bo");
 	    }
 	}
 	if(listid == SkinList)
@@ -1071,12 +1071,12 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 				}
 				if(GetPVarInt(playerid, "freeSkin") == 1)
 			    {
-					SendClientMessageEx(playerid, COLOR_GREY, "That skin ID is either invalid or restricted to a group / VIP!");
-	            	ShowModelSelectionMenu(playerid, SkinList, "Change your skin.");
+					SendClientMessageEx(playerid, COLOR_GREY, "ID da do khong hop le hoac bi han che doi voi mot nhom / VIP!");
+	            	ShowModelLua chonionMenu(playerid, SkinList, "Thay doi lan da cua ban.");
 				}
 				else {
-					SendClientMessageEx(playerid, COLOR_GREY, "That skin ID is either invalid or restricted to a group / VIP!");
-	            	ShowModelSelectionMenu(playerid, SkinList, "Change your skin.");
+					SendClientMessageEx(playerid, COLOR_GREY, "ID da do khong hop le hoac bi han che doi voi mot nhom / VIP!");
+	            	ShowModelLua chonionMenu(playerid, SkinList, "Thay doi lan da cua ban.");
 				}
 			}
 			else {
@@ -1098,7 +1098,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 
 					if(iBusiness == INVALID_BUSINESS_ID || Businesses[iBusiness][bType] != BUSINESS_TYPE_CLOTHING) return SendClientMessageEx(playerid, COLOR_GRAD2, "Ban khong o trong cua hang ao quan!");
 			        if(GetPlayerCash(playerid) < GetPVarInt(playerid, "SkinChangeCost")) return SendClientMessageEx(playerid, COLOR_GRAD2, "Ban khong the chon nhung bo ao quan nay!");
-					GameTextForPlayer(playerid, "~g~Clothes purchased!", 2000, 1);
+					GameTextForPlayer(playerid, "~g~Mua quan ao!", 2000, 1);
 					PlayerInfo[playerid][pModel] = modelid;
 					SetPlayerSkin(playerid, modelid);
 
@@ -1107,7 +1107,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 					Businesses[iBusiness][bSafeBalance] += TaxSale(GetPVarInt(playerid, "SkinChangeCost"));
                     GivePlayerCash(playerid, -GetPVarInt(playerid, "SkinChangeCost"));
 
-					format(string, sizeof(string), "%s(%d) (IP: %s) has bought skin %d in %s (%d) for %d.", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), modelid, Businesses[InBusiness(playerid)][bName],InBusiness(playerid),GetPVarInt(playerid, "SkinChangeCost"));
+					format(string, sizeof(string), "%s(%d) (IP: %s) da mua da %d trong %s (%d) cho %d.", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), modelid, Businesses[InBusiness(playerid)][bName],InBusiness(playerid),GetPVarInt(playerid, "SkinChangeCost"));
 					Log("logs/business.log", string);
 					DeletePVar(playerid, "SkinChangeCost");
 				}
@@ -1122,7 +1122,7 @@ public OnPlayerModelSelection(playerid, response, listid, modelid)
 			if(response) {
 				SetPVarInt(playerid, PVAR_FURNITURE_BUYMODEL, modelid);
 				format(szMiscArray, sizeof(szMiscArray), "Would you like to buy this %s for $%s and %s materials?", GetFurnitureName(modelid), number_format(GetFurniturePrice(modelid)), number_format(GetFurniturePrice(modelid) / 10));
-				ShowPlayerDialogEx(playerid, DIALOG_FURNITURE_BUYCONFIRM, DIALOG_STYLE_MSGBOX, "Furniture Menu | Confirm Purchase", szMiscArray, "Buy", "Sui");
+				ShowPlayerDialogEx(playerid, DIALOG_FURNITURE_BUYCONFIRM, DIALOG_STYLE_MSGBOX, "Furniture Menu | Confirm Mua", szMiscArray, "Buy", "Huy bo");
 			}
 			else {
 				FurnitureMenu(playerid, 0);
@@ -1152,7 +1152,7 @@ public OnPlayerStreamIn(playerid, forplayerid)
 	            if(GetPVarInt(playerid, "InRangeBackup") < 1)
 	            {
 		            SetPVarInt(playerid, "InRangeBackup", 30);
-		            format(string, sizeof(string), "You are in range of %s's backup call (Code 3) (Blue marker on minimap)", GetPlayerNameEx(playerid));
+		            format(string, sizeof(string), "Ban dang trong pham vi cua %s's du phong cuoc goi (Ma 3) (Xanh duong diem danh dau tren ban do nho)", GetPlayerNameEx(playerid));
 		            SendClientMessageEx(forplayerid, DEPTRADIO, string);
 				}
 	  			SetPlayerMarkerForPlayer(forplayerid, playerid, 0x2641FEAA);
@@ -1165,7 +1165,7 @@ public OnPlayerStreamIn(playerid, forplayerid)
 	            if(GetPVarInt(playerid, "InRangeBackup") < 1)
 	            {
 		            SetPVarInt(playerid, "InRangeBackup", 30);
-		            format(string, sizeof(string), "You are in range of %s's backup call (Code 2) (Green marker on minimap)", GetPlayerNameEx(playerid));
+		            format(string, sizeof(string), "Ban dang trong pham vi cua %s's du phong cuoc goi (Ma 2) (Xanh diem danh dau tren ban do nho)", GetPlayerNameEx(playerid));
 		            SendClientMessageEx(forplayerid, DEPTRADIO, string);
 				}
 	  			SetPlayerMarkerForPlayer(forplayerid, playerid, 0x00FF33AA);
@@ -1178,7 +1178,7 @@ public OnPlayerStreamIn(playerid, forplayerid)
 	            if(GetPVarInt(playerid, "InRangeBackup") < 1)
 	            {
 		            SetPVarInt(playerid, "InRangeBackup", 30);
-		            format(string, sizeof(string), "You are in range of %s's backup call (Code 3) (Blue marker on minimap)", GetPlayerNameEx(playerid));
+		            format(string, sizeof(string), "Ban dang trong pham vi cua %s's du phong cuoc goi (Ma 3) (Xanh duong diem danh dau tren ban do nho)", GetPlayerNameEx(playerid));
 		            SendClientMessageEx(forplayerid, DEPTRADIO, string);
 				}
 	  			SetPlayerMarkerForPlayer(forplayerid, playerid, 0x2641FEAA);
@@ -1223,7 +1223,7 @@ public OnPlayerConnect(playerid)
 	DeletePVar(playerid, "TempLevel");
 	HackingMods[playerid] = 0;
 	PlayerInfo[playerid][pHitman] = -1;
-	pSpeed[playerid] = 0.0;
+	pToc do[playerid] = 0.0;
 	//SetTimerEx("HackingTimer", 1000, 0, "i", playerid);
 
 	for(new i = 0; i < 3; i++) {
@@ -1268,10 +1268,10 @@ public OnPlayerConnect(playerid)
 	}
 
 	for(new i = 0; i < MAX_BUSINESSSALES; i++) {
-        Selected[playerid][i] = 0;
+        Lua choned[playerid][i] = 0;
 	}
-	for(new x=0; x < mS_SELECTION_ITEMS; x++) {
-        gSelectionItems[playerid][x] = PlayerText:INVALID_TEXT_DRAW;
+	for(new x=0; x < mS_Lua chonION_ITEMS; x++) {
+        gLua chonionItems[playerid][x] = PlayerText:INVALID_TEXT_DRAW;
 	}
 
 	gHeaderTextDrawId[playerid] = PlayerText:INVALID_TEXT_DRAW;
@@ -1350,13 +1350,13 @@ public OnPlayerConnect(playerid)
 	unbanip[playerid][0] = 0;
     advisorchat[playerid] = 1;
 	ChosenSkin[playerid]=0;
-	SelectFChar[playerid]=0;
+	Lua chonFChar[playerid]=0;
 	MatsHolding[playerid]=0;
 	MatDeliver[playerid]=-1;
 	MatDeliver2[playerid]=0;
 	szAdvert[playerid][0] = 0;
 	AdvertType[playerid] = 0;
-	SelectFCharPlace[playerid]=0;
+	Lua chonFCharPlace[playerid]=0;
 	GettingJob[playerid]=0;
 	GettingJob2[playerid]=0;
 	GettingJob3[playerid]=0;
@@ -1587,7 +1587,7 @@ public OnPlayerConnect(playerid)
 	SetPlayerVirtualWorld(playerid, 1);
 
 	SetPlayerColor(playerid,TEAM_HIT_COLOR);
-	SendClientMessage( playerid, COLOR_WHITE, "SERVER: Chao mung ban den voi SARP.Online!" );
+	SendClientMessage( playerid, COLOR_WHITE, "SERVER: Chao mung ban den voi LSRP.Online!" );
 
 	SyncPlayerTime(playerid);
 
@@ -1657,7 +1657,7 @@ public OnPlayerDisconnect(playerid, reason)
 				if(hgPlayerCount == 3)
 				{
 					new szmessage[128];
-					format(szmessage, sizeof(szmessage), "** %s has came in third place in the Hunger Games Event.", GetPlayerNameEx(playerid));
+					format(szmessage, sizeof(szmessage), "** %s da dung o vi tri thu ba trong Su kien Hunger Games", GetPlayerNameEx(playerid));
 					SendClientMessageToAll(COLOR_LIGHTBLUE, szmessage);
 
 					SetHealth(playerid, HungerPlayerInfo[playerid][hgLastHealth]);
@@ -1672,7 +1672,7 @@ public OnPlayerDisconnect(playerid, reason)
 					hgPlayerCount--;
 					HideHungerGamesTextdraw(playerid);
 					PlayerInfo[playerid][pRewardDrawChance] += 10;
-					SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "** You have been given 10 Draw Chances for the Fall Into Fun Event.");
+					SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "** Ban da nhan duoc 10 Co hoi Rut tham cho Su kien Roi vao Niem vui.");
 
 					for(new w = 0; w < 12; w++)
 					{
@@ -1686,7 +1686,7 @@ public OnPlayerDisconnect(playerid, reason)
 				else if(hgPlayerCount == 2)
 				{
 					new szmessage[128];
-					format(szmessage, sizeof(szmessage), "** %s has came in second place in the Hunger Games Event.", GetPlayerNameEx(playerid));
+					format(szmessage, sizeof(szmessage), "** %s da dung o vi tri thu hai trong Su kien Hunger Games.", GetPlayerNameEx(playerid));
 					SendClientMessageToAll(COLOR_LIGHTBLUE, szmessage);
 
 					SetHealth(playerid, HungerPlayerInfo[playerid][hgLastHealth]);
@@ -1701,7 +1701,7 @@ public OnPlayerDisconnect(playerid, reason)
 					hgPlayerCount--;
 					HideHungerGamesTextdraw(playerid);
 					PlayerInfo[playerid][pRewardDrawChance] += 25;
-					SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "** You have been given 25 Draw Chances for the Fall Into Fun Event.");
+					SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "** Ban da nhan duoc 25 Co hoi Rut tham cho Su kien Roi vao Niem vui.");
 
 					for(new w = 0; w < 12; w++)
 					{
@@ -1716,7 +1716,7 @@ public OnPlayerDisconnect(playerid, reason)
 					{
 						if(HungerPlayerInfo[i][hgInEvent] == 1)
 						{
-							format(szmessage, sizeof(szmessage), "** %s has came in first place in the Hunger Games Event.", GetPlayerNameEx(i));
+							format(szmessage, sizeof(szmessage), "** %s da dung o vi tri dau tien trong Su kien Hunger Games.", GetPlayerNameEx(i));
 							SendClientMessageToAll(COLOR_LIGHTBLUE, szmessage);
 
 							SetHealth(i, HungerPlayerInfo[i][hgLastHealth]);
@@ -1731,7 +1731,7 @@ public OnPlayerDisconnect(playerid, reason)
 							hgPlayerCount--;
 							HideHungerGamesTextdraw(i);
 							PlayerInfo[i][pRewardDrawChance] += 50;
-							SendClientMessageEx(i, COLOR_LIGHTBLUE, "** You have been given 50 Draw Chances for the Fall Into Fun Event.");
+							SendClientMessageEx(i, COLOR_LIGHTBLUE, "** Ban da nhan duoc 50 Co hoi Rut tham cho Su kien Roi vao Niem vui.");
 							hgActive = 0;
 
 							for(new w = 0; w < 12; w++)
@@ -1769,7 +1769,7 @@ public OnPlayerDisconnect(playerid, reason)
 
 					ResetPlayerWeapons(playerid);
 
-					SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "* You have died and has been removed from the Hunger Games Event, better luck next time.");
+					SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "* Ban da chet va bi loai khoi Su kien Hunger Games, chuc ban may man lan sau.");
 
 					HungerPlayerInfo[playerid][hgInEvent] = 0;
 					hgPlayerCount--;
@@ -1787,7 +1787,7 @@ public OnPlayerDisconnect(playerid, reason)
 				}
 
 				new string[128];
-				format(string, sizeof(string), "Players in event: %d", hgPlayerCount);
+				format(string, sizeof(string), "Nguoi choi trong su kien: %d", hgPlayerCount);
 				foreach(new i: Player)
 				{
 					PlayerTextDrawSetString(i, HungerPlayerInfo[i][hgPlayerText], string);
@@ -1848,7 +1848,7 @@ public OnPlayerDisconnect(playerid, reason)
 		{
 		    if(GetVehicleModel(GetPVarInt(playerid, "Gas_TrailerID")) == 584)
 		    {
-		        printf("Deleting Trailer. Veh ID %d Player %s", GetPVarInt(playerid, "Gas_TrailerID"), GetPlayerNameExt(playerid));
+		        printf("dang xoa doan gioi thieu. Veh ID %d Player %s", GetPVarInt(playerid, "Gas_TrailerID"), GetPlayerNameExt(playerid));
 		        DestroyVehicle(GetPVarInt(playerid, "Gas_TrailerID"));
 		    }
 		}
@@ -1896,7 +1896,7 @@ public OnPlayerDisconnect(playerid, reason)
 		    if(GetPVarType(playerid, "pBoomBoxArea"))
 		    {
 		        new string[128];
-				format(string, sizeof(string), "The boombox owner (%s) has logged off", GetPlayerNameEx(playerid));
+				format(string, sizeof(string), " boombox chu so huu (%s) da dang tat", GetPlayerNameEx(playerid));
 		        foreach(new i: Player)
 				{
 					if(IsPlayerInDynamicArea(i, GetPVarInt(playerid, "pBoomBoxArea")))
@@ -1928,7 +1928,7 @@ public OnPlayerDisconnect(playerid, reason)
             DeletePVar(GetPVarInt(playerid, "DraggingPlayer"), "BeingDragged");
 		}
 		if(pTazer{playerid} == 1) GivePlayerValidWeapon(playerid,pTazerReplace{playerid});
-		if(GetPVarInt(playerid, "SpeedRadar") == 1) GivePlayerValidWeapon(playerid, GetPVarInt(playerid, "RadarReplacement"));
+		if(GetPVarInt(playerid, "Toc doRadar") == 1) GivePlayerValidWeapon(playerid, GetPVarInt(playerid, "RadarReplacement"));
 
 		if(GetPVarType(playerid, "MovingStretcher")) {
 			KillTimer(GetPVarInt(playerid, "TickEMSMove"));
@@ -1963,7 +1963,7 @@ public OnPlayerDisconnect(playerid, reason)
 		}
 		if(GetPVarType(playerid, "ttSeller"))
 		{
-			SendClientMessageEx(GetPVarInt(playerid, "ttSeller"), COLOR_GRAD2, "The buyer has disconnected from the server.");
+			SendClientMessageEx(GetPVarInt(playerid, "ttSeller"), COLOR_GRAD2, "Nguoi mua da ngat ket noi voi may chu.");
 			DeletePVar(GetPVarInt(playerid, "ttSeller"), "ttBuyer");
 			DeletePVar(GetPVarInt(playerid, "ttSeller"), "ttCost");
 			DeletePVar(playerid, "ttSeller");
@@ -2018,7 +2018,7 @@ public OnPlayerDisconnect(playerid, reason)
 				}
 				else
 				{
-					format(string, sizeof(string), "%s has left the server (timeout).", GetPlayerNameEx(playerid));
+					format(string, sizeof(string), "%s da roi khoi may chu (het thoi gian cho).", GetPlayerNameEx(playerid));
 					ProxDetector(30.0, playerid, string, COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW);
 				}
 				format(string, sizeof(string), "%s (ID: %d | SQL ID: %d | Level: %d | IP: %s) has timed out.", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pLevel], PlayerInfo[playerid][pIP]);
@@ -2037,7 +2037,7 @@ public OnPlayerDisconnect(playerid, reason)
 					if(PlayerInfo[playerid][pWantedJailTime] != 0) PlayerInfo[playerid][pJailTime] += PlayerInfo[playerid][pWantedJailTime]*60; else PlayerInfo[playerid][pJailTime] += 120*60;
 					if(PlayerInfo[playerid][pWantedJailFine] != 0) GivePlayerCash(playerid, -PlayerInfo[playerid][pWantedJailFine]);
 
-					format(string, sizeof(string), "%s has crashed while cuffed. (ID: %d | SQLID: %D | JT: %d | F: %d | IP: %s)", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pWantedJailTime], PlayerInfo[playerid][pWantedJailFine], PlayerInfo[playerid][pIP]);
+					format(string, sizeof(string), "%s da bi roi trong khi bi cong. (ID: %d | SQLID: %D | JT: %d | F: %d | IP: %s)", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pWantedJailTime], PlayerInfo[playerid][pWantedJailFine], PlayerInfo[playerid][pIP]);
 					Log("logs/login.log", string);
 
 					PlayerInfo[playerid][pBailPrice] = 15000000;
@@ -2063,14 +2063,14 @@ public OnPlayerDisconnect(playerid, reason)
 								}
 							}
 						}
-						format(string, sizeof string, "%s%s %s da het thoi gian quy dinh.(leaving)", badge, rank, GetPlayerNameEx(playerid));
+						format(string, sizeof string, "%s%s %s da het thoi gian quy dinh.(roi di)", badge, rank, GetPlayerNameEx(playerid));
 						GroupLog(PlayerInfo[playerid][pMember], string);
 					}
 					else if((0 <= PlayerInfo[playerid][pMember] < MAX_GROUPS) && !IsACop(playerid))
 					{
 						if(PlayerInfo[playerid][pDuty] || arrGroupData[PlayerInfo[playerid][pMember]][g_iGroupType] == GROUP_TYPE_CRIMINAL)
 						{
-							format(string, sizeof(string), "** %s%s %s da khong con nua (( lost connection )) **", badge, rank, GetPlayerNameEx(playerid));
+							format(string, sizeof(string), "** %s%s %s da khong con nua ((mat ket noi)) **", badge, rank, GetPlayerNameEx(playerid));
 							foreach(new i: Player)
 							{
 								if(PlayerInfo[i][pToggledChats][12] == 0)
@@ -2079,7 +2079,7 @@ public OnPlayerDisconnect(playerid, reason)
 								}
 							}
 						}
-						format(string, sizeof string, "%s%s %s has lost connection.", badge, rank, GetPlayerNameEx(playerid));
+						format(string, sizeof string, "%s%s %s da mat ket noi.", badge, rank, GetPlayerNameEx(playerid));
 						GroupLog(PlayerInfo[playerid][pMember], string);
 					}
 				}
@@ -2104,10 +2104,10 @@ public OnPlayerDisconnect(playerid, reason)
 				}
 				else
 				{
-					format(string, sizeof(string), "%s da sui khoi may chu (leaving).", GetPlayerNameEx(playerid));
+					format(string, sizeof(string), "%s da Huy bo khoi may chu (leaving).", GetPlayerNameEx(playerid));
 					ProxDetector(30.0, playerid, string, COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW);
 				}
-				format(string, sizeof(string), "%s (ID: %d | SQL ID: %d | Level: %d | IP: %s) has disconnected.", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pLevel], PlayerInfo[playerid][pIP]);
+				format(string, sizeof(string), "%s (ID: %d | SQL ID: %d | Level: %d | IP: %s) da ngat ket noi.", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pLevel], PlayerInfo[playerid][pIP]);
 				Log("logs/login.log", string);
 				if(PlayerCuffed[playerid] != 0)
 				{
@@ -2124,10 +2124,10 @@ public OnPlayerDisconnect(playerid, reason)
 					if(PlayerInfo[playerid][pWantedJailFine] != 0) GivePlayerCash(playerid, -PlayerInfo[playerid][pWantedJailFine]);
 
 					new szMessage[80+MAX_PLAYER_NAME];
-					format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s da sui khoi may chu (/q) khi dang bi cong tay.", GetPlayerNameEx(playerid));
+					format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s da Huy bo khoi may chu (/q) khi dang bi cong tay.", GetPlayerNameEx(playerid));
 					ABroadCast(COLOR_YELLOW, szMessage, 2);
 
-					format(string, sizeof(string), "%s has left (/q) while cuffed. (ID: %d | SQLID: %D | JT: %d | F: %d | IP: %s)", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pWantedJailTime], PlayerInfo[playerid][pWantedJailFine], PlayerInfo[playerid][pIP]);
+					format(string, sizeof(string), "%s da roi di (/q) trong khi cong. (ID: %d | SQLID: %D | JT: %d | F: %d | IP: %s)", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pWantedJailTime], PlayerInfo[playerid][pWantedJailFine], PlayerInfo[playerid][pIP]);
 					Log("logs/login.log", string);
 
 					PlayerInfo[playerid][pBailPrice] = 15000000;
@@ -2142,7 +2142,7 @@ public OnPlayerDisconnect(playerid, reason)
 					if(PlayerInfo[playerid][pWantedJailTime] != 0) PlayerInfo[playerid][pJailTime] += PlayerInfo[playerid][pWantedJailTime]*60; else PlayerInfo[playerid][pJailTime] += 120*60;
 					if(PlayerInfo[playerid][pWantedJailFine] != 0) GivePlayerCash(playerid, -PlayerInfo[playerid][pWantedJailFine]);
 
-					format(string, sizeof(string), "%s da sui khoi may chu khi dang bi khong che. (ID: %d | SQLID: %D | JT: %d | F: %d | IP: %s)", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pWantedJailTime], PlayerInfo[playerid][pWantedJailFine], PlayerInfo[playerid][pIP]);
+					format(string, sizeof(string), "%s da Huy bo khoi may chu khi dang bi khong che. (ID: %d | SQLID: %D | JT: %d | F: %d | IP: %s)", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pWantedJailTime], PlayerInfo[playerid][pWantedJailFine], PlayerInfo[playerid][pIP]);
 					Log("logs/login.log", string);
 
 					PlayerInfo[playerid][pBailPrice] = 15000000;
@@ -2151,7 +2151,7 @@ public OnPlayerDisconnect(playerid, reason)
 					PlayerInfo[playerid][pWantedLevel] = 0;
 
 					new szMessage[80+MAX_PLAYER_NAME];
-					format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s da sui khoi may chu khi dang bi khong che.", GetPlayerNameEx(playerid));
+					format(szMessage, sizeof(szMessage), "{AA3333}AdmWarning{FFFF00}: %s da Huy bo khoi may chu khi dang bi khong che.", GetPlayerNameEx(playerid));
 					ABroadCast(COLOR_YELLOW, szMessage, 2);
 				}
 				if(((0 <= PlayerInfo[playerid][pMember] < MAX_GROUPS)) && (PlayerInfo[playerid][pAdmin] < 2 || (PlayerInfo[playerid][pAdmin] >= 2 && PlayerInfo[playerid][pTogReports])))
@@ -2172,14 +2172,14 @@ public OnPlayerDisconnect(playerid, reason)
 								}
 							}
 						}
-						format(string, sizeof string, "%s%s %s has logged out.", badge, rank, GetPlayerNameEx(playerid));
+						format(string, sizeof string, "%s%s %s 	da dang xuat.", badge, rank, GetPlayerNameEx(playerid));
 						GroupLog(PlayerInfo[playerid][pMember], string);
 					}
 					else if((0 <= PlayerInfo[playerid][pMember] < MAX_GROUPS) && !IsACop(playerid))
 					{
 						if(PlayerInfo[playerid][pDuty] || arrGroupData[PlayerInfo[playerid][pMember]][g_iGroupType] == GROUP_TYPE_CRIMINAL)
 						{
-							format(string, sizeof(string), "** %s%s %s is no longer available **", badge, rank, GetPlayerNameEx(playerid));
+							format(string, sizeof(string), "** %s%s %s khong con nua **", badge, rank, GetPlayerNameEx(playerid));
 							foreach(new i: Player)
 							{
 								if(PlayerInfo[i][pToggledChats][12] == 0)
@@ -2188,7 +2188,7 @@ public OnPlayerDisconnect(playerid, reason)
 								}
 							}
 						}
-						format(string, sizeof string, "%s%s has logged out.", badge, GetPlayerNameEx(playerid));
+						format(string, sizeof string, "%s%s da dang xuat.", badge, GetPlayerNameEx(playerid));
 						GroupLog(PlayerInfo[playerid][pMember], string);
 					}
 				}
@@ -2213,32 +2213,32 @@ public OnPlayerDisconnect(playerid, reason)
 				}
 				else
 				{
-					format(string, sizeof(string), "%s da sui khoi may chu (kicked/banned).", GetPlayerNameEx(playerid));
+					format(string, sizeof(string), "%s da Huy bo khoi may chu (kicked/banned).", GetPlayerNameEx(playerid));
 					ProxDetector(30.0, playerid, string, COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW);
 				}
-				format(string, sizeof(string), "%s (ID: %d | SQL ID: %d | Level: %d | IP: %s) has been kicked/banned.", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pLevel], PlayerInfo[playerid][pIP]);
+				format(string, sizeof(string), "%s (ID: %d | SQL ID: %d | Level: %d | IP: %s) da bi kick/ban.", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pLevel], PlayerInfo[playerid][pIP]);
 				Log("logs/login.log", string);
 			}
 			case 3:
 			{
 				if(PlayerInfo[playerid][pAdmin] < 2 && Spectating[playerid] != 1)
 				{
-					format(string, sizeof(string), "%s da sui khoi may chu (Force Relog).", GetPlayerNameEx(playerid));
+					format(string, sizeof(string), "%s da Huy bo khoi may chu (Buoc dang nhap lai).", GetPlayerNameEx(playerid));
 					ProxDetector(30.0, playerid, string, COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW,COLOR_YELLOW);
 				}
-				format(string, sizeof(string), "%s (ID: %d | SQL ID: %d | Level: %d | IP: %s) has been force relogged", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pLevel], PlayerInfo[playerid][pIP]);
+				format(string, sizeof(string), "%s (ID: %d | SQL ID: %d | Level: %d | IP: %s) da bi dang nhap lai", GetPlayerNameExt(playerid), playerid, GetPlayerSQLId(playerid), PlayerInfo[playerid][pLevel], PlayerInfo[playerid][pIP]);
 				Log("logs/login.log", string);
 			}
 		}
 		if(EventKernel[EventRequest] == playerid)
 		{
 			EventKernel[EventRequest] = INVALID_PLAYER_ID;
-			ABroadCast( COLOR_YELLOW, "{AA3333}AdmWarning{FFFF00}: The player that was requesting an event has disconnected/crashed.", 4 );
+			ABroadCast( COLOR_YELLOW, "{AA3333}AdmWarning{FFFF00}: Nguoi choi dang yeu cau su kien da ngat ket noi/gap su co.", 4 );
 		}
 		if(EventKernel[EventCreator] == playerid)
 		{
 			EventKernel[EventCreator] = INVALID_PLAYER_ID;
-			ABroadCast( COLOR_YELLOW, "{AA3333}AdmWarning{FFFF00}: The player that was creating an event has disconnected/crashed.", 4 );
+			ABroadCast( COLOR_YELLOW, "{AA3333}AdmWarning{FFFF00}: Nguoi choi dang tao su kien da ngat ket noi/bi loi.", 4 );
 		}
 		for(new x; x < sizeof(EventKernel[EventStaff]); x++) {
 			if(EventKernel[EventStaff][x] == playerid) {
@@ -2406,40 +2406,40 @@ public OnPlayerDisconnect(playerid, reason)
 		{
 			if (GetPVarType(i, "hFind") && GetPVarInt(i, "hFind") == playerid)
 			{
-				SendClientMessageEx(i, COLOR_GREY, "Nguoi choi ban dang theo doi da sui khoi may chu.");
+				SendClientMessageEx(i, COLOR_GREY, "Nguoi choi ban dang theo doi da Huy bo khoi may chu.");
 				DeletePVar(i, "hFind");
 				DisablePlayerCheckpoint(i);
 			}
 			if (GetPVarType(i, "Backup") && GetPVarInt(i, "Backup") == playerid)
 			{
-				SendClientMessageEx(i, COLOR_GREY, "Nguoi choi ban dang goi Backup da sui khoi may chu.");
+				SendClientMessageEx(i, COLOR_GREY, "Nguoi choi ban dang goi Backup da Huy bo khoi may chu.");
 				DeletePVar(i, "Backup");
 			}
 			if(TaxiAccepted[i] == playerid)
 			{
 				TaxiAccepted[i] = INVALID_PLAYER_ID;
-				GameTextForPlayer(i, "~w~Taxi Caller~n~~r~Da sui khoi may chu", 5000, 1);
+				GameTextForPlayer(i, "~w~Taxi Caller~n~~r~Da Huy bo khoi may chu", 5000, 1);
 				TaxiCallTime[i] = 0;
 				DisablePlayerCheckpoint(i);
 			}
 			if(EMSAccepted[i] == playerid)
 			{
 				EMSAccepted[i] = INVALID_PLAYER_ID;
-				GameTextForPlayer(i, "~w~EMS Caller~n~~r~Da sui khoi may chu", 5000, 1);
+				GameTextForPlayer(i, "~w~EMS Caller~n~~r~Da Huy bo khoi may chu", 5000, 1);
 				EMSCallTime[i] = 0;
 				DisablePlayerCheckpoint(i);
 			}
 			if(BusAccepted[i] == playerid)
 			{
 				BusAccepted[i] = INVALID_PLAYER_ID;
-				GameTextForPlayer(i, "~w~Bus Caller~n~~r~Da sui khoi may chu", 5000, 1);
+				GameTextForPlayer(i, "~w~Bus Caller~n~~r~Da Huy bo khoi may chu", 5000, 1);
 				BusCallTime[i] = 0;
 				DisablePlayerCheckpoint(i);
 			}
 			if(MedicAccepted[i] == playerid)
 			{
 				TaxiAccepted[playerid] = INVALID_PLAYER_ID; BusAccepted[playerid] = INVALID_PLAYER_ID; MedicAccepted[playerid] = INVALID_PLAYER_ID;
-				GameTextForPlayer(i, "~w~Medic Caller~n~~r~Da sui khoi may chu", 5000, 1);
+				GameTextForPlayer(i, "~w~Medic Caller~n~~r~Da Huy bo khoi may chu", 5000, 1);
 				MedicCallTime[i] = 0;
 				DisablePlayerCheckpoint(i);
 			}
@@ -2467,7 +2467,7 @@ public OnPlayerDisconnect(playerid, reason)
 			{
 				if(IsPlayerConnected(GetChased[playerid]))
 				{
-					SendClientMessageEx(GetChased[playerid], COLOR_YELLOW, "Hit cua ban da sui khoi may chu.");
+					SendClientMessageEx(GetChased[playerid], COLOR_YELLOW, "Hit cua ban da Huy bo khoi may chu.");
 					GoChase[GetChased[playerid]] = INVALID_PLAYER_ID;
 				}
 			}
@@ -2573,7 +2573,7 @@ public OnPlayerDisconnect(playerid, reason)
 			DestroyDynamic3DTextLabel(RFLTeamN3D[playerid]);
 			RFLTeamN3D[playerid] = Text3D:-1;
 		}
-		pSpeed[playerid] = 0.0;
+		pToc do[playerid] = 0.0;
 		SetPVarInt(playerid, "PlayerOwnASurf", 0);
 	}
 	PlayerInfo[playerid][pWarrant][0] = 0;
@@ -2606,9 +2606,9 @@ public OnRconLoginAttempt(ip[], password[], success)
 			{
 				if(PlayerInfo[i][pAdmin] < 1337)
 				{
-					CreateBan(INVALID_PLAYER_ID, PlayerInfo[i][pId], i, PlayerInfo[i][pIP], "Successful RCON Login - Not Head Admin", 9999);
+					CreateBan(INVALID_PLAYER_ID, PlayerInfo[i][pId], i, PlayerInfo[i][pIP], "dang nhap RCON thanh cong - Khong phai quan tri vien chinh", 9999);
 
-					format(szMiscArray, sizeof(szMiscArray), "{AA3333}AdmWarning{FFFF00}: %s(%s) has successfully logged into RCON without being a Head Admin, and has been perma-banned.", GetPlayerNameEx(i), ip);
+					format(szMiscArray, sizeof(szMiscArray), "{AA3333}AdmWarning{FFFF00}: %s(%s) da dang nhap thanh cong vao RCON ma khong phai la Quan tri vien truong va da bi cam vinh vien.", GetPlayerNameEx(i), ip);
 					ABroadCast(COLOR_YELLOW, szMiscArray, 2);
 				}
 			}
@@ -2916,7 +2916,7 @@ public OnPlayerSpawn(playerid)
 		AdvanceTutorial(playerid);
 	}
 
-	if(PlayerInfo[playerid][pTut] == -1 && PlayerInfo[playerid][pNation] != 0 && PlayerInfo[playerid][pNation] != 1) ShowPlayerDialogEx(playerid, DIALOG_NATION_CHECK, DIALOG_STYLE_LIST, "Please chose a nation.", "San Andreas\nNew Robada", "Select", "<<");
+	if(PlayerInfo[playerid][pTut] == -1 && PlayerInfo[playerid][pNation] != 0 && PlayerInfo[playerid][pNation] != 1) ShowPlayerDialogEx(playerid, DIALOG_NATION_CHECK, DIALOG_STYLE_LIST, "Please chose a nation.", "San Andreas\nNew Robada", "Lua chon", "<<");
 	return 1;
 }
 
@@ -2968,8 +2968,8 @@ public OnPlayerEnterCheckpoint(playerid)
 			return SendClientMessageEx(playerid, COLOR_WHITE, "Ban khong the vua o trong xe va vua tham gia su kien nay cung luc.");
 	    }
 	    if(EventRCPT[RCPIdCurrent[playerid]] == 3 && PlayerInfo[playerid][pHydration] < 60) {
-		    SendClientMessageEx(playerid, COLOR_WHITE, "You have entered a Watering Station checkpoint, you need to stay here in order to get rehydrated again.");
-		    SendClientMessageEx(playerid, COLOR_WHITE, "You may choose to leave at any point or wait until you get the message of fully rehydrated.");
+		    SendClientMessageEx(playerid, COLOR_WHITE, "Ban da vao tram kiem soat Watering Station, ban can o lai day de duoc bu nuoc lan nua.");
+		    SendClientMessageEx(playerid, COLOR_WHITE, "Ban co the chon roi di bat cu luc nao hoac doi cho den khi nhan duoc thong bao da bu nuoc day du.");
             SetPVarInt(playerid, "WSRCPTimerId", SetTimerEx("WateringStation", 4000, 1, "i", playerid));
             SetPVarInt(playerid, "InWaterStationRCP", 1);
             return 1;
@@ -2983,7 +2983,7 @@ public OnPlayerEnterCheckpoint(playerid)
 			}
 			else if(PlayerInfo[playerid][pRacePlayerLaps] == 25) {
 			    PlayerInfo[playerid][pEXPToken]++;
-			    SendClientMessageEx(playerid, COLOR_YELLOW, "You have been given a Double EXP Token for completing 25 laps");
+			    SendClientMessageEx(playerid, COLOR_YELLOW, "Ban da duoc tang mot Ma thong bao EXP kep khi hoan thanh 25 vong dua");
 			}
 			if(toglapcount == 0 && rflstatus > 0) {
 				RaceTotalLaps++;
@@ -3001,10 +3001,10 @@ public OnPlayerEnterCheckpoint(playerid)
 			}
 			new string[128];
 			if(PlayerInfo[playerid][pRFLTeam] != -1) {
-				format(string, sizeof(string), "Lap successfully completed. Laps Completed: %d | Team Laps Completed: %d | Total Laps Completed: %d", PlayerInfo[playerid][pRacePlayerLaps], RFLInfo[PlayerInfo[playerid][pRFLTeam]][RFLlaps], RaceTotalLaps);
+				format(string, sizeof(string), "Vong thanh cong da hoan thanh, So vong da hoan thanh: %d | Nhom So vong da hoan thanh: %d | Tong So vong da hoan thanh: %d", PlayerInfo[playerid][pRacePlayerLaps], RFLInfo[PlayerInfo[playerid][pRFLTeam]][RFLlaps], RaceTotalLaps);
 			}
 			else {
-				format(string, sizeof(string), "Lap successfully completed. Laps Completed: %d | Total Laps Completed: %d", PlayerInfo[playerid][pRacePlayerLaps], RaceTotalLaps);
+				format(string, sizeof(string), "Vong thanh cong da hoan thanh, So vong da hoan thanh: %d | Tong So vong da hoan thanh: %d", PlayerInfo[playerid][pRacePlayerLaps], RaceTotalLaps);
 			}
 			SendClientMessageEx(playerid, COLOR_WHITE, string);
 		}
@@ -3016,17 +3016,17 @@ public OnPlayerEnterCheckpoint(playerid)
 		new string[128];
         if(PlayerInfo[playerid][pHydration] > 60)
         {
-			format(string, sizeof(string), "Hydration level normal(%d)", PlayerInfo[playerid][pHydration]);
+			format(string, sizeof(string), "Muc do hydrat hoa binh thuong(%d)", PlayerInfo[playerid][pHydration]);
 			SendClientMessageEx(playerid, COLOR_GREEN, string);
 		}
 		else if(PlayerInfo[playerid][pHydration] < 61 && PlayerInfo[playerid][pHydration] > 30)
 		{
-		    format(string, sizeof(string), "Hydration level low(%d)", PlayerInfo[playerid][pHydration]);
+		    format(string, sizeof(string), "Muc do hydrat hoa thap(%d)", PlayerInfo[playerid][pHydration]);
 			SendClientMessageEx(playerid, COLOR_YELLOW, string);
 		}
 		else if(PlayerInfo[playerid][pHydration] < 31 && PlayerInfo[playerid][pHydration] > 0)
 		{
-		    format(string, sizeof(string), "Hydration level very low(%d)", PlayerInfo[playerid][pHydration]);
+		    format(string, sizeof(string), "Muc do hydrat hoa rat thap(%d)", PlayerInfo[playerid][pHydration]);
 			SendClientMessageEx(playerid, COLOR_RED, string);
 		}
 		else if(PlayerInfo[playerid][pHydration] < 0)
@@ -3102,7 +3102,7 @@ public OnPlayerEnterCheckpoint(playerid)
 			mysql_format(MainPipeline, szMessage, sizeof(szMessage), "UPDATE `vehicles` SET `pvFuel` = %0.5f WHERE `id` = '%d' AND `sqlID` = '%d'", VehicleFuel[GetPVarInt(playerid, "LockPickVehicle")], GetPVarInt(playerid, "LockPickVehicleSQLId"), GetPVarInt(playerid, "LockPickPlayerSQLId"));
 			mysql_tquery(MainPipeline, szMessage, "OnQueryFinish", "ii", SENDDATA_THREAD, playerid);
 			GetPVarString(playerid, "LockPickPlayerName", ip2, sizeof(ip2));
-			format(szMessage, sizeof(szMessage), "[LOCK PICK] %s(%d) (IP:%s) delivered a %s(VID:%d SQLId:%d) owned by %s(Offline SQLId %d)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), ip, GetVehicleName(GetPVarInt(playerid, "LockPickVehicle")), GetPVarInt(playerid, "LockPickVehicle"), GetPVarInt(playerid, "LockPickVehicleSQLId"), ip2, GetPVarInt(playerid, "LockPickPlayerSQLId"));
+			format(szMessage, sizeof(szMessage), "[LOCK PICK] %s(%d) (IP:%s) giao mot %s(VID:%d SQLId:%d) duoc so huu boi %s(Offline SQLId %d)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), ip, GetVehicleName(GetPVarInt(playerid, "LockPickVehicle")), GetPVarInt(playerid, "LockPickVehicle"), GetPVarInt(playerid, "LockPickVehicleSQLId"), ip2, GetPVarInt(playerid, "LockPickPlayerSQLId"));
 			Log("logs/playervehicle.log", szMessage);
 			DeletePVar(playerid, "LockPickVehicleSQLId");
 			DeletePVar(playerid, "LockPickPlayerSQLId");
@@ -3111,7 +3111,7 @@ public OnPlayerEnterCheckpoint(playerid)
 		else {
 			new ownerid = GetPVarInt(playerid, "LockPickPlayer"), slot = GetPlayerVehicle(GetPVarInt(playerid, "LockPickPlayer"), GetPVarInt(playerid, "LockPickVehicle"));
 			GetPlayerIp(ownerid, ip2, sizeof(ip2));
-			format(szMessage, sizeof(szMessage), "[LOCK PICK] %s(%d) (IP:%s) delivered a %s(VID:%d Slot %d) owned by %s(IP:%s)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), ip, GetVehicleName(PlayerVehicleInfo[ownerid][slot][pvId]), PlayerVehicleInfo[ownerid][slot][pvId], slot, GetPlayerNameEx(ownerid), ip2);
+			format(szMessage, sizeof(szMessage), "[LOCK PICK] %s(%d) (IP:%s) giao mot %s(VID:%d Slot %d) duoc so huu boi %s(IP:%s)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), ip, GetVehicleName(PlayerVehicleInfo[ownerid][slot][pvId]), PlayerVehicleInfo[ownerid][slot][pvId], slot, GetPlayerNameEx(ownerid), ip2);
 			Log("logs/playervehicle.log", szMessage);
 			--PlayerCars;
 			VehicleSpawned[ownerid]--;
@@ -3368,12 +3368,12 @@ public OnPlayerEnterCheckpoint(playerid)
 	{
 	    DeletePVar(playerid, "Finding");
 	    DisablePlayerCheckpoint(playerid);
-	    GameTextForPlayer(playerid, "~w~Reached destination", 5000, 1);
+	    GameTextForPlayer(playerid, "~w~Da hoan thanh", 5000, 1);
 	}
 	if(TaxiCallTime[playerid] > 0 && TaxiAccepted[playerid] != INVALID_PLAYER_ID)
 	{
 		TaxiAccepted[playerid] = INVALID_PLAYER_ID;
-		GameTextForPlayer(playerid, "~w~Reached destination", 5000, 1);
+		GameTextForPlayer(playerid, "~w~Da hoan thanh", 5000, 1);
 		TaxiCallTime[playerid] = 0;
 		DisablePlayerCheckpoint(playerid);
 	}
@@ -3383,14 +3383,14 @@ public OnPlayerEnterCheckpoint(playerid)
 	    {
 	    	SendEMSQueue(EMSAccepted[playerid],2);
 	    	EMSAccepted[playerid] = INVALID_PLAYER_ID;
-	    	GameTextForPlayer(playerid, "~w~Reached destination", 5000, 1);
+	    	GameTextForPlayer(playerid, "~w~Da hoan thanh", 5000, 1);
 	    	EMSCallTime[playerid] = 0;
 	    	DisablePlayerCheckpoint(playerid);
 		}
 		else
 		{
             EMSAccepted[playerid] = INVALID_PLAYER_ID;
-		    GameTextForPlayer(playerid, "~r~Patient has died", 5000, 1);
+		    GameTextForPlayer(playerid, "~r~Benh nhan da tu vong", 5000, 1);
 		    EMSCallTime[playerid] = 0;
 	    	DisablePlayerCheckpoint(playerid);
 		}
@@ -3398,14 +3398,14 @@ public OnPlayerEnterCheckpoint(playerid)
 	else if(BusCallTime[playerid] > 0 && BusAccepted[playerid] != INVALID_PLAYER_ID)
 	{
 		BusAccepted[playerid] = INVALID_PLAYER_ID;
-		GameTextForPlayer(playerid, "~w~Reached destination", 5000, 1);
+		GameTextForPlayer(playerid, "~w~Da hoan thanh", 5000, 1);
 		BusCallTime[playerid] = 0;
 		DisablePlayerCheckpoint(playerid);
 	}
 	else if(MedicCallTime[playerid] > 0 && MedicAccepted[playerid] != INVALID_PLAYER_ID)
 	{
 		MedicAccepted[playerid] = INVALID_PLAYER_ID;
-		GameTextForPlayer(playerid, "~w~Reached patient", 5000, 1);
+		GameTextForPlayer(playerid, "~w~Tiep can benh nhan", 5000, 1);
 		MedicCallTime[playerid] = 0;
 		DisablePlayerCheckpoint(playerid);
 	}
@@ -3540,11 +3540,11 @@ public OnPlayerEnterCheckpoint(playerid)
 			// 			{
 			// 				switch(level) {
 			// 					case 0 .. 49: GivePlayerValidWeapon(playerid, WEAPON_COLT45);
-			// 					case 50 .. 100: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun", "Select", "");
-			// 					case 101 .. 200: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5", "Select", "");
-			// 					case 201 .. 400: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5\nDeagle", "Select", "");
-			// 					case 401: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5\nDeagle\nAK-47", "Select", "");
-			// 					default: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5\nDeagle\nAK-47", "Select", "");
+			// 					case 50 .. 100: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun", "Lua chon", "");
+			// 					case 101 .. 200: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5", "Lua chon", "");
+			// 					case 201 .. 400: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5\nDeagle", "Lua chon", "");
+			// 					case 401: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5\nDeagle\nAK-47", "Lua chon", "");
+			// 					default: ShowPlayerDialogEx(playerid, D_TRUCKDELIVER_WEPCHOICE, DIALOG_STYLE_LIST, "Chon phan thuong cua ban", "9mm\nShotgun\nMP5\nDeagle\nAK-47", "Lua chon", "");
 			// 				}
 			// 			}
 			// 			else
@@ -3688,11 +3688,11 @@ public OnPlayerEnterCheckpoint(playerid)
 
 			case 6:
 			{
-				SendClientMessageEx(playerid, COLOR_WHITE, "Lap completed! Your fitness has increased slightly.");
+				SendClientMessageEx(playerid, COLOR_WHITE, "Vong hoan thanh!.");
 				if(PlayerInfo[playerid][mCooldown][4]) PlayerInfo[playerid][pFitness] += 5;
 				else PlayerInfo[playerid][pFitness] += 3;
 				if (PlayerInfo[playerid][pFitness] > 100) PlayerInfo[playerid][pFitness] = 100;
-				SendClientMessageEx(playerid, COLOR_WHITE, "If you have finished exercising, type /stopswimming.");
+				SendClientMessageEx(playerid, COLOR_WHITE, "Neu ban da tap the duc xong, hay go /stopswimming.");
 				SetPVarInt(playerid, "_SwimmingActivity", 3);
 				SetPlayerCheckpoint(playerid, 2839.7312, -2268.6123, -0.9815, 2.0);
 			}
@@ -3761,7 +3761,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					}
 					default: // fail
 					{
-						format(string, sizeof(string), "** %s leaps at %s attempting to tackle them but is not able.", GetPlayerNameEx(playerid), GetPlayerNameEx(GetPlayerTargetPlayer(playerid)));
+						format(string, sizeof(string), "** %s nhay tai %s co chong doi ho nhung khong khong the", GetPlayerNameEx(playerid), GetPlayerNameEx(GetPlayerTargetPlayer(playerid)));
 						ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 						TogglePlayerControllable(playerid, 0);
 						SetTimerEx("CopGetUp", 2500, 0, "i", playerid);
@@ -3778,9 +3778,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			if(IsPlayerConnected(GetPVarInt(playerid, "ttSeller")))
 			{
 				new string[128];
-				format(string, sizeof(string), "%s has declined the toy offer.", GetPlayerNameEx(playerid));
+				format(string, sizeof(string), "%s da tu choi loi de nghi do choi.", GetPlayerNameEx(playerid));
 				SendClientMessageEx(GetPVarInt(playerid, "ttSeller"), COLOR_LIGHTBLUE, string);
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "You have declined the toy offer.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "Ban da tu choi loi de nghi do choi.");
 
 				DeletePVar(GetPVarInt(playerid, "ttSeller"), "ttBuyer");
 				DeletePVar(GetPVarInt(playerid, "ttSeller"), "ttCost");
@@ -3790,7 +3790,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				return 1;
 			}
 			else {
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "Nguoi ban da sui khoi may chu, vi the ban khong the trao doi duoc.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "Nguoi ban da Huy bo khoi may chu, vi the ban khong the trao doi duoc.");
 				DeletePVar(playerid, "ttSeller");
 
 				HideTradeToysGUI(playerid);
@@ -3806,7 +3806,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				ShowPlayerDialogEx(playerid, CONFIRMSELLTOY, DIALOG_STYLE_MSGBOX, "Hay chac chan voi su lua chon cua ban", "Ban co chac chan rang muon mua Toys nay voi gia tri do khong?", "Co", "Khum");
 			}
 			else {
-				SendClientMessageEx(playerid, COLOR_LIGHTRED, "Nguoi ban da sui khoi may chu, vi the ban khong the trao doi duoc.");
+				SendClientMessageEx(playerid, COLOR_LIGHTRED, "Nguoi ban da Huy bo khoi may chu, vi the ban khong the trao doi duoc.");
 				DeletePVar(playerid, "ttSeller");
 
 				HideTradeToysGUI(playerid);
@@ -3831,7 +3831,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		ClearAnimationsEx(playerid);
 		return 1;
 	}
-	else if((newkeys & KEY_FIRE) && GetPlayerState(playerid) == PLAYER_STATE_ONFOOT && GetPlayerWeapon(playerid) == SPEEDGUN && GetPVarType(playerid, "SpeedRadar"))
+	else if((newkeys & KEY_FIRE) && GetPlayerState(playerid) == PLAYER_STATE_ONFOOT && GetPlayerWeapon(playerid) == TOC DOGUN && GetPVarType(playerid, "Toc doRadar"))
 	{
 	    if(GetPVarInt(playerid, "RadarTimeout") == 0)
 	    {
@@ -3844,9 +3844,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					if(IsPlayerAimingAt(playerid,x,y,z,10))
 					{
 						new string[68];
-						format(string, sizeof(string), "~n~~n~~n~~n~~n~~n~~b~License Plate: ~w~%d~n~~b~Speed: ~w~%.0f MPH", GetPlayerVehicleID(i), fVehSpeed[i]);
+						format(string, sizeof(string), "~n~~n~~n~~n~~n~~n~~b~Bien so xe: ~w~%d~n~~b~Toc do: ~w~%.0f MPH", GetPlayerVehicleID(i), fVehToc do[i]);
 						GameTextForPlayer(playerid, string,3500, 3);
-						format(string, sizeof(string), "License Plate: %d. Speed: %.0f MPH", GetPlayerVehicleID(i), fVehSpeed[i]);
+						format(string, sizeof(string), "Bien so xe: %d. Toc do: %.0f MPH", GetPlayerVehicleID(i), fVehToc do[i]);
 						SendClientMessageEx(playerid, COLOR_GRAD4, string);
 						SetPVarInt(playerid, "RadarTimeout", 1);
 						SetTimerEx("RadarCooldown", 3000, 0, "i", playerid);
@@ -3873,7 +3873,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		    }
 		    else
 		    {
-		        SendClientMessageEx(playerid, COLOR_GREY, "* You finish up the drink and throw it away.");
+		        SendClientMessageEx(playerid, COLOR_GREY, "* Ban uong xong va vut no di.");
 		        SetPlayerSpecialAction(playerid, SPECIAL_ACTION_NONE);
 				SetHealth(playerid, 100);
 		    }
@@ -4046,7 +4046,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 				ConfigEventCPs[playerid][1] = 3;
             	format(string,sizeof(string),"Race Checkpoint %d Size", ConfigEventCPId[playerid]);
-				ShowPlayerDialogEx(playerid,RCPSIZE,DIALOG_STYLE_INPUT,string,"You are now in stage 3, which means you will need to choose the size of the checkpoint\nYou now have a preview of the checkpoint(Step outside the checkpoint so you can see it)\nNote: Checkpoint is now made with the default settings,\nyou may choose not to continue checkpoint won't be affected.","Oce","Sui");
+				ShowPlayerDialogEx(playerid,RCPSIZE,DIALOG_STYLE_INPUT,string,"Ban hien dang o giai doan 3, co nghia la ban se can chon kich thuoc cua diem kiem tra\nbAy gio, ban co ban xem truoc cua diem kieM tra (buoc ra ngoai diem kiem tra de ban co the nhin Thay no)\nluu y: diem kiem tra hien duoc tao bang cai dat mac dinh","Dong y","Huy bo");
 			}
 			else
 			{
@@ -4075,7 +4075,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 							new takemoney = PlayerInfo[GoChase[playerid]][pHeadValue];
 							GivePlayerCash(playerid, floatround(takemoney * 0.9));
 							GivePlayerCash(GoChase[playerid], -takemoney);
-							format(string,sizeof(string),"Hitman %s has fulfilled the contract on %s and collected $%d",GetPlayerNameEx(playerid),GetPlayerNameEx(GoChase[playerid]),takemoney);
+							format(string,sizeof(string),"Hitman %s da hoan thanh hop dong vao %s va thu $%d",GetPlayerNameEx(playerid),GetPlayerNameEx(GoChase[playerid]),takemoney);
 							foreach(new i: Player) if(IsAHitman(i)) SendClientMessage(i, COLOR_YELLOW, string);
 							format(string,sizeof(string),"Ban da bi 1 sat thu gay sat thuong va bi mat $%d!",takemoney);
 							ResetPlayerWeaponsEx(GoChase[playerid]);
@@ -4091,7 +4091,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 							GoChase[playerid] = INVALID_PLAYER_ID;
 							new iHitPercent = floatround(takemoney * 0.10);
 							iHMASafe_Val += iHitPercent;
-							format(szMiscArray, sizeof szMiscArray, "[hit] %s (%d) has killed %s (%d) [C4] for $%s ($%s deposited to safe).", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerNameEx(GoChase[playerid]), GetPlayerSQLId(GoChase[playerid]), number_format(takemoney), number_format(iHitPercent));
+							format(szMiscArray, sizeof szMiscArray, "[hit] %s (%d) da thiet mang %s (%d) [C4] vi $%s ($%s ky gui an toan).", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerNameEx(GoChase[playerid]), GetPlayerSQLId(GoChase[playerid]), number_format(takemoney), number_format(iHitPercent));
 							Log("logs/hitman.log", szMiscArray);
 						}
 					}
@@ -4129,7 +4129,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			ClearAnimationsEx(GetPVarInt(playerid, "DraggingPlayer"));
 			ApplyAnimation(GetPVarInt(playerid, "DraggingPlayer"), "ped","cower",1,1,0,0,0,0,1);
             DeletePVar(GetPVarInt(playerid, "DraggingPlayer"), "BeingDragged");
-            format(string, sizeof(string), "* You have stopped dragging %s.", GetPlayerNameEx(GetPVarInt(playerid, "DraggingPlayer")));
+            format(string, sizeof(string), "* Ban da ngung keo %s.", GetPlayerNameEx(GetPVarInt(playerid, "DraggingPlayer")));
 			DeletePVar(playerid, "DraggingPlayer");
             SendClientMessage(playerid, COLOR_GRAD2, string);
 		}
@@ -4151,7 +4151,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					new takemoney = PlayerInfo[playerid][pHeadValue];//(PlayerInfo[playerid][pHeadValue] / 4) * 2;
 					GivePlayerCash(GetChased[playerid], floatround(takemoney * 0.9));
 					GivePlayerCash(playerid, -takemoney);
-					format(string,sizeof(string),"Hitman %s has fulfilled the contract on %s and collected $%d.",GetPlayerNameEx(GetChased[playerid]),GetPlayerNameEx(playerid),takemoney);
+					format(string,sizeof(string),"Hitman %s da hoan thanh hop dong vao %s va thu $%d.",GetPlayerNameEx(GetChased[playerid]),GetPlayerNameEx(playerid),takemoney);
 					foreach(new i: Player) if(IsAHitman(i)) SendClientMessage(i, COLOR_YELLOW, string);
 					format(string,sizeof(string),"Ban da bi 1 sat thu gay sat thuong va bi mat $%d!",takemoney);
 					ResetPlayerWeaponsEx(playerid);
@@ -4167,7 +4167,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 
 					new iHitPercent = floatround(takemoney * 0.10);
 					iHMASafe_Val += iHitPercent;
-					format(szMiscArray, sizeof szMiscArray, "[hit] %s (%d) has killed %s (%d) [car bomb] for $%s ($%s deposited to safe).", GetPlayerNameEx(GetChased[playerid]), GetPlayerSQLId(GetChased[playerid]), GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), number_format(takemoney), number_format(iHitPercent));
+					format(szMiscArray, sizeof szMiscArray, "[hit] %s (%d) da thiet mang %s (%d) [car bomb] vi $%s ($%s ky gui an toan).", GetPlayerNameEx(GetChased[playerid]), GetPlayerSQLId(GetChased[playerid]), GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), number_format(takemoney), number_format(iHitPercent));
 					Log("logs/hitman.log", szMiscArray);
 					return 1;
 				}
@@ -4201,7 +4201,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		if (CarRadars[playerid] > 0)
 		{
 			PlayerTextDrawShow(playerid, _crTextTarget[playerid]);
-			PlayerTextDrawShow(playerid, _crTextSpeed[playerid]);
+			PlayerTextDrawShow(playerid, _crTextToc do[playerid]);
 			PlayerTextDrawShow(playerid, _crTickets[playerid]);
 			DeletePVar(playerid, "_lastTicketWarning");
 		}
@@ -4209,7 +4209,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	IsPlayerEntering{playerid} = false;
 	if(newstate == PLAYER_STATE_PASSENGER)
 	{
-		if (PlayerInfo[playerid][pSpeedo] != 0)
+		if (PlayerInfo[playerid][pToc doo] != 0)
 		{
 			ShowVehicleHUDForPlayer(playerid);
 		}
@@ -4234,7 +4234,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			}
 		}
 
-		if (PlayerInfo[playerid][pSpeedo] != 0)
+		if (PlayerInfo[playerid][pToc doo] != 0)
 		{
 			ShowVehicleHUDForPlayer(playerid);
 		}
@@ -4344,7 +4344,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			if (CarRadars[playerid] > 0)
 			{
 				PlayerTextDrawHide(playerid, _crTextTarget[playerid]);
-				PlayerTextDrawHide(playerid, _crTextSpeed[playerid]);
+				PlayerTextDrawHide(playerid, _crTextToc do[playerid]);
 				PlayerTextDrawHide(playerid, _crTickets[playerid]);
 				DeletePVar(playerid, "_lastTicketWarning");
 			}
@@ -4368,7 +4368,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			}
 			TransportDuty[playerid] = 0;
 			new string[70]; // increased buf size as full message wasn't getting shown
-			format(string, sizeof(string), "* You are now off duty and earned $%d.", TransportMoney[playerid]);
+			format(string, sizeof(string), "* Bay gio ban da het nhiem vu va kiem duoc $%d.", TransportMoney[playerid]);
 			SendClientMessageEx(playerid, COLOR_LIGHTBLUE, string);
 
 			foreach(new i: Player)
@@ -4395,15 +4395,15 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		{
 			new string[128];
 			TransportMoney[TransportDriver[playerid]] += TransportCost[playerid];
-			format(string, sizeof(string), "~w~The ride cost~n~~r~$%d",TransportCost[playerid]);
+			format(string, sizeof(string), "~w~Chi phi di xe~n~~r~$%d",TransportCost[playerid]);
 			GameTextForPlayer(playerid, string, 5000, 3);
-			format(string, sizeof(string), "~w~Passenger left the taxi.~n~~g~Earned $%d",TransportCost[playerid]);
+			format(string, sizeof(string), "~w~Hanh khach roi khoi xe taxi,~n~~g~da kiem duoc $%d",TransportCost[playerid]);
 			GameTextForPlayer(TransportDriver[playerid], string, 5000, 3);
 			GivePlayerCash(playerid, -TransportCost[playerid]);
 
 			if(TransportCost[playerid] >= 10000)
 			{
-				format(string, sizeof(string), "%s (IP:%s) has taxied %s (IP:%s) $%d in this session.", GetPlayerNameEx(playerid), GetPlayerIpEx(playerid), GetPlayerNameEx(TransportDriver[playerid]), GetPlayerIpEx(TransportDriver[playerid]), TransportCost[playerid]);
+				format(string, sizeof(string), "%s (IP:%s) da danh thue %s (IP:%s) $%d trong phien nay.", GetPlayerNameEx(playerid), GetPlayerIpEx(playerid), GetPlayerNameEx(TransportDriver[playerid]), GetPlayerIpEx(TransportDriver[playerid]), TransportCost[playerid]);
 				//Log("logs/pay.log", string);
 				ABroadCast(COLOR_YELLOW, string, 2);
 			}
@@ -4419,14 +4419,14 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	    #if defined zombiemode
    		if(zombieevent == 1 && GetPVarType(playerid, "pIsZombie"))
 		{
-			SendClientMessageEx(playerid, COLOR_GREY, "Zombies can't go into cars.");
+			SendClientMessageEx(playerid, COLOR_GREY, "Zombies khong the di vao o to.");
 			new Float:X, Float:Y, Float:Z;
 			GetPlayerPos(playerid, X, Y, Z);
 			SetPlayerPos(playerid, X, Y, Z);
 			return 1;
 		}
 		#endif
-		fVehSpeed[playerid] = 0;
+		fVehToc do[playerid] = 0;
 		fVehHealth[playerid] = 0;
  		if(!isnull(stationidv[GetPlayerVehicleID(playerid)]))
 		{
@@ -4527,14 +4527,14 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	    #if defined zombiemode
     	if(zombieevent == 1 && GetPVarType(playerid, "pIsZombie"))
 		{
-			SendClientMessageEx(playerid, COLOR_GREY, "Zombies can't drive.");
+			SendClientMessageEx(playerid, COLOR_GREY, "Zombies khong the lai xe.");
 			new Float:X, Float:Y, Float:Z;
 			GetPlayerPos(playerid, X, Y, Z);
 			SetPlayerPos(playerid, X, Y, Z);
 			return 1;
 		}
 		#endif
-		fVehSpeed[playerid] = 0;
+		fVehToc do[playerid] = 0;
 		fVehHealth[playerid] = 0;
 	    if(!isnull(stationidv[GetPlayerVehicleID(playerid)]))
 		{
@@ -4566,7 +4566,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 					new
 						string[128];
 
-					format(string, sizeof(string),"You are the owner of this %s.", GetVehicleName(newcar));
+					format(string, sizeof(string),"Ban la chu so huu cua cai nay %s.", GetVehicleName(newcar));
 					SendClientMessageEx(playerid, COLOR_GREY, string);
 					if(PlayerVehicleInfo[i][v][pvTicket] != 0)
 					{
@@ -4620,7 +4620,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 				GetPlayerPos(playerid, slx, sly, slz);
 				SetPlayerPos(playerid, slx, sly, slz);
 				defer NOPCheck(playerid);
-				return SendClientMessageEx(playerid, -1, "You can't use this vehicle during the Zombie Event!");
+				return SendClientMessageEx(playerid, -1, "Ban khong the su dung phuong tien nay Trong sU kien Zombie!");
 			}
 		    if(PlayerInfo[playerid][pDonateRank] > 0)
 			{
@@ -4759,7 +4759,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 				return 1;
 			}
 			format(string, sizeof(string), "Ban co muon mua chiec xe xin xo con bo %s nay?\nChiec xe co gia $%s.", GetVehicleName(newcar), number_format(Businesses[iBusiness][bPrice][iSlot]));
-		    ShowPlayerDialogEx(playerid,DIALOG_CDBUY,DIALOG_STYLE_MSGBOX,"Buy Vehicle",string,"Buy","Sui");
+		    ShowPlayerDialogEx(playerid,DIALOG_CDBUY,DIALOG_STYLE_MSGBOX,"Buy Vehicle",string,"Buy","Huy bo");
 		    TogglePlayerControllable(playerid, false);
 		    return 1;
         }
@@ -4774,7 +4774,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		}
 		else if((engine == VEHICLE_PARAMS_UNSET || engine == VEHICLE_PARAMS_OFF) && (DynVeh[newcar] != -1 && GetVehicleModel(newcar) == 592 && DynVehicleInfo[DynVeh[newcar]][gv_iType] == 1))
 		{
-			SendClientMessageEx(playerid, COLOR_WHITE, "You must request clearance to take off. /announcetakeoff to put in the request.");
+			SendClientMessageEx(playerid, COLOR_WHITE, "Ban phai yeu cau giai phong mat bang de cat canh. /announcetakeoff to put in the request.");
 		}
 	}
 	if((newstate == 2 || newstate == 3 || newstate == 7 || newstate == 9) && pTazer{playerid} == 1)
@@ -4817,7 +4817,7 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 	if (CarRadars[playerid] > 0)
 	{
 		PlayerTextDrawHide(playerid, _crTextTarget[playerid]);
-		PlayerTextDrawHide(playerid, _crTextSpeed[playerid]);
+		PlayerTextDrawHide(playerid, _crTextToc do[playerid]);
 		PlayerTextDrawHide(playerid, _crTickets[playerid]);
 		DeletePVar(playerid, "_lastTicketWarning");
 	}
@@ -4926,11 +4926,11 @@ public OnPlayerCommandReceived(playerid, cmdtext[]) {
 
 	if(GetPVarInt(playerid, "voucherdialog"))
 	{
-		if(GetPVarInt(playerid, "voucherdialog") == 1) return SendClientMessageEx(playerid, COLOR_GRAD2, "Please finalize your voucher transaction."), 0;
+		if(GetPVarInt(playerid, "voucherdialog") == 1) return SendClientMessageEx(playerid, COLOR_GRAD2, "Vui long hoan tat giao dich chung tu cua ban."), 0;
 		new string[128];
-		format(string,sizeof(string),"{AA3333}AdmWarning{FFFF00}: %s (ID: %d) may be attempting to exploit the voucher system. (CMD)", GetPlayerNameEx(playerid), playerid);
+		format(string,sizeof(string),"{AA3333}AdmWarning{FFFF00}: %s (ID: %d) co the dang co gang khai thac he thong chung tu. (CMD)", GetPlayerNameEx(playerid), playerid);
 		ABroadCast(COLOR_YELLOW, string, 2);
-		format(string,sizeof(string),"AdmWarning: %s(%d) (ID: %d) may be attempting to exploit the voucher system. (CMD)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), playerid);
+		format(string,sizeof(string),"AdmWarning: %s(%d) (ID: %d) co the dang co gang khai thac he thong chung tu. (CMD)", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), playerid);
 		Log("logs/vouchers.log", string);
 		return 0;
 	}
@@ -4965,7 +4965,7 @@ public OnPlayerCommandReceived(playerid, cmdtext[]) {
 		new string[128];
 		format(string,sizeof(string),"{AA3333}AdmWarning{FFFF00}: Suc vat %s (ID: %d) dang quang cao server: '{AA3333}%s{FFFF00}'.", GetPlayerNameEx(playerid), playerid, cmdtext);
 		ABroadCast(COLOR_YELLOW, string, 2);
-		format(string,sizeof(string),"%s(%d) (IP: %s) may be server advertising: '%s'.", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), cmdtext);
+		format(string,sizeof(string),"%s(%d) (IP: %s) co the la dang quang cao may chu: '%s'.", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), cmdtext);
 		Log("logs/hack.log", string);
 		return 0;
 	}
@@ -5062,7 +5062,7 @@ public OnPlayerText(playerid, text[])
 	{
 		format(string,sizeof(string),"{AA3333}AdmWarning{FFFF00}: Suc vat %s (ID: %d) dang quang cao server: '{AA3333}%s{FFFF00}'.", GetPlayerNameEx(playerid), playerid, text);
 		ABroadCast(COLOR_YELLOW, string, 2);
-		format(string,sizeof(string),"%s(%d) (IP: %s) may be server advertising: '%s'.", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), text);
+		format(string,sizeof(string),"%s(%d) (IP: %s) co the la dang quang cao may chu: '%s'.", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), text);
 		Log("logs/hack.log", string);
 		return 0;
 	}
@@ -5130,7 +5130,7 @@ public OnPlayerText(playerid, text[])
 						format(string, sizeof(string), "%s_%s", GetFirstName(playerid), GetLastName(ProposedTo[playerid]));
 						mysql_escape_string(string, escapedName);
 						SetPVarString(playerid, "NewNameRequest", escapedName);
-						mysql_format(MainPipeline, string, sizeof(string), "SELECT `Username` FROM `accounts` WHERE `Username`='%e'", string);
+						mysql_format(MainPipeline, string, sizeof(string), "Lua chon `Username` FROM `accounts` WHERE `Username`='%e'", string);
 						mysql_tquery(MainPipeline, string, "OnApproveName", "ii", playerid, playerid);
 					}
 					if(GetPVarInt(ProposedTo[playerid], "marriagelastname") == 2)
@@ -5139,7 +5139,7 @@ public OnPlayerText(playerid, text[])
 						format(string, sizeof(string), "%s_%s", GetFirstName(ProposedTo[playerid]), GetLastName(playerid));
 						mysql_escape_string(string, escapedName);
 						SetPVarString(ProposedTo[playerid], "NewNameRequest", escapedName);
-						mysql_format(MainPipeline, string, sizeof(string), "SELECT `Username` FROM `accounts` WHERE `Username`='%e'", string);
+						mysql_format(MainPipeline, string, sizeof(string), "Lua chon `Username` FROM `accounts` WHERE `Username`='%e'", string);
 						mysql_tquery(MainPipeline, string, "OnApproveName", "ii", ProposedTo[playerid], ProposedTo[playerid]);
 					}
 					//MarriageCeremoney[ProposedTo[playerid]] = 1;
@@ -5225,14 +5225,14 @@ public OnPlayerText(playerid, text[])
 	{
 		if(IsAReporter(playerid))
 		{
-			format(string, sizeof(string), "Live News Reporter %s: %s", GetPlayerNameEx(playerid), text);
+			format(string, sizeof(string), "Phong vien tin tuc Truc Tiep %s: %s", GetPlayerNameEx(playerid), text);
 			OOCNews(COLOR_LIGHTGREEN, string);
 			format(szMiscArray, sizeof(szMiscArray), "[/LIVE] %s (%i): %s", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), text);
 			Log("logs/broadcast.log", szMiscArray);
 		}
 		else
 		{
-			format(string, sizeof(string), "Live Interview Guest %s: %s", GetPlayerNameEx(playerid), text);
+			format(string, sizeof(string), "Khach phong van truc tiep %s: %s", GetPlayerNameEx(playerid), text);
 			OOCNews(COLOR_LIGHTGREEN, string);
 			format(szMiscArray, sizeof(szMiscArray), "[/LIVE] %s (%i): %s", GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), text);
 			Log("logs/broadcast.log", szMiscArray);
@@ -5242,9 +5242,9 @@ public OnPlayerText(playerid, text[])
 	if(Mobile[playerid] != INVALID_PLAYER_ID)
 	{
 		if(GetPVarType(playerid, "PayPhone")) {
-			format(string, sizeof(string), "(payphone)(unknown) says: %s", text);
+			format(string, sizeof(string), "(payphone)(unknown) noi: %s", text);
 		}
-		else format(string, sizeof(string), "(cellphone) %s says: %s", GetPlayerNameEx(playerid), text);
+		else format(string, sizeof(string), "(cellphone) %s noi: %s", GetPlayerNameEx(playerid), text);
 
 
 		ProxDetector(20.0, playerid, string,COLOR_FADE1,COLOR_FADE2,COLOR_FADE3,COLOR_FADE4,COLOR_FADE5);
@@ -5254,7 +5254,7 @@ public OnPlayerText(playerid, text[])
 			{
 				if(PlayerInfo[Mobile[playerid]][pSpeakerPhone] != 0)
 				{
-				    format(string, sizeof(string), "(speakerphone) Unknown says: %s",  text);
+				    format(string, sizeof(string), "(speakerphone) Unknown noi: %s",  text);
 					ProxDetector(20.0, Mobile[playerid], string,COLOR_FADE1,COLOR_FADE2,COLOR_FADE3,COLOR_FADE4,COLOR_FADE5);
 				}
 				else
@@ -5275,9 +5275,9 @@ public OnPlayerText(playerid, text[])
 				if(PlayerInfo[Mobile[playerid]][pSpeakerPhone] != 0)
 				{
 				    if(GetPVarType(playerid, "PayPhone")) {
-						format(string, sizeof(string), "(speakerphone)(unknown) says: %s", text);
+						format(string, sizeof(string), "(speakerphone)(unknown) noi: %s", text);
 					}
-				    else format(string, sizeof(string), "(speakerphone) %s says: %s", GetPlayerNameEx(playerid), text);
+				    else format(string, sizeof(string), "(speakerphone) %s noi: %s", GetPlayerNameEx(playerid), text);
 					ProxDetector(20.0, Mobile[playerid], string,COLOR_FADE1,COLOR_FADE2,COLOR_FADE3,COLOR_FADE4,COLOR_FADE5);
 				}
 				else
@@ -5296,7 +5296,7 @@ public OnPlayerText(playerid, text[])
 		}
 		else
 		{
-			SendClientMessageEx(playerid, COLOR_YELLOW,"There's nobody there!");
+			SendClientMessageEx(playerid, COLOR_YELLOW,"Khong co ai o do!");
 			SetPlayerSpecialAction(playerid, SPECIAL_ACTION_STOPUSECELLPHONE);
 			RemovePlayerAttachedObject(playerid, 8);
 			Mobile[playerid] = INVALID_PLAYER_ID;
@@ -5313,16 +5313,16 @@ public OnPlayerText(playerid, text[])
 		{
 			if(PlayerInfo[playerid][pPaintTeam] == 1)
 			{
-				format(string, sizeof(string), "[Paintball Arena] ({FF0000}Red Team{FFFFFF}) %s says: %s", sendername, text);
+				format(string, sizeof(string), "[Paintball Arena] ({FF0000}Red Team{FFFFFF}) %s noi: %s", sendername, text);
 			}
 			if(PlayerInfo[playerid][pPaintTeam] == 2)
 			{
-				format(string, sizeof(string), "[Paintball Arena] ({0000FF}Blue Team{FFFFFF}) %s says: %s", sendername, text);
+				format(string, sizeof(string), "[Paintball Arena] ({0000FF}Blue Team{FFFFFF}) %s noi: %s", sendername, text);
 			}
 		}
 		else
 		{
-			format(string, sizeof(string), "[Paintball Arena] %s says: %s", sendername, text);
+			format(string, sizeof(string), "[Paintball Arena] %s noi: %s", sendername, text);
 		}
 		SendPaintballArenaMessage(a, COLOR_WHITE, string);
 		return 0;
@@ -5372,8 +5372,8 @@ public OnPlayerText(playerid, text[])
 		foreach(new i: Player)
 		{
 			if((InsidePlane[playerid] == GetPlayerVehicleID(i) && GetPlayerState(i) == 2) || (InsidePlane[i] == GetPlayerVehicleID(playerid) && GetPlayerState(playerid) == 2) || (InsidePlane[playerid] != INVALID_VEHICLE_ID && InsidePlane[playerid] == InsidePlane[i])) {
-				//if(PlayerInfo[playerid][pDuty] || IsAHitman(playerid)) format(string, sizeof(string), "%s{%06x}%s{E6E6E6} says: %s", accent, GetPlayerColor(playerid), sendername, text);
-				format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+				//if(PlayerInfo[playerid][pDuty] || IsAHitman(playerid)) format(string, sizeof(string), "%s{%06x}%s{E6E6E6} noi: %s", accent, GetPlayerColor(playerid), sendername, text);
+				format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 				SendClientMessageEx(i, COLOR_FADE1, string);
 			}
 			else if(GetPlayerVirtualWorld(i) == GetPlayerVirtualWorld(playerid)) {
@@ -5381,11 +5381,11 @@ public OnPlayerText(playerid, text[])
 				{
 					if(playerid == i)
 					{
-						format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+						format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 						format(str, sizeof(str), "{8D8DFF}(BUGGED) {CBCCCE}%s", string);
 					}
 					else {
-						format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+						format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 						format(str, sizeof(str), "{8D8DFF}(BUG ID %d) {CBCCCE}%s", i,string);
 					}
 					if(PlayerInfo[playerid][pAdmin] >= 2 && PlayerInfo[playerid][pTogReports] == 1 || PlayerInfo[playerid][pAdmin] < 2 || PlayerInfo[i][pAdmin] >= 2 && PlayerInfo[i][pTogReports] == 1 || PlayerInfo[i][pAdmin] < 2) SendBugMessage(i, PlayerInfo[i][pBugged], str);
@@ -5396,28 +5396,28 @@ public OnPlayerText(playerid, text[])
 					SendClientMessageEx(i, COLOR_FADE5, string);
 				}
 				else if(IsPlayerInRangeOfPoint(i, 20.0 / 16, f_playerPos[0], f_playerPos[1], f_playerPos[2])) {
-					format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+					format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 					SendClientMessageEx(i, COLOR_FADE1, string);
 				}
 				else if(IsPlayerInRangeOfPoint(i, 20.0 / 8, f_playerPos[0], f_playerPos[1], f_playerPos[2])) {
-					format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+					format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 					SendClientMessageEx(i, COLOR_FADE2, string);
 				}
 				else if(IsPlayerInRangeOfPoint(i, 20.0 / 4, f_playerPos[0], f_playerPos[1], f_playerPos[2])) {
-					format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+					format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 					SendClientMessageEx(i, COLOR_FADE3, string);
 				}
 				else if(IsPlayerInRangeOfPoint(i, 20.0 / 2, f_playerPos[0], f_playerPos[1], f_playerPos[2])) {
-					format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+					format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 					SendClientMessageEx(i, COLOR_FADE4, string);
 				}
 				else if(IsPlayerInRangeOfPoint(i, 20.0, f_playerPos[0], f_playerPos[1], f_playerPos[2])) {
-					format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+					format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 					SendClientMessageEx(i, COLOR_FADE5, string);
 				}
 			}
 			if(GetPVarInt(i, "BigEar") == 1 || GetPVarInt(i, "BigEar") == 6 && GetPVarInt(i, "BigEarPlayer") == playerid) {
-				format(string, sizeof(string), "%s%s says: %s", accent, sendername, text);
+				format(string, sizeof(string), "%s%s noi: %s", accent, sendername, text);
 				new string2[128] = "(BE) ";
 				strcat(string2,string, sizeof(string2));
 				SendClientMessageEx(i, COLOR_FADE1, string);
@@ -5456,7 +5456,7 @@ public OnUnoccupiedVehicleUpdate(vehicleid, playerid, passenger_seat, Float:new_
 	return 0;
 }
 
-public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_id) {
+public OnPlayerModelLua chonionEx(playerid, response, extraid, modelid, extralist_id) {
 	if(extraid == 1500 && response) {
 
 		new iGroup = PlayerInfo[playerid][pMember];
@@ -5539,7 +5539,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 				return 1;
 			}
 		}
-		SendClientMessageEx(playerid, COLOR_WHITE, "Unable to spawn more barricades, limit is " #MAX_BARRICADES# ".");
+		SendClientMessageEx(playerid, COLOR_WHITE, "Khong the tao them chuong ngai vat, gioi han la " #MAX_BARRICADES# ".");
 		return 1;
 	}
 	/*
@@ -5548,7 +5548,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 		if(response) {
 			SetPVarInt(playerid, PVAR_FURNITURE_BUYMODEL, modelid);
 			format(szMiscArray, sizeof(szMiscArray), "Would you like to buy this %s for $%s and %s materials?", GetFurnitureName(modelid), number_format(GetFurniturePrice(modelid)), number_format(GetFurniturePrice(modelid) / 10));
-			ShowPlayerDialogEx(playerid, DIALOG_FURNITURE_BUYCONFIRM, DIALOG_STYLE_MSGBOX, "Furniture Menu | Confirm Purchase", szMiscArray, "Buy", "Sui");
+			ShowPlayerDialogEx(playerid, DIALOG_FURNITURE_BUYCONFIRM, DIALOG_STYLE_MSGBOX, "Furniture Menu | Confirm Mua", szMiscArray, "Buy", "Huy bo");
 		}
 		else {
 			FurnitureMenu(playerid, 0);
@@ -5576,11 +5576,11 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 			ApplyAnimation(playerid,"BOMBER","BOM_Plant",4.0,0,0,0,0,0);
 			PlayerInfo[playerid][pBombs]--;
 			PlayerInfo[playerid][pC4Used] = 1;
-			SendClientMessageEx(playerid, COLOR_GREEN, "You have placed C4 on the ground, /pickupbomb to remove it.");
+			SendClientMessageEx(playerid, COLOR_GREEN, "Ban da dat c4 trEn mat dat, /pickupbomb de loai bo no.");
 		}
 		else
 		{
-			return SendClientMessageEx(playerid, COLOR_GRAD2, "You have exited the bomb selection menu.");
+			return SendClientMessageEx(playerid, COLOR_GRAD2, "Ban da thoat menu lua choN bomb.");
 		}
 	}
 	else if(extraid == 1339)
@@ -5629,7 +5629,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 						format(string,sizeof(string),"VIP: Ban da duoc giam gia 20% cho mon hang nay. Thay vi phai tra $%s, ban chi can tra $%s.", number_format(Businesses[iBusiness][bItemPrices][iItem]), number_format(cost));
 						SendClientMessageEx(playerid, COLOR_YELLOW, string);
 					}
-					format(string,sizeof(string),"%s(%d) (IP: %s) has bought a Helmet in %s (%d) for $%s.",GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), Businesses[iBusiness][bName], iBusiness, number_format(cost));
+					format(string,sizeof(string),"%s(%d) (IP: %s) da mua a mu bao hiem trong %s (%d) cho $%s.",GetPlayerNameEx(playerid), GetPlayerSQLId(playerid), GetPlayerIpEx(playerid), Businesses[iBusiness][bName], iBusiness, number_format(cost));
 					Log("logs/business.log", string);
 					format(string,sizeof(string),"* Ban da mua Mu bao hiem tu %s voi $%s, ban co the su dung Mu bao hiem bang /helmet(/hm).", Businesses[iBusiness][bName], number_format(cost));
 					SendClientMessageEx(playerid, COLOR_GRAD2, string);
@@ -5648,7 +5648,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 			if(i == MAX_PLAYERTOYS) return SendClientMessageEx(playerid, COLOR_GRAD2, "Ban khong the them mot slot Toys nao nua, hay mo trong slot Toys.");
 		}
 		else
-			return SendClientMessageEx(playerid, COLOR_GRAD2, "You have exited the helmet selection menu.");
+			return SendClientMessageEx(playerid, COLOR_GRAD2, "Ban da thoat menu lua chon Mu bao hiem.");
 	}
 	else if(extraid == 2000)
 	{
@@ -5673,7 +5673,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 					format(name, sizeof(name), "%s", HoldingObjectsAll[i][holdingmodelname]);
 				}
 			}
-			format(string, sizeof(string), "Successfully attached %s(%d) (Bone: %s) (Slot: %d)", name, PlayerToyInfo[playerid][extralist_id][ptModelID], HoldingBones[PlayerToyInfo[playerid][extralist_id][ptBone]], extralist_id);
+			format(string, sizeof(string), "Dinh kem thanh cong %s(%d) (Bone: %s) (Slot: %d)", name, PlayerToyInfo[playerid][extralist_id][ptModelID], HoldingBones[PlayerToyInfo[playerid][extralist_id][ptBone]], extralist_id);
 			SendClientMessageEx(playerid, COLOR_RED, string);
 			SetPVarInt(playerid, "HelmetOn", extralist_id);
 			PlayerHoldingObject[playerid][toycount] = extralist_id;
@@ -5681,12 +5681,12 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 			PlayerToyInfo[playerid][extralist_id][ptRotX], PlayerToyInfo[playerid][extralist_id][ptRotY], PlayerToyInfo[playerid][extralist_id][ptRotZ], PlayerToyInfo[playerid][extralist_id][ptScaleX], PlayerToyInfo[playerid][extralist_id][ptScaleY], PlayerToyInfo[playerid][extralist_id][ptScaleZ]);
 
 			Seatbelt[playerid] = 2;
-			format(string, sizeof(string), "{FF8000}** {C2A2DA}%s reaches for their helmet and puts it on.", GetPlayerNameEx(playerid));
+			format(string, sizeof(string), "{FF8000}** {C2A2DA}%s voi lay mu bao hiem cua ho va doi no len.", GetPlayerNameEx(playerid));
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-            SendClientMessageEx(playerid, COLOR_WHITE, "You have put on your helmet.");
+            SendClientMessageEx(playerid, COLOR_WHITE, "Ban da doi mu bao hiem cua ban");
 		}
 		else
-			return SendClientMessageEx(playerid, COLOR_GRAD2, "You have exited the helmet selection menu.");
+			return SendClientMessageEx(playerid, COLOR_GRAD2, "Ban da thoat menu lua chon Mu bao hiem.");
 	}
 	else if(extraid == DIALOG_STPATRICKSSHOP) // St Patrick's Day
 	{
@@ -5702,7 +5702,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 		}
 		format(szMiscArray, sizeof(szMiscArray),"Item: %s\nSo Credits cua ban: %s\nCost: {FFD700}150{A9C4E4}\nCredits con lai: %s", name, number_format(PlayerInfo[playerid][pCredits]), number_format(PlayerInfo[playerid][pCredits]-150));
 		SetPVarInt(playerid, "StPatrickToy", modelid);
-		ShowPlayerDialogEx(playerid, DIALOG_STPATRICKSSHOP, DIALOG_STYLE_MSGBOX, "St Patrick's Day Shop", szMiscArray, "Purchase", "Exit");
+		ShowPlayerDialogEx(playerid, DIALOG_STPATRICKSSHOP, DIALOG_STYLE_MSGBOX, "St Patrick's Day Shop", szMiscArray, "Mua", "Exit");
 	}
 	else if(extraid == 0525) // Memorial's Day
 	{
@@ -5718,7 +5718,7 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 		}
 		format(szMiscArray, sizeof(szMiscArray),"Item: %s\nSo Credits cua ban: %s\nCost: {FFD700}150{A9C4E4}\nCredits con lai: %s", name, number_format(PlayerInfo[playerid][pCredits]), number_format(PlayerInfo[playerid][pCredits]-150));
 		SetPVarInt(playerid, "MemorialToy", modelid);
-		ShowPlayerDialogEx(playerid, 0525, DIALOG_STYLE_MSGBOX, "Memorial's Day Shop", szMiscArray, "Purchase", "Exit");
+		ShowPlayerDialogEx(playerid, 0525, DIALOG_STYLE_MSGBOX, "Memorial's Day Shop", szMiscArray, "Mua", "Exit");
 	}
 	/*
 	if(extraid == REGISTER_SKINMODEL)
@@ -5731,26 +5731,26 @@ public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_
 		Register_MainMenu(playerid);
 	}
 	*/
-	if(extraid == PRISON_SKINSELECT)
+	if(extraid == PRISON_SKINLua chon)
 	{
 		if(response)
 		{
-			if(GetPVarInt(playerid, "pPrisonSelectingSkin") == 1)
+			if(GetPVarInt(playerid, "pPrisonLua choningSkin") == 1)
 			{
 			    if(PlayerInfo[playerid][pPrisonCredits] >= 250)
                 {
                     PlayerInfo[playerid][pModel] = modelid;
                     PlayerInfo[playerid][pPrisonCredits] -= 250;
 					SetPlayerSkin(playerid, modelid);
-					SetPVarInt(playerid, "pPrisonSelectingSkin", 0);
+					SetPVarInt(playerid, "pPrisonLua choningSkin", 0);
 
-					SendClientMessageEx(playerid, COLOR_GREY, "You have purchased a pair of clothes from the prison shop for 500 credits.");
+					SendClientMessageEx(playerid, COLOR_GREY, "Ban co mua mot bo quan ao tu cua hang nha tu voi 500 tin dung.");
 				}
-				else return SendClientMessageEx(playerid, COLOR_GREY, "  You do not have enough prison credits!");
+				else return SendClientMessageEx(playerid, COLOR_GREY, "  Ban khong co du tin dung nha tu");
 			}
 			else return 1;
 		}
-		else SetPVarInt(playerid, "pPrisonSelectingSkin", 0);
+		else SetPVarInt(playerid, "pPrisonLua choningSkin", 0);
 	}
 	return 1;
 }
@@ -5761,9 +5761,9 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source)
 	{
 		new szString[5], string[MAX_PLAYER_NAME+82];
 		format(szString, sizeof(szString), "%i", clickedplayerid);
-		format(string, sizeof(string), "Are you sure you want to offer %s a free namechange?", GetPlayerNameEx(clickedplayerid));
+		format(string, sizeof(string), "Ban co chac ban muon cung cap %s a mien phi doi ten khong?", GetPlayerNameEx(clickedplayerid));
 		SetPVarString(playerid, "nrn", szString);
-		ShowPlayerDialogEx(playerid, DIALOG_NRNCONFIRM, DIALOG_STYLE_MSGBOX, "Confirm this NRN", string, "Yes", "No");
+		ShowPlayerDialogEx(playerid, DIALOG_NRNCONFIRM, DIALOG_STYLE_MSGBOX, "Xac nhan nrn NAY", string, "Dong y", "Huy bo");
 	}
 	return true;
 }
