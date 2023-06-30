@@ -1,2 +1,2 @@
 # LS-RPBase
-Tui commit được rồi nè ae :v
+Mệt thì nghỉ đừng bỏ <3
