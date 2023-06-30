@@ -10,7 +10,7 @@ public OnGameModeInit()
     cefobj = CreateDynamicObject(7909, 1185.675292, -1376.301513, 18.787693, 0.000000, 0.000000, 90.000000, -1, -1, -1, 300.00, 300.00); 
     SetDynamicObjectMaterial(cefobj, 0, 10101, "2notherbuildsfe", "ferry_build14", 0xFFFFFFFF);
     SetDynamicObjectMaterial(cefobj, 3, 10101, "2notherbuildsfe", "ferry_build14", 0x00000000);
-    print("CEF Load");
+    print("CEF Dang Tai Du Lieu");
 }
 
 CMD:ceflink(playerid, params[])
