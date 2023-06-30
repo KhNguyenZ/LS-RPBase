@@ -37,7 +37,7 @@
 hook OnGameModeInit()
 {
 	DCC_Connect("MjUxODAwMTY4OTM5MjU3ODU2.C8Lhhg.PMIaZpEXgUE48jH9oDwLHYK_f7Y");
-	print("[DCC] Connecting to Discord...");
+	print("[DCC] Ket noi voi diScord...");
 	return 1;
 }
 
@@ -91,7 +91,7 @@ public DCC_OnChannelMessage(DCC_Channel:channel, const author[], const message[]
 	if(betaserver == 0) {
 		new channel_name[32], szMessage[128];
 		DCC_GetChannelName(channel, channel_name);
-		printf("[DCC] OnChannelMessage (Channel %s): Author %s sent message: %s", channel_name, author, message);
+		printf("[DCC] OnChannelMessage (Channel %s): Tac gia %s da gui tin nhan: %s", channel_name, author, message);
 		if(!strcmp(channel_name, "admin", true) && strcmp(author, "SAMP-Bot", true))
 		{
 			format(szMessage, sizeof(szMessage), "* [Discord] Administrator %s: %s", author, message);
