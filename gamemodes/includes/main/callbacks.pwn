@@ -909,7 +909,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 	return 1;
 }
 
-public OnPlayerModelLua chonion(playerid, response, listid, modelid)
+public OnPlayerModelSelection(playerid, response, listid, modelid)
 {
 	/*if(!response)
 	{
@@ -1072,11 +1072,11 @@ public OnPlayerModelLua chonion(playerid, response, listid, modelid)
 				if(GetPVarInt(playerid, "freeSkin") == 1)
 			    {
 					SendClientMessageEx(playerid, COLOR_GREY, "ID da do khong hop le hoac bi han che doi voi mot nhom / VIP!");
-	            	ShowModelLua chonionMenu(playerid, SkinList, "Thay doi lan da cua ban.");
+	            	ShowModelSelectionMenu(playerid, SkinList, "thAy doi trang phuc cua ban.");
 				}
 				else {
 					SendClientMessageEx(playerid, COLOR_GREY, "ID da do khong hop le hoac bi han che doi voi mot nhom / VIP!");
-	            	ShowModelLua chonionMenu(playerid, SkinList, "Thay doi lan da cua ban.");
+	            	ShowModelSelectionMenu(playerid, SkinList, "thAy doi trang phuc cua ban.");
 				}
 			}
 			else {
@@ -1223,7 +1223,7 @@ public OnPlayerConnect(playerid)
 	DeletePVar(playerid, "TempLevel");
 	HackingMods[playerid] = 0;
 	PlayerInfo[playerid][pHitman] = -1;
-	pToc do[playerid] = 0.0;
+	pSpeed[playerid] = 0.0;
 	//SetTimerEx("HackingTimer", 1000, 0, "i", playerid);
 
 	for(new i = 0; i < 3; i++) {
@@ -1268,10 +1268,10 @@ public OnPlayerConnect(playerid)
 	}
 
 	for(new i = 0; i < MAX_BUSINESSSALES; i++) {
-        Lua choned[playerid][i] = 0;
+        Selected[playerid][i] = 0;
 	}
-	for(new x=0; x < mS_Lua chonION_ITEMS; x++) {
-        gLua chonionItems[playerid][x] = PlayerText:INVALID_TEXT_DRAW;
+	for(new x=0; x < mS_SELECTION_ITEMS; x++) {
+        gSelectionItems[playerid][x] = PlayerText:INVALID_TEXT_DRAW;
 	}
 
 	gHeaderTextDrawId[playerid] = PlayerText:INVALID_TEXT_DRAW;
@@ -1350,13 +1350,13 @@ public OnPlayerConnect(playerid)
 	unbanip[playerid][0] = 0;
     advisorchat[playerid] = 1;
 	ChosenSkin[playerid]=0;
-	Lua chonFChar[playerid]=0;
+	SelectFChar[playerid]=0;
 	MatsHolding[playerid]=0;
 	MatDeliver[playerid]=-1;
 	MatDeliver2[playerid]=0;
 	szAdvert[playerid][0] = 0;
 	AdvertType[playerid] = 0;
-	Lua chonFCharPlace[playerid]=0;
+	SelectFCharPlace[playerid]=0;
 	GettingJob[playerid]=0;
 	GettingJob2[playerid]=0;
 	GettingJob3[playerid]=0;
@@ -2573,7 +2573,7 @@ public OnPlayerDisconnect(playerid, reason)
 			DestroyDynamic3DTextLabel(RFLTeamN3D[playerid]);
 			RFLTeamN3D[playerid] = Text3D:-1;
 		}
-		pToc do[playerid] = 0.0;
+		pSpeed[playerid] = 0.0;
 		SetPVarInt(playerid, "PlayerOwnASurf", 0);
 	}
 	PlayerInfo[playerid][pWarrant][0] = 0;
@@ -3831,7 +3831,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		ClearAnimationsEx(playerid);
 		return 1;
 	}
-	else if((newkeys & KEY_FIRE) && GetPlayerState(playerid) == PLAYER_STATE_ONFOOT && GetPlayerWeapon(playerid) == TOC DOGUN && GetPVarType(playerid, "Toc doRadar"))
+	else if((newkeys & KEY_FIRE) && GetPlayerState(playerid) == PLAYER_STATE_ONFOOT && GetPlayerWeapon(playerid) == SPEEDGUN && GetPVarType(playerid, "SpeedRadar"))
 	{
 	    if(GetPVarInt(playerid, "RadarTimeout") == 0)
 	    {
@@ -3844,9 +3844,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					if(IsPlayerAimingAt(playerid,x,y,z,10))
 					{
 						new string[68];
-						format(string, sizeof(string), "~n~~n~~n~~n~~n~~n~~b~Bien so xe: ~w~%d~n~~b~Toc do: ~w~%.0f MPH", GetPlayerVehicleID(i), fVehToc do[i]);
+						format(string, sizeof(string), "~n~~n~~n~~n~~n~~n~~b~Bien so xe: ~w~%d~n~~b~Toc do: ~w~%.0f MPH", GetPlayerVehicleID(i), fVehSpeed[i]);
 						GameTextForPlayer(playerid, string,3500, 3);
-						format(string, sizeof(string), "Bien so xe: %d. Toc do: %.0f MPH", GetPlayerVehicleID(i), fVehToc do[i]);
+						format(string, sizeof(string), "Bien so xe: %d. Toc do: %.0f MPH", GetPlayerVehicleID(i), fVehSpeed[i]);
 						SendClientMessageEx(playerid, COLOR_GRAD4, string);
 						SetPVarInt(playerid, "RadarTimeout", 1);
 						SetTimerEx("RadarCooldown", 3000, 0, "i", playerid);
@@ -4201,7 +4201,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		if (CarRadars[playerid] > 0)
 		{
 			PlayerTextDrawShow(playerid, _crTextTarget[playerid]);
-			PlayerTextDrawShow(playerid, _crTextToc do[playerid]);
+			PlayerTextDrawShow(playerid, _crTextSpeed[playerid]);
 			PlayerTextDrawShow(playerid, _crTickets[playerid]);
 			DeletePVar(playerid, "_lastTicketWarning");
 		}
@@ -4209,7 +4209,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	IsPlayerEntering{playerid} = false;
 	if(newstate == PLAYER_STATE_PASSENGER)
 	{
-		if (PlayerInfo[playerid][pToc doo] != 0)
+		if (PlayerInfo[playerid][pSpeedo] != 0)
 		{
 			ShowVehicleHUDForPlayer(playerid);
 		}
@@ -4234,7 +4234,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			}
 		}
 
-		if (PlayerInfo[playerid][pToc doo] != 0)
+		if (PlayerInfo[playerid][pSpeedo] != 0)
 		{
 			ShowVehicleHUDForPlayer(playerid);
 		}
@@ -4344,7 +4344,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			if (CarRadars[playerid] > 0)
 			{
 				PlayerTextDrawHide(playerid, _crTextTarget[playerid]);
-				PlayerTextDrawHide(playerid, _crTextToc do[playerid]);
+				PlayerTextDrawHide(playerid, _crTextSpeed[playerid]);
 				PlayerTextDrawHide(playerid, _crTickets[playerid]);
 				DeletePVar(playerid, "_lastTicketWarning");
 			}
@@ -4426,7 +4426,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			return 1;
 		}
 		#endif
-		fVehToc do[playerid] = 0;
+		fVehSpeed[playerid] = 0;
 		fVehHealth[playerid] = 0;
  		if(!isnull(stationidv[GetPlayerVehicleID(playerid)]))
 		{
@@ -4534,7 +4534,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			return 1;
 		}
 		#endif
-		fVehToc do[playerid] = 0;
+		fVehSpeed[playerid] = 0;
 		fVehHealth[playerid] = 0;
 	    if(!isnull(stationidv[GetPlayerVehicleID(playerid)]))
 		{
@@ -4817,7 +4817,7 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 	if (CarRadars[playerid] > 0)
 	{
 		PlayerTextDrawHide(playerid, _crTextTarget[playerid]);
-		PlayerTextDrawHide(playerid, _crTextToc do[playerid]);
+		PlayerTextDrawHide(playerid, _crTextSpeed[playerid]);
 		PlayerTextDrawHide(playerid, _crTickets[playerid]);
 		DeletePVar(playerid, "_lastTicketWarning");
 	}
@@ -5456,7 +5456,7 @@ public OnUnoccupiedVehicleUpdate(vehicleid, playerid, passenger_seat, Float:new_
 	return 0;
 }
 
-public OnPlayerModelLua chonionEx(playerid, response, extraid, modelid, extralist_id) {
+public OnPlayerModelSelectionEx(playerid, response, extraid, modelid, extralist_id) {
 	if(extraid == 1500 && response) {
 
 		new iGroup = PlayerInfo[playerid][pMember];
@@ -5731,7 +5731,7 @@ public OnPlayerModelLua chonionEx(playerid, response, extraid, modelid, extralis
 		Register_MainMenu(playerid);
 	}
 	*/
-	if(extraid == PRISON_SKINLua chon)
+	if(extraid == PRISON_SKINSELECT)
 	{
 		if(response)
 		{
