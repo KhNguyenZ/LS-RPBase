@@ -45,7 +45,7 @@ hook OnPlayerEnterCheckpoint(playerid) {
     {
         DisablePlayerCheckpoint(playerid);
         DeletePVar(playerid, "pSellingFish");
-        SendClientMessageEx(playerid, COLOR_WHITE, "Ban da den noi ban ca, hay su dung /sellfish [amount] de ban ca cua ban.");
+        SendClientMessageEx(playerid, COLOR_WHITE, "Ban da den dich. Dung /sellfish [so luong] de ban so ca cua ban.");
     }
     return 1;
 }
@@ -55,7 +55,7 @@ IncreaseFishingLevel(playerid) {
     if(PlayerInfo[playerid][pDoubleEXP] > 0)
     {
         PlayerInfo[playerid][pFishingSkill] += 2;
-        format(szMiscArray, sizeof(szMiscArray), "Ban da nhan duoc 2 diem cau cau. Ban con %d gio (DOUBLE EXP) nua.", PlayerInfo[playerid][pDoubleEXP]);
+        format(szMiscArray, sizeof(szMiscArray), "Ban da nhan duoc 2 diem ky nang cau ca thay vi 1. Ban %d gio con tren cai doi EXP ma thong bao.", PlayerInfo[playerid][pDoubleEXP]);
         SendClientMessageEx(playerid, COLOR_YELLOW, szMiscArray);
         // PlayerInfo[playerid][pXP] += PlayerInfo[playerid][pLevel] * XP_RATE * 2;
     }
@@ -77,9 +77,9 @@ CMD:fishhelp(playerid, params[])
 CMD:ofishhelp(playerid, params[])
 {
     SendClientMessageEx(playerid, COLOR_GREEN,"_______________________________________");
-    SendClientMessageEx(playerid, COLOR_WHITE,"*** FISH HELP *** - Su dung lenh de biet them chi tiet.");
-    SendClientMessageEx(playerid, COLOR_GRAD3,"*** FISHING *** /fish (cau ca)   /myfish (hien thi so ca cua ban)");
-    SendClientMessageEx(playerid, COLOR_GRAD3,"*** FISHING *** /sellfish (ban ca cua ban)");
+    SendClientMessageEx(playerid, COLOR_WHITE,"*** FISH HELP *** - go lenh de biet them thong tin.");
+    SendClientMessageEx(playerid, COLOR_GRAD3,"*** FISHING *** /fish (Co gang bat mot con ca)   /myfish (Hien thi nhung con ca ban da bat duoc)");
+    SendClientMessageEx(playerid, COLOR_GRAD3,"*** FISHING *** /sellfish (Ban ca cua ban)");
     return 1;
 }
 
@@ -101,22 +101,22 @@ CMD:fish(playerid, params[]) {
                         		{
                         		    case 0:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da khong cau duoc gi het!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da khong bat duoc gi!");
     									
     									SetPVarInt(playerid, "pFishTime", gettime() + 10);
     									IncreaseFishingLevel(playerid);
 									}
 									case 1:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc 1 con Bluegill!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot ca mang xanh!");
     									
     									PlayerInfo[playerid][pFishWeight] += 5;
     									
@@ -125,11 +125,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 2:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc 1 con Bass!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca vuoc!");
     									
     									PlayerInfo[playerid][pFishWeight] += 7;
     									
@@ -144,22 +144,22 @@ CMD:fish(playerid, params[]) {
                         		{
                         		    case 0:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da cau khong duoc gi!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da khong bat duoc gi!");
     									
     									SetPVarInt(playerid, "pFishTime", gettime() + 10);
     									IncreaseFishingLevel(playerid);
 									}
 									case 1:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bluegill!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot ca mang xanh!");
 
     									PlayerInfo[playerid][pFishWeight] += 5;
     									
@@ -168,11 +168,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 2:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bass!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca vuoc!");
 
     									PlayerInfo[playerid][pFishWeight] += 7;
     									
@@ -181,11 +181,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 3:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con cod!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca tuyet!");
 
     									PlayerInfo[playerid][pFishWeight] += 14;
     									
@@ -194,11 +194,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 4:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con catfish!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca da tron!");
 
     									PlayerInfo[playerid][pFishWeight] += 17;
     									
@@ -213,22 +213,22 @@ CMD:fish(playerid, params[]) {
                         		{
                         		    case 0:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da cau khong duoc gi!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da khong bat duoc gi!");
     									
     									SetPVarInt(playerid, "pFishTime", gettime() + 10);
     									IncreaseFishingLevel(playerid);
 									}
 									case 1:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bluegill!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot ca mang xanh!");
 
     									PlayerInfo[playerid][pFishWeight] += 5;
     									
@@ -237,11 +237,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 2:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bass!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca vuoc!");
 
     									PlayerInfo[playerid][pFishWeight] += 7;
     									
@@ -250,11 +250,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 3:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con cod!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca tuyet!");
 
     									PlayerInfo[playerid][pFishWeight] += 14;
     									
@@ -263,11 +263,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 4:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con catfish!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca da tron!");
 
     									PlayerInfo[playerid][pFishWeight] += 17;
     									
@@ -276,11 +276,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 5:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con pike!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot pike!");
 
     									PlayerInfo[playerid][pFishWeight] += 24;
     									
@@ -289,7 +289,7 @@ CMD:fish(playerid, params[]) {
 									}
 									case 6:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
@@ -302,11 +302,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 7:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con mackerel!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca thu!");
 
     									PlayerInfo[playerid][pFishWeight] += 35;
     									
@@ -315,7 +315,7 @@ CMD:fish(playerid, params[]) {
 									}
 									case 8:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
@@ -334,22 +334,22 @@ CMD:fish(playerid, params[]) {
                         		{
                         		    case 0:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da cau khong duoc gi!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da khong bat duoc gi!");
     									
     									SetPVarInt(playerid, "pFishTime", gettime() + 10);
     									IncreaseFishingLevel(playerid);
 									}
 									case 1:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bluegill!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot ca mang xanh!");
 
     									PlayerInfo[playerid][pFishWeight] += 5;
     									
@@ -358,11 +358,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 2:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bass!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca vuoc!");
 
     									PlayerInfo[playerid][pFishWeight] += 7;
     									
@@ -371,11 +371,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 3:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con cod!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca tuyet!");
 
     									PlayerInfo[playerid][pFishWeight] += 14;
     									
@@ -384,11 +384,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 4:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con catfish!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca da tron!");
 
     									PlayerInfo[playerid][pFishWeight] += 17;
     									
@@ -397,11 +397,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 5:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con pike!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot pike!");
 
     									PlayerInfo[playerid][pFishWeight] += 24;
     									
@@ -410,7 +410,7 @@ CMD:fish(playerid, params[]) {
 									}
 									case 6:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
@@ -423,11 +423,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 7:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con mackerel!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca thu!");
 
     									PlayerInfo[playerid][pFishWeight] += 35;
     									
@@ -436,7 +436,7 @@ CMD:fish(playerid, params[]) {
 									}
 									case 8:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
@@ -449,11 +449,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 9:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con swordfish!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca kiem!");
 
     									PlayerInfo[playerid][pFishWeight] += 70;
     									
@@ -462,11 +462,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 10:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con tench!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot tench!");
 
     									PlayerInfo[playerid][pFishWeight] += 71;
     									
@@ -475,11 +475,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 11:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con seabass!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da cau duoc mot con ca chem!");
 
     									PlayerInfo[playerid][pFishWeight] += 80;
     									
@@ -494,22 +494,22 @@ CMD:fish(playerid, params[]) {
                         		{
                         		    case 0:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da cau khong duoc gi!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da khong bat duoc gi!");
     									
     									SetPVarInt(playerid, "pFishTime", gettime() + 10);
     									IncreaseFishingLevel(playerid);
 									}
 									case 1:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bluegill!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot ca mang xanh!");
 
     									PlayerInfo[playerid][pFishWeight] += 5;
     									
@@ -518,11 +518,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 2:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con bass!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca vuoc!");
 
     									PlayerInfo[playerid][pFishWeight] += 7;
     									
@@ -531,11 +531,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 3:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con cod!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca tuyet!");
 
     									PlayerInfo[playerid][pFishWeight] += 14;
     									
@@ -544,11 +544,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 4:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con catfish!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca da tron!");
 
     									PlayerInfo[playerid][pFishWeight] += 17;
     									
@@ -557,11 +557,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 5:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con pike!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot pike!");
 
     									PlayerInfo[playerid][pFishWeight] += 24;
     									
@@ -570,7 +570,7 @@ CMD:fish(playerid, params[]) {
 									}
 									case 6:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
@@ -583,11 +583,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 7:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con mackerel!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca thu!");
 
     									PlayerInfo[playerid][pFishWeight] += 35;
     									
@@ -596,7 +596,7 @@ CMD:fish(playerid, params[]) {
 									}
 									case 8:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
@@ -609,11 +609,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 9:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con swordfish!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con ca kiem!");
 
     									PlayerInfo[playerid][pFishWeight] += 70;
     									
@@ -622,11 +622,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 10:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con tench!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot tench!");
 
     									PlayerInfo[playerid][pFishWeight] += 71;
     									
@@ -635,11 +635,11 @@ CMD:fish(playerid, params[]) {
 									}
 									case 11:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
-    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da bat duoc mot con seabass!");
+    									SendClientMessageEx(playerid, COLOR_LIGHTBLUE, "Ban da cau duoc mot con ca chem!");
 
     									PlayerInfo[playerid][pFishWeight] += 80;
     									
@@ -648,7 +648,7 @@ CMD:fish(playerid, params[]) {
 									}
 									case 12:
                             		{
-                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s da quang soi day cua can cau ra xa.", GetPlayerNameEx(playerid));
+                						format(szMiscArray, sizeof szMiscArray, "{FF8000}* {C2A2DA}%s nem cay gay cua ho ra, quay no tro lai", GetPlayerNameEx(playerid));
     									SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 30.0, 4000);
     									SendClientMessageEx(playerid, COLOR_PURPLE, szMiscArray);
 
@@ -663,12 +663,12 @@ CMD:fish(playerid, params[]) {
 							}
 						}
 					}
-					else SendClientMessageEx(playerid, COLOR_GRAD2, "  Vui long doi 10 giay nua de tiep tuc!");
+					else SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban phai doi them 10 giay truoc khi co the su dung lai!");
 				}
-				else SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban dang giu rat nhieu ca, su dung /selfish de ban bot chung di.");
+				else SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban da dat den trong luong toi da cua ban. Dung /sellfish de kiem loi nhuan.");
             }
         }
-        else return SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban khong o tren tau!");
+        else return SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban khong o tren thuyen!");
     }
     //else SendClientMessageEx(playerid, COLOR_GRAD2, "  You are not a fisherman!");
 	return 1;
@@ -686,17 +686,17 @@ CMD:sellfish(playerid, params[]) {
 	new amount;
     if(GetPVarInt(playerid, "pFishSellTime") < gettime())
     {
-        if(PlayerInfo[playerid][pFishWeight] < 50) return SendClientMessageEx(playerid, COLOR_GREY, "Ban can phai co it nhat 50 pounds ca de ban chung.");
+        if(PlayerInfo[playerid][pFishWeight] < 50) return SendClientMessageEx(playerid, COLOR_GREY, "Ban it nhat phai co nam muoi can ca de ban chung.");
         if(IsPlayerInRangeOfPoint(playerid, 30.0, 2161.0513,-98.5897,2.7893))
         {
         	if(sscanf(params, "d", amount))
 			{
-				SendClientMessageEx(playerid, COLOR_GREY, "SU DUNG: /sellfish [amount]");
+				SendClientMessageEx(playerid, COLOR_GREY, "Su Dung: /sellfish [So Luong]");
 				format(szMiscArray, sizeof szMiscArray, "Fish: %d lbs.", PlayerInfo[playerid][pFishWeight]);
 				return SendClientMessageEx(playerid, COLOR_YELLOW, szMiscArray);
 			}
         
-            if(amount < 50) return SendClientMessageEx(playerid, COLOR_GREY, "Ban chi co the ban duoc hon 50 pound ca moi lan.");
+            if(amount < 50) return SendClientMessageEx(playerid, COLOR_GREY, "Ban chi co the ban hon 50 pound ca moi lan.");
         	if(PlayerInfo[playerid][pFishWeight] >= amount && PlayerInfo[playerid][pFishWeight] != 0)
        		{
    	    		new rand = random(100) + 100, money = amount * 40 + rand;
@@ -705,10 +705,10 @@ CMD:sellfish(playerid, params[]) {
 
                 SetPVarInt(playerid, "pFishSellTime", gettime() + 120);
 				
-				format(szMiscArray, sizeof szMiscArray, "Ban da ban %d lbs va nhan duoc $%s.", amount, number_format(money));
+				format(szMiscArray, sizeof szMiscArray, "Ban da ban %d lbs cho $%s.", amount, number_format(money));
 				SendClientMessageEx(playerid, COLOR_YELLOW, szMiscArray);
 			}
-			else return SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban khong co nhieu den vay!");
+			else return SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban khong co nhieu can nhu vay!");
 		}
 		else
 		{
@@ -717,9 +717,9 @@ CMD:sellfish(playerid, params[]) {
 		    GameTextForPlayer(playerid, "~g~CHECKPOINT ~r~SET", 5000, 4);
             SetPVarInt(playerid, "pSellingFish", 1);
 		    SetPlayerCheckpoint(playerid, 2161.0513,-98.5897,2.7893, 10.0);
-			return SendClientMessageEx(playerid, COLOR_YELLOW, "Hay di den checkpoint de ban so ca cua ban.");
+			return SendClientMessageEx(playerid, COLOR_YELLOW, "Tim duong den tram kiem soat de ban ca cua ban.");
 		}
     }
-    else SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban phai doi 2 phut de tiep tuc ban ca!");
+    else SendClientMessageEx(playerid, COLOR_GRAD2, "  Ban phai doi hai phut truoc khi ban lai ca cua minh!");
 	return 1;
 }
