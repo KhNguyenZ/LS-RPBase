@@ -261,9 +261,9 @@ CMD:walkstyle(playerid, params[])
 	if(styleid == 0)
 	{
 		ResetPlayerWalkingStyle(playerid);
-		return SendClientMessage(playerid, COLOR_WHITE, "* Walking style has been reset!");
+		return SendClientMessage(playerid, COLOR_WHITE, "* Phong cach di bo da duoc thiet lap lai!");
 	}
-	if(styleid < 1 || styleid > 26) return SendClientMessage(playerid, COLOR_GRAD2, "Style can't be below 1, or above 26.");
+	if(styleid < 1 || styleid > 26) return SendClientMessage(playerid, COLOR_GRAD2, "Animation khong the duoi day 1, hoac o tren 26.");
 	SetPlayerWalkingStyle(playerid, PlayerWalkStyle[styleid]);
 	format(string, sizeof(string), "* Walking style set to %d.", styleid);
 	SendClientMessage(playerid, COLOR_WHITE, string);

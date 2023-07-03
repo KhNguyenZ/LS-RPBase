@@ -334,19 +334,16 @@ new CarRadars[MAX_PLAYERS];
 new PlayerText:BackupText[MAX_PLAYERS];
 new BackupClearTimer[MAX_PLAYERS]; // backup clear timer
 
-//MechanicTD
-new PlayerText:MechanicTD[MAX_PLAYERS][11];
-
 // Countdown var
 new CountDown = 0;
 
 // Main Menu Random Tooltips
 new Tooltips[][] =
 {
-	"Next Generation Gaming Staff will never ask you for your password.",
-	"Bored? Have a round of Paintball at the ~r~Paintball Arena~w~!",
-	"Remember! We log everything, and have auto-detection for the majority of hacks.",
-	"Don't have a voip server? No Problem! Use our ~b~TeamSpeak~w~ at ~y~ts.ng-gaming.net:9987~w~.",
+	"Next Generation Gaming Staff se khong bao gio hoi ban mat khau cua ban.",
+	"Chan? Choi mot vong Paintball tai ~r~Paintball Arena~w~!",
+	"Nho! Chung toi ghi nhat ky moi thu va co tinh nang tu dong phat hien phan lon cac vu hack.",
+	"Khong co may chu voip? Khong van de! su dung ~b~TeamSpeak~w~ at ~y~ts.ng-gaming.net:9987~w~.",
 	"We are not just a sa-mp community, don't forget to check our other projects at ~y~ng-gaming.net~w~!",
 	"Don't forget to check out our E-store at ~y~shop.ng-gaming.net~w~, Helps keep this server up and running~w~!",
 	"We have a full Advisors staff waiting to help you! Use ~g~/requesthelp~w~ to communicate with them!",

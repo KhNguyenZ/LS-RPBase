@@ -12,23 +12,23 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 		//if(!AC_KeySpamCheck(playerid)) return 1;
 		new engine,lights,alarm,doors,bonnet,boot,objective;
 		if(GetVehicleModel(vehicleid) == 481 || GetVehicleModel(vehicleid) == 509 || GetVehicleModel(vehicleid) == 510 || DynVeh[vehicleid] != -1 && DynVehicleInfo[DynVeh[vehicleid]][gv_iType] == 1 && GetVehicleModel(vehicleid) == 592) return SendClientMessageEx(playerid,COLOR_WHITE,"This command can't be used in this vehicle.");
-		if(WheelClamp{vehicleid}) return SendClientMessageEx(playerid,COLOR_WHITE,"(( This vehicle has a wheel camp on its front tire, you will not be able to drive away with it. ))");
+		if(WheelClamp{vehicleid}) return SendClientMessageEx(playerid,COLOR_WHITE,"(( Chiec xe nay co mot banh xe bi lom o lop truoc, ban se khong the lai xe di voi no. ))");
 
 		GetVehicleParamsEx(vehicleid,engine,lights,alarm,doors,bonnet,boot,objective);
 		if(engine == VEHICLE_PARAMS_ON)
 		{
 			SetVehicleEngine(vehicleid, playerid);
-			format(szMiscArray, sizeof(szMiscArray), "%s turns the key in the ignition and the engine stops.", GetPlayerNameEx(playerid));
+			format(szMiscArray, sizeof(szMiscArray), "%s xoay chia khoa trong danh lua va dong co dung lai.", GetPlayerNameEx(playerid));
 			SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 15.0, 5000);
 			//ProxDetector(30.0, playerid, szMiscArray, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 		}
 		else if((engine == VEHICLE_PARAMS_OFF || engine == VEHICLE_PARAMS_UNSET))
 		{
-			if (GetPVarInt(playerid, "Refueling")) return SendClientMessageEx(playerid, COLOR_WHITE, "You can't do this while refueling.");
-			format(szMiscArray, sizeof(szMiscArray), "%s turns the key in the ignition and the engine starts.", GetPlayerNameEx(playerid));
+			if (GetPVarInt(playerid, "Refueling")) return SendClientMessageEx(playerid, COLOR_WHITE, "Ban khong the lam dieu nay trong khi tiep nhien lieu.");
+			format(szMiscArray, sizeof(szMiscArray), "%s xoay chia khoa trong danh lua va dong co bat dau.", GetPlayerNameEx(playerid));
 			SetPlayerChatBubble(playerid, szMiscArray, COLOR_PURPLE, 15.0, 5000);
 			//ProxDetector(30.0, playerid, szMiscArray, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
-			SendClientMessageEx(playerid, COLOR_WHITE, "Vehicle engine starting, please wait...");
+			SendClientMessageEx(playerid, COLOR_WHITE, "dong co xe dang khoi dong, vui long doi...");
 			SetTimerEx("SetVehicleEngine", 1000, 0, "dd",  vehicleid, playerid);
 			RemoveVehicleFromMeter(vehicleid);
 		}

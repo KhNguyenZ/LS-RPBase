@@ -175,7 +175,7 @@ Int_DestDyn3DTxtLabel(Text3D:id) {
 		case 10: szString = "Businesses[iBusiness][GasPumpInfoTextID][iPump]";
 		default: szString = "Unknown";
 	}
-	format(szString, sizeof(szString), "Removed TextLabel: %d | Tracker: %s", _:id, szString);
+	format(szString, sizeof(szString), "Xoa TextLabel: %d | Tracker: %s", _:id, szString);
 	SendDiscordMessage(3, szString);
 
 	format(szString, sizeof(szString), "TL (%d) data: %0.2f, %0.2f, %0.2f, VW: %d, INT: %d", _:id, fPos[0], fPos[1], fPos[2], iData[0], iData[1]);
@@ -183,7 +183,7 @@ Int_DestDyn3DTxtLabel(Text3D:id) {
 
 	if(!IsValidDynamic3DTextLabel(id)) {
 
-		format(szString, sizeof(szString), "Text Label %d (Tracker %s) deleted a non-created text label.", _:id, szString);
+		format(szString, sizeof(szString), "Text Label %d (Tracker %s) da xoa mot cai khong duoc tao text label.", _:id, szString);
 		SendDiscordMessage(3, szString);
 	}
 	return DestroyDynamic3DTextLabel(id);

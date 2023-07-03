@@ -748,7 +748,7 @@ public LoadTextDraws() {
 	TextDrawSetShadow(MainMenuTxtdraw[9], 0);
 	textdrawscount++;
 
-	MainMenuTxtdraw[10] = TextDrawCreate(319.000000, 81.000000, "This server may contain explicit content and may be considered only for adults.");
+	MainMenuTxtdraw[10] = TextDrawCreate(319.000000, 81.000000, "May chu nay co the chua noi dung khieu dam va chi co the duoc xem xet cho nguoi lon.");
 	TextDrawAlignment(MainMenuTxtdraw[10], 2);
 	TextDrawBackgroundColor(MainMenuTxtdraw[10], 255);
 	TextDrawFont(MainMenuTxtdraw[10], 0);
@@ -809,7 +809,7 @@ public LoadTextDraws() {
 	TextDrawSetOutline(NoticeTxtdraw[1], 1);
 	TextDrawSetProportional(NoticeTxtdraw[1], 1);
 
-	NoticeTxtdraw[2] = TextDrawCreate(309.000000, 222.000000, "Looking up your account, Please Wait!");
+	NoticeTxtdraw[2] = TextDrawCreate(309.000000, 222.000000, "dang tra cuu tai khoan cua ban, Vui long doi!");
 	TextDrawAlignment(NoticeTxtdraw[2], 2);
 	TextDrawBackgroundColor(NoticeTxtdraw[2], 255);
 	TextDrawFont(NoticeTxtdraw[2], 2);
@@ -818,7 +818,7 @@ public LoadTextDraws() {
 	TextDrawSetOutline(NoticeTxtdraw[2], 1);
 	TextDrawSetProportional(NoticeTxtdraw[2], 1);
 
-	NoticeTxtdraw[3] = TextDrawCreate(309.000000, 222.000000, "Comparing passwords with database, Please Wait!");
+	NoticeTxtdraw[3] = TextDrawCreate(309.000000, 222.000000, "So sanh mat khau voi co so du lieu, Vui long doi!");
 	TextDrawAlignment(NoticeTxtdraw[3], 2);
 	TextDrawBackgroundColor(NoticeTxtdraw[3], 255);
 	TextDrawFont(NoticeTxtdraw[3], 2);
@@ -827,7 +827,7 @@ public LoadTextDraws() {
 	TextDrawSetOutline(NoticeTxtdraw[3], 1);
 	TextDrawSetProportional(NoticeTxtdraw[3], 1);
 
-	NoticeTxtdraw[4] = TextDrawCreate(309.000000, 222.000000, "Fetching & Loading your account, Please Wait!");
+	NoticeTxtdraw[4] = TextDrawCreate(309.000000, 222.000000, "dang tim nap & dang tai tai khoan cua ban, Vui long doi!");
 	TextDrawAlignment(NoticeTxtdraw[4], 2);
 	TextDrawBackgroundColor(NoticeTxtdraw[4], 255);
 	TextDrawFont(NoticeTxtdraw[4], 2);
@@ -836,7 +836,7 @@ public LoadTextDraws() {
 	TextDrawSetOutline(NoticeTxtdraw[4], 1);
 	TextDrawSetProportional(NoticeTxtdraw[4], 1);
 
-	NoticeTxtdraw[5] = TextDrawCreate(309.000000, 222.000000, "Streaming Objects within area, Please Wait!");
+	NoticeTxtdraw[5] = TextDrawCreate(309.000000, 222.000000, "Truyen truc tuyen cac doi tuong trong khu vuc, Vui long doi!");
 	TextDrawAlignment(NoticeTxtdraw[5], 2);
 	TextDrawBackgroundColor(NoticeTxtdraw[5], 255);
 	TextDrawFont(NoticeTxtdraw[5], 2);
@@ -845,7 +845,7 @@ public LoadTextDraws() {
 	TextDrawSetOutline(NoticeTxtdraw[5], 1);
 	TextDrawSetProportional(NoticeTxtdraw[5], 1);
 
-	NoticeTxtdraw[6] = TextDrawCreate(309.000000, 222.000000, "MySQL server is currently busy, Please Wait!");
+	NoticeTxtdraw[6] = TextDrawCreate(309.000000, 222.000000, "MySQL may chu hien dang ban, vui long doi!");
 	TextDrawAlignment(NoticeTxtdraw[6], 2);
 	TextDrawBackgroundColor(NoticeTxtdraw[6], 255);
 	TextDrawFont(NoticeTxtdraw[6], 2);
@@ -854,7 +854,7 @@ public LoadTextDraws() {
 	TextDrawSetOutline(NoticeTxtdraw[6], 1);
 	TextDrawSetProportional(NoticeTxtdraw[6], 1);
 
-	NoticeTxtdraw[7] = TextDrawCreate(309.000000, 222.000000, "Loading, Please Wait!");
+	NoticeTxtdraw[7] = TextDrawCreate(309.000000, 222.000000, "Dang tai,Vui long doi");
 	TextDrawAlignment(NoticeTxtdraw[7], 2);
 	TextDrawBackgroundColor(NoticeTxtdraw[7], 255);
 	TextDrawFont(NoticeTxtdraw[7], 2);
@@ -864,7 +864,7 @@ public LoadTextDraws() {
 	TextDrawSetProportional(NoticeTxtdraw[7], 1);
 
 	// Tutorial (Next Page)
-	TutTxtdraw[114] = TextDrawCreate(427.000000, 120.000000, "Press ~r~~k~~CONVERSATION_YES~");
+	TutTxtdraw[114] = TextDrawCreate(427.000000, 120.000000, "Nhan ~r~~k~~CONVERSATION_YES~");
 	TextDrawBackgroundColor(TutTxtdraw[114], 255);
 	TextDrawFont(TutTxtdraw[114], 2);
 	TextDrawLetterSize(TutTxtdraw[114], 0.159998, 0.899999);
@@ -910,7 +910,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Title)
-	TutTxtdraw[4] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Welcome to Next Generation Role Play!");
+	TutTxtdraw[4] = TextDrawCreate(168.000000, 120.000000, "Huong dan - Chao mung den voi Next Generation Role Play!");
 	TextDrawBackgroundColor(TutTxtdraw[4], 255);
 	TextDrawFont(TutTxtdraw[4], 2);
 	TextDrawLetterSize(TutTxtdraw[4], 0.209999, 1.000000);
@@ -921,7 +921,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 1)
-	TutTxtdraw[5] = TextDrawCreate(175.000000, 141.000000, "Introductions! Welcome to Next Generation Role Play, SA-MP's most popular");
+	TutTxtdraw[5] = TextDrawCreate(175.000000, 141.000000, "Gioi thieu! Chao mung den  Next Generation Role Play, SA-MP pho bien nhat");
 	TextDrawBackgroundColor(TutTxtdraw[5], 255);
 	TextDrawFont(TutTxtdraw[5], 2);
 	TextDrawLetterSize(TutTxtdraw[5], 0.159999, 0.899999);
@@ -931,7 +931,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 2)
-	TutTxtdraw[6] = TextDrawCreate(175.000000, 151.000000, "English speaking server! Our community has been around for quite");
+	TutTxtdraw[6] = TextDrawCreate(175.000000, 151.000000, "Cong dong cua chung toi da ton tai kha lau");
 	TextDrawBackgroundColor(TutTxtdraw[6], 255);
 	TextDrawFont(TutTxtdraw[6], 2);
 	TextDrawLetterSize(TutTxtdraw[6], 0.159999, 0.899999);
@@ -941,7 +941,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 3)
-	TutTxtdraw[7] = TextDrawCreate(175.000000, 161.000000, "some time now, and we are glad to have you with us!");
+	TutTxtdraw[7] = TextDrawCreate(175.000000, 161.000000, "mot thoi gian bay gio, va chung toi rat vui khi co ban voi chung toi!");
 	TextDrawBackgroundColor(TutTxtdraw[7], 255);
 	TextDrawFont(TutTxtdraw[7], 2);
 	TextDrawLetterSize(TutTxtdraw[7], 0.159999, 0.899999);
@@ -951,7 +951,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 4)
-	TutTxtdraw[8] = TextDrawCreate(175.000000, 193.000000, "You know, we are more than just a SA-MP community, so if you are interested");
+	TutTxtdraw[8] = TextDrawCreate(175.000000, 193.000000, "Ban biet day, chung toi khong chi la mot SA-MP community, vi vay neu ban quan tam");
 	TextDrawBackgroundColor(TutTxtdraw[8], 255);
 	TextDrawFont(TutTxtdraw[8], 2);
 	TextDrawLetterSize(TutTxtdraw[8], 0.159999, 0.899999);
@@ -961,7 +961,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 5)
-	TutTxtdraw[9] = TextDrawCreate(175.000000, 203.000000, "be sure to visit us and sign up on our forums at ~y~www.ng-gaming.net~w~ - we");
+	TutTxtdraw[9] = TextDrawCreate(175.000000, 203.000000, "hay chac chan ghe tham chung toi va dang ky tren cac dien dan cua chung toi tai ~y~www.ng-gaming.net~w~ - we");
 	TextDrawBackgroundColor(TutTxtdraw[9], 255);
 	TextDrawFont(TutTxtdraw[9], 2);
 	TextDrawLetterSize(TutTxtdraw[9], 0.159999, 0.899999);
@@ -971,7 +971,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 6)
-	TutTxtdraw[10] = TextDrawCreate(175.000000, 214.000000, "will be waiting, be sure to invite your friends!");
+	TutTxtdraw[10] = TextDrawCreate(175.000000, 214.000000, "se cho doi, hay nho moi ban be cua ban!");
 	TextDrawBackgroundColor(TutTxtdraw[10], 255);
 	TextDrawFont(TutTxtdraw[10], 2);
 	TextDrawLetterSize(TutTxtdraw[10], 0.159999, 0.899999);
@@ -981,7 +981,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 7)
-	TutTxtdraw[11] = TextDrawCreate(175.000000, 245.000000, "We also have a e-store with a bunch of useful items to purchase, be sure to");
+	TutTxtdraw[11] = TextDrawCreate(175.000000, 245.000000, "Chung toi cung co mot cua hang dien tu voi rat nhieu mat hang huu ich de mua, hay nho");
 	TextDrawBackgroundColor(TutTxtdraw[11], 255);
 	TextDrawFont(TutTxtdraw[11], 2);
 	TextDrawLetterSize(TutTxtdraw[11], 0.159999, 0.899999);
@@ -991,7 +991,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 8)
-	TutTxtdraw[12] = TextDrawCreate(175.000000, 255.000000, "check it all out at ~y~shop.ng-gaming.net~w~, it helps keep this server up and");
+	TutTxtdraw[12] = TextDrawCreate(175.000000, 255.000000, "kiem tra tat ca tai ~y~shop.ng-gaming.net~w~, no giup duy tri may chu nay va");
 	TextDrawBackgroundColor(TutTxtdraw[12], 255);
 	TextDrawFont(TutTxtdraw[12], 2);
 	TextDrawLetterSize(TutTxtdraw[12], 0.159999, 0.899999);
@@ -1001,7 +1001,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 1) (Line 9)
-	TutTxtdraw[13] = TextDrawCreate(175.000000, 265.000000, "running with all the prices of space, bandwidth and labor these days.");
+	TutTxtdraw[13] = TextDrawCreate(175.000000, 265.000000, "chay voi tat ca gia cua khong gian, bang thong va lao dong ngay nay.");
 	TextDrawBackgroundColor(TutTxtdraw[13], 255);
 	TextDrawFont(TutTxtdraw[13], 2);
 	TextDrawLetterSize(TutTxtdraw[13], 0.159999, 0.899999);
@@ -1011,7 +1011,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Title)
-	TutTxtdraw[14] = TextDrawCreate(168.000000, 120.000000, "Tutorial - How to make money!");
+	TutTxtdraw[14] = TextDrawCreate(168.000000, 120.000000, "Huong dan - Cach kiem tien!");
 	TextDrawBackgroundColor(TutTxtdraw[14], 255);
 	TextDrawFont(TutTxtdraw[14], 2);
 	TextDrawLetterSize(TutTxtdraw[14], 0.209998, 1.000000);
@@ -1022,7 +1022,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 1)
-	TutTxtdraw[15] = TextDrawCreate(175.000000, 141.000000, "There are many jobs located around San Andreas, these are represented");
+	TutTxtdraw[15] = TextDrawCreate(175.000000, 141.000000, "Co rat nhieu cong viec xung quanh San Andreas, chung duoc dai dien");
 	TextDrawBackgroundColor(TutTxtdraw[15], 255);
 	TextDrawFont(TutTxtdraw[15], 2);
 	TextDrawLetterSize(TutTxtdraw[15], 0.159998, 0.899999);
@@ -1032,7 +1032,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 2)
-	TutTxtdraw[16] = TextDrawCreate(175.000000, 151.000000, "by ~y~yellow~w~ information icons.");
+	TutTxtdraw[16] = TextDrawCreate(175.000000, 151.000000, "boi ~y~yellow~w~ bieu tuong thong tin.");
 	TextDrawBackgroundColor(TutTxtdraw[16], 255);
 	TextDrawFont(TutTxtdraw[16], 2);
 	TextDrawLetterSize(TutTxtdraw[16], 0.159998, 0.899999);
@@ -1042,7 +1042,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 3)
-	TutTxtdraw[17] = TextDrawCreate(181.000000, 172.000000, "| You can ~g~/withdraw~w~ and ~g~/deposit~w~ money at the bank.");
+	TutTxtdraw[17] = TextDrawCreate(181.000000, 172.000000, "| Ban co the ~g~/withdraw~w~ va ~g~/deposit~w~ tien tai ngan hang.");
 	TextDrawBackgroundColor(TutTxtdraw[17], 255);
 	TextDrawFont(TutTxtdraw[17], 2);
 	TextDrawLetterSize(TutTxtdraw[17], 0.159998, 0.899999);
@@ -1052,7 +1052,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 4)
-	TutTxtdraw[18] = TextDrawCreate(181.000000, 183.000000, "| You can ~g~/awithdraw~w~ and ~g~/adeposit~w~ cash at a ATM for a small fee.");
+	TutTxtdraw[18] = TextDrawCreate(181.000000, 183.000000, "| Ban co the ~g~/awithdraw~w~ va ~g~/adeposit~w~ rut tien tai may ATM voi mot khoan phi nho.");
 	TextDrawBackgroundColor(TutTxtdraw[18], 255);
 	TextDrawFont(TutTxtdraw[18], 2);
 	TextDrawLetterSize(TutTxtdraw[18], 0.159998, 0.899999);
@@ -1062,7 +1062,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 5)
-	TutTxtdraw[19] = TextDrawCreate(181.000000, 195.000000, "| You can ~g~/fish~w~ in boats or at the pier for money.");
+	TutTxtdraw[19] = TextDrawCreate(181.000000, 195.000000, "| Ban co the ~g~/fish~w~ tren thuyen hoac tai ben tau de kiem tien.");
 	TextDrawBackgroundColor(TutTxtdraw[19], 255);
 	TextDrawFont(TutTxtdraw[19], 2);
 	TextDrawLetterSize(TutTxtdraw[19], 0.159998, 0.899999);
@@ -1072,7 +1072,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 6)
-	TutTxtdraw[20] = TextDrawCreate(181.000000, 207.000000, "| You can ~g~/guard~w~ people for money.");
+	TutTxtdraw[20] = TextDrawCreate(181.000000, 207.000000, "| Ban co the ~g~/guard~w~ cho nguoi do.");
 	TextDrawBackgroundColor(TutTxtdraw[20], 255);
 	TextDrawFont(TutTxtdraw[20], 2);
 	TextDrawLetterSize(TutTxtdraw[20], 0.159998, 0.899999);
@@ -1082,7 +1082,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 7)
-	TutTxtdraw[21] = TextDrawCreate(181.000000, 219.000000, "| You can ~g~/sellgun~w~ to people for money.");
+	TutTxtdraw[21] = TextDrawCreate(181.000000, 219.000000, "| Ban co the ~g~/sellgun~w~ cho nguoi do.");
 	TextDrawBackgroundColor(TutTxtdraw[21], 255);
 	TextDrawFont(TutTxtdraw[21], 2);
 	TextDrawLetterSize(TutTxtdraw[21], 0.159998, 0.899999);
@@ -1092,7 +1092,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 8)
-	TutTxtdraw[22] = TextDrawCreate(181.000000, 232.000000, "| You can ~g~/sellpot~w~ or ~g~/sellcrack~w~ to people for money.");
+	TutTxtdraw[22] = TextDrawCreate(181.000000, 232.000000, "| Ban co the ~g~/sellpot~w~ voi ~g~/sellcrack~w~ cho nguoi do.");
 	TextDrawBackgroundColor(TutTxtdraw[22], 255);
 	TextDrawFont(TutTxtdraw[22], 2);
 	TextDrawLetterSize(TutTxtdraw[22], 0.159998, 0.899999);
@@ -1102,7 +1102,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 9)
-	TutTxtdraw[23] = TextDrawCreate(181.000000, 244.000000, "| You can smuggle drugs with ~g~/getcrate~w~ to specific dens.");
+	TutTxtdraw[23] = TextDrawCreate(181.000000, 244.000000, "| Ban co the buon lau ma tuy voi ~g~/getcrate~w~ to mat do cu the.");
 	TextDrawBackgroundColor(TutTxtdraw[23], 255);
 	TextDrawFont(TutTxtdraw[23], 2);
 	TextDrawLetterSize(TutTxtdraw[23], 0.159998, 0.899999);
@@ -1112,7 +1112,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 2-9) (Line 10)
-	TutTxtdraw[24] = TextDrawCreate(181.000000, 256.000000, "| You can ~g~/jobhelp~w~ for more!");
+	TutTxtdraw[24] = TextDrawCreate(181.000000, 256.000000, "| Ban co the ~g~/jobhelp~w~ de biet them!");
 	TextDrawBackgroundColor(TutTxtdraw[24], 255);
 	TextDrawFont(TutTxtdraw[24], 2);
 	TextDrawLetterSize(TutTxtdraw[24], 0.159998, 0.899999);
@@ -1122,7 +1122,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 10) (Title)
-	TutTxtdraw[25] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Law Enforcement");
+	TutTxtdraw[25] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Thuc thi phap luat");
 	TextDrawBackgroundColor(TutTxtdraw[25], 255);
 	TextDrawFont(TutTxtdraw[25], 2);
 	TextDrawLetterSize(TutTxtdraw[25], 0.209998, 1.000000);
@@ -1133,7 +1133,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 10) (Line 1)
-	TutTxtdraw[26] = TextDrawCreate(175.000000, 141.000000, "There are currently 4+ ~b~Law Enforcement~w~ Factions. LSPD, SFPD, SASD and FBI.");
+	TutTxtdraw[26] = TextDrawCreate(175.000000, 141.000000, "Hien tai co 4+ ~b~Law Enforcement~w~ Factions. LSPD, SFPD, SASD and FBI.");
 	TextDrawBackgroundColor(TutTxtdraw[26], 255);
 	TextDrawFont(TutTxtdraw[26], 2);
 	TextDrawLetterSize(TutTxtdraw[26], 0.159998, 0.899999);
@@ -1143,7 +1143,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 10) (Line 2)
-	TutTxtdraw[27] = TextDrawCreate(175.000000, 151.000000, "If you cause trouble and break local laws, you may be arrested by one of");
+	TutTxtdraw[27] = TextDrawCreate(175.000000, 151.000000, "Neu ban gay rac roi va vi pham luat phap dia phuong, ban co the bi bat boi mot trong nhung");
 	TextDrawBackgroundColor(TutTxtdraw[27], 255);
 	TextDrawFont(TutTxtdraw[27], 2);
 	TextDrawLetterSize(TutTxtdraw[27], 0.159998, 0.899999);
@@ -1153,7 +1153,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 10) (Line 3)
-	TutTxtdraw[28] = TextDrawCreate(175.000000, 161.000000, "them. If you're wanting to become a part of these factions, apply on our");
+	TutTxtdraw[28] = TextDrawCreate(175.000000, 161.000000, "them. neu ban muon tro thanh mot phan cua nhung phe phai nay, hay dang ky tren trang cua chung toi");
 	TextDrawBackgroundColor(TutTxtdraw[28], 255);
 	TextDrawFont(TutTxtdraw[28], 2);
 	TextDrawLetterSize(TutTxtdraw[28], 0.159998, 0.899999);
@@ -1213,7 +1213,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 11) (Title)
-	TutTxtdraw[34] = TextDrawCreate(168.000000, 120.000000, "Tutorial - San Andreas Fire/Medical Department");
+	TutTxtdraw[34] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - San Andreas Fire/Medical Department");
 	TextDrawBackgroundColor(TutTxtdraw[34], 255);
 	TextDrawFont(TutTxtdraw[34], 2);
 	TextDrawLetterSize(TutTxtdraw[34], 0.209998, 1.000000);
@@ -1224,7 +1224,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 11) (Line 1)
-	TutTxtdraw[35] = TextDrawCreate(175.000000, 141.000000, "If you so happen to get injured, You may use ~g~/service ems~w~ to call for");
+	TutTxtdraw[35] = TextDrawCreate(175.000000, 141.000000, "Neu ban vo tinh bi thuong, Ban co the su dung~g~/service ems~w~ de goi");
 	TextDrawBackgroundColor(TutTxtdraw[35], 255);
 	TextDrawFont(TutTxtdraw[35], 2);
 	TextDrawLetterSize(TutTxtdraw[35], 0.159998, 0.899999);
@@ -1234,7 +1234,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 11) (Line 2)
-	TutTxtdraw[36] = TextDrawCreate(175.000000, 151.000000, "help. If the EMS saves you in time, you may keep your personal belongings,");
+	TutTxtdraw[36] = TextDrawCreate(175.000000, 151.000000, "Giup. Neu EMS cuu ban kip thoi, ban co the giu do dac ca nhan cua minh,");
 	TextDrawBackgroundColor(TutTxtdraw[36], 255);
 	TextDrawFont(TutTxtdraw[36], 2);
 	TextDrawLetterSize(TutTxtdraw[36], 0.159998, 0.899999);
@@ -1244,7 +1244,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 11) (Line 3)
-	TutTxtdraw[37] = TextDrawCreate(175.000000, 161.000000, "without losing them. If you're wanting to become a part of this faction,");
+	TutTxtdraw[37] = TextDrawCreate(175.000000, 161.000000, "ma khong lam mat chung. Neu ban muon tro thanh mot phan cua phe nay,");
 	TextDrawBackgroundColor(TutTxtdraw[37], 255);
 	TextDrawFont(TutTxtdraw[37], 2);
 	TextDrawLetterSize(TutTxtdraw[37], 0.159997, 0.899999);
@@ -1254,7 +1254,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 11) (Line 4)
-	TutTxtdraw[38] = TextDrawCreate(175.000000, 171.000000, "apply on our forums at ~y~www.ng-gaming.net~w~.");
+	TutTxtdraw[38] = TextDrawCreate(175.000000, 171.000000, "ap dung tren cac dien dan cua chung toi tai ~y~www.ng-gaming.net~w~.");
 	TextDrawBackgroundColor(TutTxtdraw[38], 255);
 	TextDrawFont(TutTxtdraw[38], 2);
 	TextDrawLetterSize(TutTxtdraw[38], 0.159997, 0.899999);
@@ -1264,7 +1264,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 11) (Line 5)
-	TutTxtdraw[39] = TextDrawCreate(175.000000, 204.000000, "If you want to report an emergency, purchase a cellphone and ~g~/call 911~w~");
+	TutTxtdraw[39] = TextDrawCreate(175.000000, 204.000000, "Neu ban muon bao cao truong hop khan cap, hay mua mot chiec dien thoai di dong va ~g~/call 911~w~");
 	TextDrawBackgroundColor(TutTxtdraw[39], 255);
 	TextDrawFont(TutTxtdraw[39], 2);
 	TextDrawLetterSize(TutTxtdraw[39], 0.159997, 0.899999);
@@ -1274,7 +1274,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 12) (Title)
-	TutTxtdraw[40] = TextDrawCreate(168.000000, 120.000000, "Tutorial - SANews");
+	TutTxtdraw[40] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - SANews");
 	TextDrawBackgroundColor(TutTxtdraw[40], 255);
 	TextDrawFont(TutTxtdraw[40], 2);
 	TextDrawLetterSize(TutTxtdraw[40], 0.209998, 1.000000);
@@ -1285,7 +1285,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 12) (Line 1)
-	TutTxtdraw[41] = TextDrawCreate(175.000000, 141.000000, "There is a ~b~SANews~w~ faction, they handle all the news within San");
+	TutTxtdraw[41] = TextDrawCreate(175.000000, 141.000000, "Day la mot ~b~SANews~w~ faction, ho xu ly tat ca cac tin tuc trong San");
 	TextDrawBackgroundColor(TutTxtdraw[41], 255);
 	TextDrawFont(TutTxtdraw[41], 2);
 	TextDrawLetterSize(TutTxtdraw[41], 0.159998, 0.899999);
@@ -1295,7 +1295,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 12) (Line 2)
-	TutTxtdraw[42] = TextDrawCreate(175.000000, 151.000000, "Andreas. They report about anything from gang riots and government");
+	TutTxtdraw[42] = TextDrawCreate(175.000000, 151.000000, "Andreas. Ho bao cao ve bat cu dieu gi tu bao loan bang dang va chinh phu");
 	TextDrawBackgroundColor(TutTxtdraw[42], 255);
 	TextDrawFont(TutTxtdraw[42], 2);
 	TextDrawLetterSize(TutTxtdraw[42], 0.159998, 0.899999);
@@ -1305,7 +1305,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 12) (Line 3)
-	TutTxtdraw[43] = TextDrawCreate(175.000000, 161.000000, "corruption, right down to bank robberies. If you wish to become a part of");
+	TutTxtdraw[43] = TextDrawCreate(175.000000, 161.000000, "tham nhung, ngay xuong cac vu cuop ngan hang. Neu ban muon tro thanh mot phan cua");
 	TextDrawBackgroundColor(TutTxtdraw[43], 255);
 	TextDrawFont(TutTxtdraw[43], 2);
 	TextDrawLetterSize(TutTxtdraw[43], 0.159997, 0.899999);
@@ -1315,7 +1315,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 12) (Line 4)
-	TutTxtdraw[44] = TextDrawCreate(175.000000, 171.000000, "this faction, apply on our forums at ~y~www.ng-gaming.net~w~.");
+	TutTxtdraw[44] = TextDrawCreate(175.000000, 171.000000, "faction nay, ap dung tren cac dien dan cua chung toi tai ~y~www.ng-gaming.net~w~.");
 	TextDrawBackgroundColor(TutTxtdraw[44], 255);
 	TextDrawFont(TutTxtdraw[44], 2);
 	TextDrawLetterSize(TutTxtdraw[44], 0.159997, 0.899999);
@@ -1325,7 +1325,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 12) (Line 5)
-	TutTxtdraw[45] = TextDrawCreate(175.000000, 204.000000, "If you want to sell items or advertise about a party, use ~g~/ads~w~.");
+	TutTxtdraw[45] = TextDrawCreate(175.000000, 204.000000, "Neu ban muon ban cac mat hang hoac quang cao ve mot bua tiec, hay su dung ~g~/ads~w~.");
 	TextDrawBackgroundColor(TutTxtdraw[45], 255);
 	TextDrawFont(TutTxtdraw[45], 2);
 	TextDrawLetterSize(TutTxtdraw[45], 0.159997, 0.899999);
@@ -1335,7 +1335,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 13) (Title)
-	TutTxtdraw[46] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Government");
+	TutTxtdraw[46] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Government");
 	TextDrawBackgroundColor(TutTxtdraw[46], 255);
 	TextDrawFont(TutTxtdraw[46], 2);
 	TextDrawLetterSize(TutTxtdraw[46], 0.209998, 1.000000);
@@ -1346,7 +1346,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 13) (Line 1)
-	TutTxtdraw[47] = TextDrawCreate(175.000000, 141.000000, "There is also a ~b~Government~w~ faction, they make all important decisions");
+	TutTxtdraw[47] = TextDrawCreate(175.000000, 141.000000, "Cung co mot ~b~Government~w~ faction, ho dua ra tat ca cac quyet dinh quan trong");
 	TextDrawBackgroundColor(TutTxtdraw[47], 255);
 	TextDrawFont(TutTxtdraw[47], 2);
 	TextDrawLetterSize(TutTxtdraw[47], 0.159998, 0.899999);
@@ -1356,7 +1356,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 13) (Line 2)
-	TutTxtdraw[48] = TextDrawCreate(175.000000, 151.000000, "within San Andreas. They make sure law is enforced in the judicial branch.");
+	TutTxtdraw[48] = TextDrawCreate(175.000000, 151.000000, "o trong San Andreas. Ho dam bao luat phap duoc thi hanh trong nganh tu phap.");
 	TextDrawBackgroundColor(TutTxtdraw[48], 255);
 	TextDrawFont(TutTxtdraw[48], 2);
 	TextDrawLetterSize(TutTxtdraw[48], 0.159998, 0.899999);
@@ -1366,7 +1366,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 13) (Line 3)
-	TutTxtdraw[49] = TextDrawCreate(175.000000, 161.000000, "They also set taxes and pay wages. If you're wanting to become a part of");
+	TutTxtdraw[49] = TextDrawCreate(175.000000, 161.000000, "Ho cung an dinh thue va tra luong. Neu ban muon tro thanh mot phan cua");
 	TextDrawBackgroundColor(TutTxtdraw[49], 255);
 	TextDrawFont(TutTxtdraw[49], 2);
 	TextDrawLetterSize(TutTxtdraw[49], 0.159997, 0.899999);
@@ -1376,7 +1376,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 13) (Line 4)
-	TutTxtdraw[50] = TextDrawCreate(175.000000, 171.000000, "this faction, apply on our forums at ~y~www.ng-gaming.net~w~.");
+	TutTxtdraw[50] = TextDrawCreate(175.000000, 171.000000, "Faction nay, ap dung tren cac dien dan cua chung toi tai ~y~www.ng-gaming.net~w~.");
 	TextDrawBackgroundColor(TutTxtdraw[50], 255);
 	TextDrawFont(TutTxtdraw[50], 2);
 	TextDrawLetterSize(TutTxtdraw[50], 0.159997, 0.899999);
@@ -1386,7 +1386,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 13) (Line 5)
-	TutTxtdraw[51] = TextDrawCreate(175.000000, 204.000000, "If you'd like to donate your money, you may use ~g~/charity~w~.");
+	TutTxtdraw[51] = TextDrawCreate(175.000000, 204.000000, "Neu ban muon quyen gop tien cua minh, ban co the su dung ~g~/charity~w~.");
 	TextDrawBackgroundColor(TutTxtdraw[51], 255);
 	TextDrawFont(TutTxtdraw[51], 2);
 	TextDrawLetterSize(TutTxtdraw[51], 0.159997, 0.899999);
@@ -1396,7 +1396,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 14) (Title)
-	TutTxtdraw[52] = TextDrawCreate(168.000000, 120.000000, "Tutorial - The Nation of Tierra Robada");
+	TutTxtdraw[52] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Quoc Gia Tierra Robada");
 	TextDrawBackgroundColor(TutTxtdraw[52], 255);
 	TextDrawFont(TutTxtdraw[52], 2);
 	TextDrawLetterSize(TutTxtdraw[52], 0.209998, 1.000000);
@@ -1407,7 +1407,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 14) (Line 1)
-	TutTxtdraw[53] = TextDrawCreate(175.000000, 141.000000, "~g~Tierra Robada~w~ is an alternate nation seperate from San Andreas.  They");
+	TutTxtdraw[53] = TextDrawCreate(175.000000, 141.000000, "~g~Tierra Robada~w~ la mot quoc gia thay the tach biet voi San Andreas. Ho");
 	TextDrawBackgroundColor(TutTxtdraw[53], 255);
 	TextDrawFont(TutTxtdraw[53], 2);
 	TextDrawLetterSize(TutTxtdraw[53], 0.159998, 0.899999);
@@ -1417,7 +1417,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 14) (Line 2)
-	TutTxtdraw[54] = TextDrawCreate(175.000000, 151.000000, "have their own laws, law enforcement, government and medical divisions.");
+	TutTxtdraw[54] = TextDrawCreate(175.000000, 151.000000, "co luat rieng cua ho, thuc thi phap luat, government va medical divisions.");
 	TextDrawBackgroundColor(TutTxtdraw[54], 255);
 	TextDrawFont(TutTxtdraw[54], 2);
 	TextDrawLetterSize(TutTxtdraw[54], 0.159998, 0.899999);
@@ -1427,7 +1427,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 14) (Line 3)
-	TutTxtdraw[55] = TextDrawCreate(175.000000, 161.000000, "If you wish to become a part of this faction, apply on our forums");
+	TutTxtdraw[55] = TextDrawCreate(175.000000, 161.000000, "Neu ban muon tro thanh mot phan cua dieu nay faction, ap dung tren cac dien dan cua chung toi");
 	TextDrawBackgroundColor(TutTxtdraw[55], 255);
 	TextDrawFont(TutTxtdraw[55], 2);
 	TextDrawLetterSize(TutTxtdraw[55], 0.159997, 0.899999);
@@ -1437,7 +1437,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 14) (Line 4)
-	TutTxtdraw[56] = TextDrawCreate(175.000000, 171.000000, "at ~y~www.ng-gaming.net~w~.");
+	TutTxtdraw[56] = TextDrawCreate(175.000000, 171.000000, "tai ~y~www.ng-gaming.net~w~.");
 	TextDrawBackgroundColor(TutTxtdraw[56], 255);
 	TextDrawFont(TutTxtdraw[56], 2);
 	TextDrawLetterSize(TutTxtdraw[56], 0.159997, 0.899999);
@@ -1447,7 +1447,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 14) (Line 5)
-	TutTxtdraw[57] = TextDrawCreate(175.000000, 204.000000, "Be sure to pay the toll when you visit from San Fierro!");
+	TutTxtdraw[57] = TextDrawCreate(175.000000, 204.000000, "Hay chac chan tra phi cau duong khi ban tu San Fierro!");
 	TextDrawBackgroundColor(TutTxtdraw[57], 255);
 	TextDrawFont(TutTxtdraw[57], 2);
 	TextDrawLetterSize(TutTxtdraw[57], 0.159997, 0.899999);
@@ -1457,7 +1457,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 15) (Title)
-	TutTxtdraw[58] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Gangs/Families");
+	TutTxtdraw[58] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Gangs/Families");
 	TextDrawBackgroundColor(TutTxtdraw[58], 255);
 	TextDrawFont(TutTxtdraw[58], 2);
 	TextDrawLetterSize(TutTxtdraw[58], 0.209998, 1.000000);
@@ -1468,7 +1468,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 15) (Line 1)
-	TutTxtdraw[59] = TextDrawCreate(175.000000, 141.000000, "San Andreas has several different crime related gangs/families to join.");
+	TutTxtdraw[59] = TextDrawCreate(175.000000, 141.000000, "San Andreas co mot so toi pham khac nhau lien quan gangs/families to join.");
 	TextDrawBackgroundColor(TutTxtdraw[59], 255);
 	TextDrawFont(TutTxtdraw[59], 2);
 	TextDrawLetterSize(TutTxtdraw[59], 0.159998, 0.899999);
@@ -1478,7 +1478,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 15) (Line 2)
-	TutTxtdraw[60] = TextDrawCreate(175.000000, 151.000000, "Type ~g~/families~w~ to display a list of gangs. Type ~g~/families number~w~ to show");
+	TutTxtdraw[60] = TextDrawCreate(175.000000, 151.000000, "Kieu ~g~/families~w~ de hien thi mot danh sach cac bang nhom. Kieu  ~g~/families number~w~ de hien thi");
 	TextDrawBackgroundColor(TutTxtdraw[60], 255);
 	TextDrawFont(TutTxtdraw[60], 2);
 	TextDrawLetterSize(TutTxtdraw[60], 0.159998, 0.899999);
@@ -1488,7 +1488,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 15) (Line 3)
-	TutTxtdraw[61] = TextDrawCreate(175.000000, 161.000000, "thier members. Gang members can take control of the weapons/fuel/drug");
+	TutTxtdraw[61] = TextDrawCreate(175.000000, 161.000000, "thanh vien cua ho. Gang cac thanh vien co the kiem soat Sung va vat pham va chat cams");
 	TextDrawBackgroundColor(TutTxtdraw[61], 255);
 	TextDrawFont(TutTxtdraw[61], 2);
 	TextDrawLetterSize(TutTxtdraw[61], 0.159997, 0.899999);
@@ -1498,7 +1498,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 15) (Line 4)
-	TutTxtdraw[62] = TextDrawCreate(175.000000, 171.000000, "trade to earn quick cash. If you want to join a gang, be sure to roleplay");
+	TutTxtdraw[62] = TextDrawCreate(175.000000, 171.000000, "giao dich de kiem tien nhanh chong. Neu ban muon tham gia mot bang dang, hay chac chan nhap vai");
 	TextDrawBackgroundColor(TutTxtdraw[62], 255);
 	TextDrawFont(TutTxtdraw[62], 2);
 	TextDrawLetterSize(TutTxtdraw[62], 0.159997, 0.899999);
@@ -1508,7 +1508,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 15) (Line 5)
-	TutTxtdraw[63] = TextDrawCreate(175.000000, 204.000000, "Type ~g~/turfs~w~ to disply the turf maps.");
+	TutTxtdraw[63] = TextDrawCreate(175.000000, 204.000000, "Kieu ~g~/turfs~w~ de hien thi cac ban do turf.");
 	TextDrawBackgroundColor(TutTxtdraw[63], 255);
 	TextDrawFont(TutTxtdraw[63], 2);
 	TextDrawLetterSize(TutTxtdraw[63], 0.159997, 0.899999);
@@ -1518,7 +1518,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 15) (Line 6)
-	TutTxtdraw[64] = TextDrawCreate(175.000000, 182.000000, "with their leaders, you might get your chance!");
+	TutTxtdraw[64] = TextDrawCreate(175.000000, 182.000000, "voi cac nha lanh dao cua ho, ban co the co co ho!");
 	TextDrawBackgroundColor(TutTxtdraw[64], 255);
 	TextDrawFont(TutTxtdraw[64], 2);
 	TextDrawLetterSize(TutTxtdraw[64], 0.159997, 0.899999);
@@ -1528,7 +1528,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 16) (Title)
-	TutTxtdraw[65] = TextDrawCreate(168.000000, 120.000000, "Tutorial - 24/7 General Store");
+	TutTxtdraw[65] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Cua Hang 24/7");
 	TextDrawBackgroundColor(TutTxtdraw[65], 255);
 	TextDrawFont(TutTxtdraw[65], 2);
 	TextDrawLetterSize(TutTxtdraw[65], 0.209998, 1.000000);
@@ -1539,7 +1539,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 16) (Line 1)
-	TutTxtdraw[66] = TextDrawCreate(175.000000, 141.000000, "You can purchase different items with the ~g~/buy~w~ command from any 24/7.");
+	TutTxtdraw[66] = TextDrawCreate(175.000000, 141.000000, "Ban co the mua cac mat hang khac nhau voi ~g~/buy~w~ lenh tu bat ky 24/7.");
 	TextDrawBackgroundColor(TutTxtdraw[66], 255);
 	TextDrawFont(TutTxtdraw[66], 2);
 	TextDrawLetterSize(TutTxtdraw[66], 0.159998, 0.899999);
@@ -1549,7 +1549,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 16) (Line 2)
-	TutTxtdraw[67] = TextDrawCreate(175.000000, 151.000000, "Buying a cellphone will give you the ability to ~g~/call~w~ or ~g~/sms~w~ other online");
+	TutTxtdraw[67] = TextDrawCreate(175.000000, 151.000000, "Mua mot chiec dien thoai di dong se cho ban kha nang ~g~/call~w~ voi ~g~/sms~w~ truc tuyen khac");
 	TextDrawBackgroundColor(TutTxtdraw[67], 255);
 	TextDrawFont(TutTxtdraw[67], 2);
 	TextDrawLetterSize(TutTxtdraw[67], 0.159998, 0.899999);
@@ -1559,7 +1559,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 16) (Line 3)
-	TutTxtdraw[68] = TextDrawCreate(175.000000, 161.000000, "players. Along with banks, 24/7 stores appear as a green dollar sign on");
+	TutTxtdraw[68] = TextDrawCreate(175.000000, 161.000000, "nguoi choi. Cung voi cac ngan hang, 24/7 cac cua hang xuat hien duoi dang ky hieu do la xanh tren");
 	TextDrawBackgroundColor(TutTxtdraw[68], 255);
 	TextDrawFont(TutTxtdraw[68], 2);
 	TextDrawLetterSize(TutTxtdraw[68], 0.159997, 0.899999);
@@ -1569,7 +1569,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 16) (Line 4)
-	TutTxtdraw[69] = TextDrawCreate(175.000000, 171.000000, "the mini-map.");
+	TutTxtdraw[69] = TextDrawCreate(175.000000, 171.000000, "Tren ban do nho.");
 	TextDrawBackgroundColor(TutTxtdraw[69], 255);
 	TextDrawFont(TutTxtdraw[69], 2);
 	TextDrawLetterSize(TutTxtdraw[69], 0.159997, 0.899999);
@@ -1579,7 +1579,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 16) (Line 5)
-	TutTxtdraw[70] = TextDrawCreate(175.000000, 195.000000, "VIPs get special discounts from these stores.");
+	TutTxtdraw[70] = TextDrawCreate(175.000000, 195.000000, "VIP duoc giam gia dac biet tu cac cua hang nay.");
 	TextDrawBackgroundColor(TutTxtdraw[70], 255);
 	TextDrawFont(TutTxtdraw[70], 2);
 	TextDrawLetterSize(TutTxtdraw[70], 0.159997, 0.899999);
@@ -1589,7 +1589,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 17) (Title)
-	TutTxtdraw[71] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Clothing Stores");
+	TutTxtdraw[71] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Cua Hang Quan Ao");
 	TextDrawBackgroundColor(TutTxtdraw[71], 255);
 	TextDrawFont(TutTxtdraw[71], 2);
 	TextDrawLetterSize(TutTxtdraw[71], 0.209998, 1.000000);
@@ -1600,7 +1600,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 17) (Line 1)
-	TutTxtdraw[72] = TextDrawCreate(175.000000, 141.000000, "You can purchase different skins with ~g~/buyclothes~w~ from any clothing store.");
+	TutTxtdraw[72] = TextDrawCreate(175.000000, 141.000000, "Ban co the mua cac giao dien khac nhau voi ~g~/buyclothes~w~ tu bat ky cua hang quan ao.");
 	TextDrawBackgroundColor(TutTxtdraw[72], 255);
 	TextDrawFont(TutTxtdraw[72], 2);
 	TextDrawLetterSize(TutTxtdraw[72], 0.159998, 0.899999);
@@ -1610,7 +1610,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 17) (Line 2)
-	TutTxtdraw[73] = TextDrawCreate(175.000000, 151.000000, "You can also purchase different clothing items with ~g~/buytoys~w~ from any");
+	TutTxtdraw[73] = TextDrawCreate(175.000000, 151.000000, "Ban cung co the mua cac mat hang quan ao khac nhau voi ~g~/buytoys~w~ tu bat ki");
 	TextDrawBackgroundColor(TutTxtdraw[73], 255);
 	TextDrawFont(TutTxtdraw[73], 2);
 	TextDrawLetterSize(TutTxtdraw[73], 0.159998, 0.899999);
@@ -1620,7 +1620,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 17) (Line 3)
-	TutTxtdraw[74] = TextDrawCreate(175.000000, 161.000000, "clothing store. Clothing stores appear as a white tee shirt on the");
+	TutTxtdraw[74] = TextDrawCreate(175.000000, 161.000000, "Cua Hang quan ao. Cac cua hang quan ao xuat hien duoi dang ao phong trang tren");
 	TextDrawBackgroundColor(TutTxtdraw[74], 255);
 	TextDrawFont(TutTxtdraw[74], 2);
 	TextDrawLetterSize(TutTxtdraw[74], 0.159997, 0.899999);
@@ -1630,7 +1630,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 17) (Line 4)
-	TutTxtdraw[75] = TextDrawCreate(175.000000, 171.000000, "mini-map.");
+	TutTxtdraw[75] = TextDrawCreate(175.000000, 171.000000, "Ban do nho.");
 	TextDrawBackgroundColor(TutTxtdraw[75], 255);
 	TextDrawFont(TutTxtdraw[75], 2);
 	TextDrawLetterSize(TutTxtdraw[75], 0.159997, 0.899999);
@@ -1640,7 +1640,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 17) (Line 5)
-	TutTxtdraw[76] = TextDrawCreate(175.000000, 195.000000, "VIPs get an unrestricted selection of skins from these stores.");
+	TutTxtdraw[76] = TextDrawCreate(175.000000, 195.000000, "VIP co duoc lua chon giao dien khong gioi han tu cac cua hang nay.");
 	TextDrawBackgroundColor(TutTxtdraw[76], 255);
 	TextDrawFont(TutTxtdraw[76], 2);
 	TextDrawLetterSize(TutTxtdraw[76], 0.159997, 0.899999);
@@ -1650,7 +1650,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 18) (Title)
-	TutTxtdraw[77] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Car Dealerships");
+	TutTxtdraw[77] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Dai Ly Xe");
 	TextDrawBackgroundColor(TutTxtdraw[77], 255);
 	TextDrawFont(TutTxtdraw[77], 2);
 	TextDrawLetterSize(TutTxtdraw[77], 0.209998, 1.000000);
@@ -1661,7 +1661,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 18) (Line 1)
-	TutTxtdraw[78] = TextDrawCreate(175.000000, 141.000000, "You can purchase different vehicles from several different car");
+	TutTxtdraw[78] = TextDrawCreate(175.000000, 141.000000, "Ban co the mua cac loai xe khac nhau tu mot so xe khac nhau");
 	TextDrawBackgroundColor(TutTxtdraw[78], 255);
 	TextDrawFont(TutTxtdraw[78], 2);
 	TextDrawLetterSize(TutTxtdraw[78], 0.159998, 0.899999);
@@ -1671,7 +1671,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 18) (Line 2)
-	TutTxtdraw[79] = TextDrawCreate(175.000000, 151.000000, "dealerships. Once purchased, you can control said vehicle with the ~g~/car");
+	TutTxtdraw[79] = TextDrawCreate(175.000000, 151.000000, "dai ly. Sau khi mua, ban co the dieu khien chiec xe noi tren voi ~g~/car");
 	TextDrawBackgroundColor(TutTxtdraw[79], 255);
 	TextDrawFont(TutTxtdraw[79], 2);
 	TextDrawLetterSize(TutTxtdraw[79], 0.159998, 0.899999);
@@ -1681,7 +1681,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 18) (Line 3)
-	TutTxtdraw[80] = TextDrawCreate(175.000000, 161.000000, "command. Car dealerships appear as a car on the mini-map.");
+	TutTxtdraw[80] = TextDrawCreate(175.000000, 161.000000, "Lenh. dai ly xe hoi xuat hien nhu mot chiec xe hoi tren mini-map.");
 	TextDrawBackgroundColor(TutTxtdraw[80], 255);
 	TextDrawFont(TutTxtdraw[80], 2);
 	TextDrawLetterSize(TutTxtdraw[80], 0.159997, 0.899999);
@@ -1691,7 +1691,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 18) (Line 4)
-	TutTxtdraw[81] = TextDrawCreate(175.000000, 195.000000, "There are several different car dealerships, also in the VIP garage.");
+	TutTxtdraw[81] = TextDrawCreate(175.000000, 195.000000, "Co mot so dai ly xe hoi khac nhau, cung trong VIP garage.");
 	TextDrawBackgroundColor(TutTxtdraw[81], 255);
 	TextDrawFont(TutTxtdraw[81], 2);
 	TextDrawLetterSize(TutTxtdraw[81], 0.159997, 0.899999);
@@ -1701,7 +1701,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 19) (Title)
-	TutTxtdraw[82] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Houses");
+	TutTxtdraw[82] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Nha`");
 	TextDrawBackgroundColor(TutTxtdraw[82], 255);
 	TextDrawFont(TutTxtdraw[82], 2);
 	TextDrawLetterSize(TutTxtdraw[82], 0.209998, 1.000000);
@@ -1712,7 +1712,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 19) (Line 1)
-	TutTxtdraw[83] = TextDrawCreate(175.000000, 141.000000, "Houses are player ownable living units that you can purchase from other");
+	TutTxtdraw[83] = TextDrawCreate(175.000000, 141.000000, "Nha la don vi sinh song ma nguoi choi co the so huu ma ban co the mua tu nhung nguoi khac");
 	TextDrawBackgroundColor(TutTxtdraw[83], 255);
 	TextDrawFont(TutTxtdraw[83], 2);
 	TextDrawLetterSize(TutTxtdraw[83], 0.159998, 0.899999);
@@ -1722,7 +1722,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 19) (Line 2)
-	TutTxtdraw[84] = TextDrawCreate(175.000000, 151.000000, "players or from our e-store. You can store materials, drugs and money");
+	TutTxtdraw[84] = TextDrawCreate(175.000000, 151.000000, "nguoi choi hoac tu cua hang dien tu cua chung toi. Ban co the luu tru vat lieu, thuoc va tien");
 	TextDrawBackgroundColor(TutTxtdraw[84], 255);
 	TextDrawFont(TutTxtdraw[84], 2);
 	TextDrawLetterSize(TutTxtdraw[84], 0.159998, 0.899999);
@@ -1732,7 +1732,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 19) (Line 3)
-	TutTxtdraw[85] = TextDrawCreate(175.000000, 161.000000, "into the house safe for keep sakes as long as you own the house.");
+	TutTxtdraw[85] = TextDrawCreate(175.000000, 161.000000, "vao nha an toan mien la ban so huu ngoi nha.");
 	TextDrawBackgroundColor(TutTxtdraw[85], 255);
 	TextDrawFont(TutTxtdraw[85], 2);
 	TextDrawLetterSize(TutTxtdraw[85], 0.159997, 0.899999);
@@ -1742,7 +1742,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 19) (Line 4)
-	TutTxtdraw[86] = TextDrawCreate(175.000000, 195.000000, "Houses appear as a ~g~green~w~ floating house throughout San Andreas.");
+	TutTxtdraw[86] = TextDrawCreate(175.000000, 195.000000, "Nhung ngoi nha xuat hien nhu mot ~g~green~w~ nha noi trong suot San Andreas.");
 	TextDrawBackgroundColor(TutTxtdraw[86], 255);
 	TextDrawFont(TutTxtdraw[86], 2);
 	TextDrawLetterSize(TutTxtdraw[86], 0.159997, 0.899999);
@@ -1752,7 +1752,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 20) (Title)
-	TutTxtdraw[87] = TextDrawCreate(168.000000, 120.000000, "Tutorial - VIP & E-Store");
+	TutTxtdraw[87] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - VIP va E-Store");
 	TextDrawBackgroundColor(TutTxtdraw[87], 255);
 	TextDrawFont(TutTxtdraw[87], 2);
 	TextDrawLetterSize(TutTxtdraw[87], 0.209998, 1.000000);
@@ -1763,7 +1763,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 20) (Line 1)
-	TutTxtdraw[88] = TextDrawCreate(175.000000, 141.000000, "We operate a 24/7 E-Store at ~y~shop.ng-gaming.net~w~, you can purchase Vehicles,");
+	TutTxtdraw[88] = TextDrawCreate(175.000000, 141.000000, "chung toi van hanh mot 24/7 E-Store voi ~y~shop.ng-gaming.net~w~, ban co the mua Xe,");
 	TextDrawBackgroundColor(TutTxtdraw[88], 255);
 	TextDrawFont(TutTxtdraw[88], 2);
 	TextDrawLetterSize(TutTxtdraw[88], 0.159998, 0.899999);
@@ -1773,7 +1773,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 20) (Line 2)
-	TutTxtdraw[89] = TextDrawCreate(175.000000, 151.000000, "Houses, VIP and much much more! We have 4 different VIP levels that users");
+	TutTxtdraw[89] = TextDrawCreate(175.000000, 151.000000, "Nha`, VIP va nhieu hon nua! Chung toi co 4 cap do VIP khac nhau ma nguoi dung");
 	TextDrawBackgroundColor(TutTxtdraw[89], 255);
 	TextDrawFont(TutTxtdraw[89], 2);
 	TextDrawLetterSize(TutTxtdraw[89], 0.159998, 0.899999);
@@ -1783,7 +1783,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 20) (Line 3)
-	TutTxtdraw[90] = TextDrawCreate(175.000000, 161.000000, "can purchase or obtain - learn more on our shop's website. VIPs have access");
+	TutTxtdraw[90] = TextDrawCreate(175.000000, 161.000000, "co the mua hoac co duoc - tim hieu them tren trang web cua cua hang chung toi. VIPs co quyen truy cap");
 	TextDrawBackgroundColor(TutTxtdraw[90], 255);
 	TextDrawFont(TutTxtdraw[90], 2);
 	TextDrawLetterSize(TutTxtdraw[90], 0.159997, 0.899999);
@@ -1793,7 +1793,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 20) (Line 4)
-	TutTxtdraw[91] = TextDrawCreate(175.000000, 195.000000, "Want a trial run as a VIP? Ask a VIP for a ~b~buddy invite.");
+	TutTxtdraw[91] = TextDrawCreate(175.000000, 195.000000, "Muon chay thu nhu mot VIP? Yeu cau mot VIP cho mot ~b~moi ban be.");
 	TextDrawBackgroundColor(TutTxtdraw[91], 255);
 	TextDrawFont(TutTxtdraw[91], 2);
 	TextDrawLetterSize(TutTxtdraw[91], 0.159997, 0.899999);
@@ -1803,7 +1803,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 20) (Line 5)
-	TutTxtdraw[92] = TextDrawCreate(175.000000, 172.000000, "to several features, such as VIP chat, special vehicles, and much more!");
+	TutTxtdraw[92] = TextDrawCreate(175.000000, 172.000000, "den mot so tinh nang, chang han nhu tro chuyen VIP, phuong tien dac biet, v,v,!");
 	TextDrawBackgroundColor(TutTxtdraw[92], 255);
 	TextDrawFont(TutTxtdraw[92], 2);
 	TextDrawLetterSize(TutTxtdraw[92], 0.159997, 0.899999);
@@ -1813,7 +1813,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 21) (Title)
-	TutTxtdraw[93] = TextDrawCreate(168.000000, 120.000000, "Tutorial - The Rules");
+	TutTxtdraw[93] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Quy Tac");
 	TextDrawBackgroundColor(TutTxtdraw[93], 255);
 	TextDrawFont(TutTxtdraw[93], 2);
 	TextDrawLetterSize(TutTxtdraw[93], 0.209998, 1.000000);
@@ -1824,7 +1824,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 21) (Line 1)
-	TutTxtdraw[94] = TextDrawCreate(175.000000, 141.000000, "Breaking these rules may result in jail/prision time, or leading up to a ban.");
+	TutTxtdraw[94] = TextDrawCreate(175.000000, 141.000000, "Pha vo cac quy tac nay co the dan den jail/prision thoi gian, hoac dan den mot xoa tai khoan.");
 	TextDrawBackgroundColor(TutTxtdraw[94], 255);
 	TextDrawFont(TutTxtdraw[94], 2);
 	TextDrawLetterSize(TutTxtdraw[94], 0.159998, 0.899999);
@@ -1834,7 +1834,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 21) (Line 2)
-	TutTxtdraw[95] = TextDrawCreate(181.000000, 160.000000, "| No deathmatching - do not kill without a reason.");
+	TutTxtdraw[95] = TextDrawCreate(181.000000, 160.000000, "| Khong deathmatching - khong giet ma khong co ly do.");
 	TextDrawBackgroundColor(TutTxtdraw[95], 255);
 	TextDrawFont(TutTxtdraw[95], 2);
 	TextDrawLetterSize(TutTxtdraw[95], 0.159998, 0.899999);
@@ -1844,7 +1844,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 21) (Line 3)
-	TutTxtdraw[96] = TextDrawCreate(181.000000, 170.000000, "| No revengekilling - you loose 30 minutes of memory when you die.");
+	TutTxtdraw[96] = TextDrawCreate(181.000000, 170.000000, "| Khong revengekilling - ban mat 30 phut ky uc khi ban chet.");
 	TextDrawBackgroundColor(TutTxtdraw[96], 255);
 	TextDrawFont(TutTxtdraw[96], 2);
 	TextDrawLetterSize(TutTxtdraw[96], 0.159998, 0.899999);
@@ -1854,7 +1854,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 21) (Line 4)
-	TutTxtdraw[97] = TextDrawCreate(181.000000, 181.000000, "| No carparking - do not park cars on people.");
+	TutTxtdraw[97] = TextDrawCreate(181.000000, 181.000000, "| Khong carparking - khong dau xe tren nguoi.");
 	TextDrawBackgroundColor(TutTxtdraw[97], 255);
 	TextDrawFont(TutTxtdraw[97], 2);
 	TextDrawLetterSize(TutTxtdraw[97], 0.159998, 0.899999);
@@ -1864,7 +1864,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 21) (Line 5)
-	TutTxtdraw[98] = TextDrawCreate(181.000000, 192.000000, "| No disconnecting/logging to avoid any roleplay situation.");
+	TutTxtdraw[98] = TextDrawCreate(181.000000, 192.000000, "| Khong disconnecting/logging de tranh moi tinh huong nhap vai.");
 	TextDrawBackgroundColor(TutTxtdraw[98], 255);
 	TextDrawFont(TutTxtdraw[98], 2);
 	TextDrawLetterSize(TutTxtdraw[98], 0.159998, 0.899999);
@@ -1874,7 +1874,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 21) (Line 6)
-	TutTxtdraw[99] = TextDrawCreate(181.000000, 203.000000, "| No account farming/server advertising/cheating/hacking.");
+	TutTxtdraw[99] = TextDrawCreate(181.000000, 203.000000, "| Khong account farming/server advertising/cheating/hacking.");
 	TextDrawBackgroundColor(TutTxtdraw[99], 255);
 	TextDrawFont(TutTxtdraw[99], 2);
 	TextDrawLetterSize(TutTxtdraw[99], 0.159998, 0.899999);
@@ -1884,7 +1884,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 22) (Title)
-	TutTxtdraw[100] = TextDrawCreate(168.000000, 120.000000, "Tutorial - The Credits");
+	TutTxtdraw[100] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Cac khoan tin dung");
 	TextDrawBackgroundColor(TutTxtdraw[100], 255);
 	TextDrawFont(TutTxtdraw[100], 2);
 	TextDrawLetterSize(TutTxtdraw[100], 0.209998, 1.000000);
@@ -1895,7 +1895,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 22) (Line 1)
-	TutTxtdraw[101] = TextDrawCreate(175.000000, 141.000000, "Be sure to thank who makes all of this possible.");
+	TutTxtdraw[101] = TextDrawCreate(175.000000, 141.000000, "Hay chac chan de cam on nguoi lam cho tat ca nhung dieu nay co the.");
 	TextDrawBackgroundColor(TutTxtdraw[101], 255);
 	TextDrawFont(TutTxtdraw[101], 2);
 	TextDrawLetterSize(TutTxtdraw[101], 0.159998, 0.899999);
@@ -1966,7 +1966,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 23) (Title)
-	TutTxtdraw[108] = TextDrawCreate(168.000000, 120.000000, "Tutorial - Welcome to San Andreas");
+	TutTxtdraw[108] = TextDrawCreate(168.000000, 120.000000, "Huong Dan - Chao Mung Den San Andreas");
 	TextDrawBackgroundColor(TutTxtdraw[108], 255);
 	TextDrawFont(TutTxtdraw[108], 2);
 	TextDrawLetterSize(TutTxtdraw[108], 0.209998, 1.000000);
@@ -1977,7 +1977,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 23) (Line 1)
-	TutTxtdraw[109] = TextDrawCreate(175.000000, 141.000000, "Enough chat, it's time to for us to shut up and for you to play, so if you");
+	TutTxtdraw[109] = TextDrawCreate(175.000000, 141.000000, "Tro chuyen du roi, da den luc chung toi im lang va ban choi, vi vay neu ban");
 	TextDrawBackgroundColor(TutTxtdraw[109], 255);
 	TextDrawFont(TutTxtdraw[109], 2);
 	TextDrawLetterSize(TutTxtdraw[109], 0.159998, 0.899999);
@@ -1987,7 +1987,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 23) (Line 2)
-	TutTxtdraw[110] = TextDrawCreate(175.000000, 152.000000, "have any questions, use ~g~/newb~w~. If you need personal help, use");
+	TutTxtdraw[110] = TextDrawCreate(175.000000, 152.000000, "co bat ky cau hoi, use ~g~/newb~w~. Neu ban can tro giup ca nhan, hay su dung");
 	TextDrawBackgroundColor(TutTxtdraw[110], 255);
 	TextDrawFont(TutTxtdraw[110], 2);
 	TextDrawLetterSize(TutTxtdraw[110], 0.159998, 0.899999);
@@ -1997,7 +1997,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 23) (Line 3)
-	TutTxtdraw[111] = TextDrawCreate(175.000000, 163.000000, "~g~/requesthelp~w~. For a list of commands type ~g~/help. ~w~For more information,");
+	TutTxtdraw[111] = TextDrawCreate(175.000000, 163.000000, "~g~/requesthelp~w~. doi voi mot danh sach cac loai lenh ~g~/help. ~w~de biet them thong tin,");
 	TextDrawBackgroundColor(TutTxtdraw[111], 255);
 	TextDrawFont(TutTxtdraw[111], 2);
 	TextDrawLetterSize(TutTxtdraw[111], 0.159998, 0.899999);
@@ -2007,7 +2007,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 23) (Line 4)
-	TutTxtdraw[112] = TextDrawCreate(175.000000, 174.000000, "check out ~y~www.ng-gaming.net~w~.");
+	TutTxtdraw[112] = TextDrawCreate(175.000000, 174.000000, "kiem tra ngoai ~y~www.ng-gaming.net~w~.");
 	TextDrawBackgroundColor(TutTxtdraw[112], 255);
 	TextDrawFont(TutTxtdraw[112], 2);
 	TextDrawLetterSize(TutTxtdraw[112], 0.159998, 0.899999);
@@ -2017,7 +2017,7 @@ public LoadTextDraws() {
 	textdrawscount++;
 
 	// Tutorial (Frame 23) (Line 5)
-	TutTxtdraw[113] = TextDrawCreate(175.000000, 204.000000, "Your weapons will be restricted for the first 2 hours of play.");
+	TutTxtdraw[113] = TextDrawCreate(175.000000, 204.000000, "Yvu khi cua chung toi se bi han che trong 2 gio choi dau tien.");
 	TextDrawBackgroundColor(TutTxtdraw[113], 255);
 	TextDrawFont(TutTxtdraw[113], 2);
 	TextDrawLetterSize(TutTxtdraw[113], 0.159998, 0.899999);
@@ -2143,7 +2143,7 @@ stock PrepTradeToysGUI(playerid, sellerid, price, object)
 	PlayerTextDrawSetSelectable(playerid, ttOffer[playerid], 0);
 	
 	// Note
-	ttNote[playerid] = CreatePlayerTextDraw(playerid, 74.000000, 221.000000, "If you would like to purchase this toy, press 'Y' on your keyboard, otherwise, press 'N' on your keyboard.");
+	ttNote[playerid] = CreatePlayerTextDraw(playerid, 74.000000, 221.000000, "Neu ban muon mua do choi nay, Nhan 'Y' Tren ban phim, neu khong thi, Nhan 'N' tren ban phim.");
 	PlayerTextDrawBackgroundColor(playerid, ttNote[playerid], 255);
 	PlayerTextDrawFont(playerid, ttNote[playerid], 1);
 	PlayerTextDrawLetterSize(playerid, ttNote[playerid], 0.150000, 1.000000);
@@ -2220,7 +2220,7 @@ stock CreateHungerGamesTextdraw(playerid)
 	PlayerTextDrawSetSelectable(playerid, HungerPlayerInfo[playerid][hgPlayerText], 0);
 	
 	// Create the loading textdraw
-	HungerPlayerInfo[playerid][hgLoadingText] = CreatePlayerTextDraw(playerid, 549.000000, 423.000000, "The Hunger Games is loading...");
+	HungerPlayerInfo[playerid][hgLoadingText] = CreatePlayerTextDraw(playerid, 549.000000, 423.000000, "The Hunger Games dang duoc tai...");
 	PlayerTextDrawBackgroundColor(playerid, HungerPlayerInfo[playerid][hgLoadingText], 255);
 	PlayerTextDrawFont(playerid, HungerPlayerInfo[playerid][hgLoadingText], 1);
 	PlayerTextDrawLetterSize(playerid, HungerPlayerInfo[playerid][hgLoadingText], 0.160000, 0.699999);
@@ -2441,7 +2441,7 @@ stock CreateAccountRestTextdraw(playerid)
 	PlayerTextDrawTextSize(playerid,AccountRestriction[playerid], 0.000000, 0.000000);
 	PlayerTextDrawSetSelectable(playerid,AccountRestriction[playerid], 0);
 
-	AccountRestrictionEx[playerid] = CreatePlayerTextDraw(playerid,39.000000, 428.000000, "Your account is restricted, please contact a member of the RP Improvement Team.");
+	AccountRestrictionEx[playerid] = CreatePlayerTextDraw(playerid,39.000000, 428.000000, "Tai khoan cua ban bi han che, xin vui long lien he voi mot thanh vien cua RP Improvement Team.");
 	PlayerTextDrawBackgroundColor(playerid,AccountRestrictionEx[playerid], 255);
 	PlayerTextDrawFont(playerid,AccountRestrictionEx[playerid], 2);
 	PlayerTextDrawLetterSize(playerid,AccountRestrictionEx[playerid], 0.300000, 2.000000);

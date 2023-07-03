@@ -20,15 +20,15 @@ hook OnPlayerConnect(playerid)
 {
     if (SvGetVersion(playerid) == SV_NULL)
     {
-        SendClientMessage(playerid, -1, "Could not find plugin sampvoice.");
+        SendClientMessage(playerid, -1, "Khong the tim thay plugin sampvoice.");
     }
     else if (SvHasMicro(playerid) == SV_FALSE)
     {
-        SendClientMessage(playerid, -1, "The microphone could not be found.");
+        SendClientMessage(playerid, -1, "Khong the tim thay micro.");
     }
     else if ((lstream[playerid] = SvCreateDLStreamAtPlayer(40.0, SV_INFINITY, playerid, 0xff0000ff, "Local")))
     {
-        SendClientMessage(playerid, -1, "Press Z to talk to global chat and B to talk to local chat.");
+        SendClientMessage(playerid, -1, "Nhan Z de noi chuyen voi tro chuyen toan cau va B de noi chuyen voi tro chuyen cuc bo.");
 
         if (gstream) SvAttachListenerToStream(gstream, playerid);
 
