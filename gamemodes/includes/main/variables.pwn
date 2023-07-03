@@ -334,6 +334,9 @@ new CarRadars[MAX_PLAYERS];
 new PlayerText:BackupText[MAX_PLAYERS];
 new BackupClearTimer[MAX_PLAYERS]; // backup clear timer
 
+//MechanicTD
+new PlayerText:MechanicTD[MAX_PLAYERS][11];
+
 // Countdown var
 new CountDown = 0;
 
