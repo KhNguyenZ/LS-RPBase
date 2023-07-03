@@ -311,6 +311,9 @@ enum furnitureEnum
 //#include "./includes/main/task.pwn"
 //#include "./includes/main/voice.pwn"
 
+//Mechanic
+#include "./includes/main/Thongtinsuachua.pwn"
+
 
 main(){}
 
