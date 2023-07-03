@@ -1,0 +1,271 @@
+#include <YSI\y_hooks>
+
+
+CMD:kiemtraxe(playerid,params[]){
+	new vehicleid = GetPlayerVehicleID(playerid),Float:mpos[3];
+	if(!vehicleid || GetPlayerState(playerid) != PLAYER_STATE_DRIVER)
+	{
+	    return SendClientMessage(playerid, COLOR_RED, "He Thong: Ban phai lai xe de su dung lenh nay.");
+	}
+	if(PlayerInfo[playerid][pMember] != 35){
+		return SendClientMessage(playerid,COLOR_RED,"He Thong: Ban khong phai la nhan vien mechanic nen khong the lam dieu nay.");
+	}
+	ShowMechanicTD(playerid);
+	SelectTextDraw(playerid, 0x808080AA);
+	GetVehiclePos(vehicleid, mpos[0], mpos[1], mpos[2]);
+	return 1;
+}
+
+hook OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid){
+	if(playertextid == MechanicTD[playerid][1])
+    {
+    	HideMechanicTD(playerid);
+        return 1;
+    }
+	return 1;
+}
+
+stock ShowMechanicTD(playerid){
+	new
+		Float:health,
+		string[128],
+		Trangthaixe;
+	new vehicleid = GetPlayerVehicleID(playerid);
+	GetVehicleHealth(vehicleid, health);
+
+	MechanicTD[playerid][0] = CreatePlayerTextDraw(playerid, 369.948272, 110.083343, "mdl-2023:thongtinsuachua");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][0], 0.000000, 0.000000);
+	PlayerTextDrawTextSize(playerid, MechanicTD[playerid][0], 163.000000, 238.000000);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][0], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][0], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][0], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][0], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][0], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][0], 4);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][0], 0);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][0], 0);
+
+	MechanicTD[playerid][1] = CreatePlayerTextDraw(playerid, 455.119567, 312.099975, "mdl-2024:huybo");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][1], 0.000000, 0.000000);
+	PlayerTextDrawTextSize(playerid, MechanicTD[playerid][1], 58.000000, 19.000000);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][1], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][1], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][1], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][1], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][1], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][1], 4);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][1], 0);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][1], 0);
+	PlayerTextDrawSetSelectable(playerid, MechanicTD[playerid][1], true);
+
+	MechanicTD[playerid][2] = CreatePlayerTextDraw(playerid, 384.015228, 312.099975, "mdl-2025:suachua");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][2], 0.000000, 0.000000);
+	PlayerTextDrawTextSize(playerid, MechanicTD[playerid][2], 58.000000, 19.000000);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][2], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][2], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][2], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][2], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][2], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][2], 4);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][2], 0);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][2], 0);
+	PlayerTextDrawSetSelectable(playerid, MechanicTD[playerid][2], true);
+
+	MechanicTD[playerid][3] = CreatePlayerTextDraw(playerid, 484.268463, 137.500076, "");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][3], 0.000000, 0.000000);
+	PlayerTextDrawTextSize(playerid, MechanicTD[playerid][3], -79.000000, 67.000000);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][3], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][3], -2139062017);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][3], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][3], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][3], -1073741824);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][3], 5);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][3], 0);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][3], 0);
+	PlayerTextDrawSetPreviewModel(playerid, MechanicTD[playerid][3], 420);
+	PlayerTextDrawSetPreviewRot(playerid, MechanicTD[playerid][3], 2.000000, 0.000000, 83.000000, 0.899999);
+	PlayerTextDrawSetPreviewVehCol(playerid, MechanicTD[playerid][3], 1, 1);
+	PlayerTextDrawSetSelectable(playerid, MechanicTD[playerid][3], vehicleid);
+
+	MechanicTD[playerid][4] = CreatePlayerTextDraw(playerid, 426.071075, 200.300018, "Flash");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][4], 0.273030, 1.949999);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][4], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][4], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][4], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][4], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][4], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][4], 2);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][4], 1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][4], 0);
+
+	MechanicTD[playerid][5] = CreatePlayerTextDraw(playerid, 423.391448, 224.383285, "100");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][5], 0.273030, 1.949999);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][5], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][5], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][5], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][5], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][5], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][5], 2);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][5], 1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][5], 0);
+
+	MechanicTD[playerid][10] = CreatePlayerTextDraw(playerid, 433.372894, 248.249832, "Binh Thuong");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][6], 0.273030, 1.949999);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][6], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][6], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][6], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][6], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][6], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][6], 2);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][6], 1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][6], 0);
+
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][0]);
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][1]);
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][2]);
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][3]);
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][4]);
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][5]);
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][10]);
+
+	if(health < 100){
+		new randomtrangthai = random(500);
+		switch(randomtrangthai)
+		{
+		    case 0..50:{
+		    	Trangthaixe = "Banh Xe";
+		    	format(string, sizeof(string), "%s",Trangthaixe, string);
+    			PlayerTextDrawSetString(playerid, MechanicTD[playerid][10] , string);
+		    }
+			case 51..91:{
+				Trangthaixe = "Den Xe";
+				format(string, sizeof(string), "%s",Trangthaixe, string);
+    			PlayerTextDrawSetString(playerid, MechanicTD[playerid][10] , string);
+			}
+			case 92..142:{
+				Trangthaixe = "Bugi";
+				format(string, sizeof(string), "%s",Trangthaixe, string);
+    			PlayerTextDrawSetString(playerid, MechanicTD[playerid][10] , string);
+			}
+			case 143..193:{
+				Trangthaixe = "Cua So";
+				format(string, sizeof(string), "%s",Trangthaixe, string);
+    			PlayerTextDrawSetString(playerid, MechanicTD[playerid][10] , string);
+			}
+			case 243..293:{
+				Trangthaixe = "Dong Co Duoi";
+				format(string, sizeof(string), "%s",Trangthaixe, string);
+				PlayerTextDrawSetString(playerid, MechanicTD[playerid][10] , string);
+			}
+			case 294..344:{
+				Trangthaixe = "Dong Co Dau";
+				format(string, sizeof(string), "%s",Trangthaixe, string);
+    			PlayerTextDrawSetString(playerid, MechanicTD[playerid][10] , string);
+			}
+		}
+	}else{
+		Trangthaixe = "Binh Thuong";
+		format(string, sizeof(string), "%s",Trangthaixe, string);
+    	PlayerTextDrawSetString(playerid, MechanicTD[playerid][10] , string);
+	}
+
+	format(string, sizeof(string), "%.1f",health, string);
+    PlayerTextDrawSetString(playerid, MechanicTD[playerid][5] , string);
+
+	return 1;
+}
+
+stock HideMechanicTD(playerid){
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][0]);
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][1]);
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][2]);
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][3]);
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][4]);
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][5]);
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][10]);
+	return 1;
+}
+
+/*stock ShowTrangthaibanhxeTD(playerid){
+	MechanicTD[playerid][6] = CreatePlayerTextDraw(playerid, 433.372894, 248.249832, "Banh Xe");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][6], 0.273030, 1.949999);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][6], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][6], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][6], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][6], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][6], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][6], 2);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][6], 1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][6], 0);;
+
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][6]);
+	return 1;
+}
+
+stock HideTrangthaibanhxeTD(playerid){
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][6]);
+	return 1;
+}
+
+stock ShowTrangthaidongcoTD(playerid){
+	MechanicTD[playerid][7] = CreatePlayerTextDraw(playerid, 433.372894, 248.249832, "Dong Co");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][7], 0.273030, 1.949999);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][7], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][7], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][7], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][7], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][7], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][7], 2);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][7], 1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][7], 0);
+
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][7]);
+	return 1;
+}
+
+stock HideTrangthaidongcoTD(playerid){
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][7]);
+	return 1;
+}
+
+stock ShowTrangthaidenxeTD(playerid){
+	MechanicTD[playerid][8] = CreatePlayerTextDraw(playerid, 433.372894, 248.249832, "Den Xe");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][8], 0.273030, 1.949999);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][8], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][8], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][8], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][8], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][8], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][8], 2);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][8], 1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][8], 0);
+
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][8]);
+	return 1;
+}
+
+stock HideTrangthaidenxeTD(playerid){
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][8]);
+	return 1;
+}
+
+stock ShowTrangthaiboxeTD(playerid){
+	MechanicTD[playerid][9] = CreatePlayerTextDraw(playerid, 433.372894, 248.249832, "Bo Xe");
+	PlayerTextDrawLetterSize(playerid, MechanicTD[playerid][9], 0.273030, 1.949999);
+	PlayerTextDrawAlignment(playerid, MechanicTD[playerid][9], 1);
+	PlayerTextDrawColor(playerid, MechanicTD[playerid][9], -1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][9], 0);
+	PlayerTextDrawSetOutline(playerid, MechanicTD[playerid][9], 0);
+	PlayerTextDrawBackgroundColor(playerid, MechanicTD[playerid][9], 255);
+	PlayerTextDrawFont(playerid, MechanicTD[playerid][9], 2);
+	PlayerTextDrawSetProportional(playerid, MechanicTD[playerid][9], 1);
+	PlayerTextDrawSetShadow(playerid, MechanicTD[playerid][9], 0);
+
+	PlayerTextDrawShow(playerid, MechanicTD[playerid][9]);
+	return 1;
+}
+
+stock HideTrangthaiboxeTD(playerid){
+	PlayerTextDrawHide(playerid, MechanicTD[playerid][9]);
+	return 1;
+}*/
