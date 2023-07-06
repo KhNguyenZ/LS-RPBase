@@ -312,7 +312,7 @@ enum furnitureEnum
 //#include "./includes/main/voice.pwn"
 
 //Mechanic
-#include "./includes/main/Thongtinsuachua.pwn"
+//#include "./includes/main/Thongtinsuachua.pwn"
 
 
 main(){}
