@@ -923,6 +923,8 @@ enum sInfo
 
 enum pInfo
 {
+	pDiemthuongbank,
+	pTientietkiembank,
 	pTaskID,
 	pTaskAmount,
 	pId,
