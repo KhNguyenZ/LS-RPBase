@@ -314,6 +314,8 @@ enum furnitureEnum
 //Mechanic
 //#include "./includes/main/Thongtinsuachua.pwn"
 
+//SystemBank
+//#include "./includes/main/SystemBank.pwn"
 
 main(){}
 
